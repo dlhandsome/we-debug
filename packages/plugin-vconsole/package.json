@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/plugin-vconsole",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "vconsole plugin for we-debug",
   "main": "dist/index.js",
   "scripts": {
@@ -14,6 +14,6 @@
   },
   "license": "MIT",
   "readme": "ERROR: No README data found!",
-  "_id": "@we-debug/plugin-vconsole@0.1.2",
-  "_commitid": "52757c3"
+  "_id": "@we-debug/plugin-vconsole@0.1.3",
+  "_commitid": "433b5d1"
 }
