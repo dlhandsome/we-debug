@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/plugin-error",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "error plugin for we-debug",
   "main": "dist/index.js",
   "scripts": {
@@ -9,6 +9,11 @@
   "keywords": [
     "we-debug"
   ],
-  "author": "dlhandsome",
-  "license": "MIT"
+  "author": {
+    "name": "dlhandsome"
+  },
+  "license": "MIT",
+  "readme": "ERROR: No README data found!",
+  "_id": "@we-debug/plugin-error@0.1.1",
+  "_commitid": "8862dfd"
 }
