@@ -1,7 +1,7 @@
 <div align="center">
 <h1>we-debug</h1>
 
-[![travis-ci](https://travis-ci.org/dlhandsome/we-debug.svg?branch=master)](https://www.travis-ci.org/dlhandsome/we-debug) [![npm-version](https://img.shields.io/npm/v/@we-debug/core.svg)](https://www.npmjs.com/package/@we-debug/core)
+[![Build Status](https://travis-ci.com/dlhandsome/we-debug.svg?token=PfDv3SxcBYsJDq3kuspS&branch=master)](https://travis-ci.com/dlhandsome/we-debug) [![npm-version](https://img.shields.io/npm/v/@we-debug/core.svg)](https://www.npmjs.com/package/@we-debug/core)
 
 <p>一款灵活小巧的小程序调试工具 <a href="https://unpkg.com/we-cropper@1.2.0/docs/assets/online.jpg">在线体验</a></p>
 
