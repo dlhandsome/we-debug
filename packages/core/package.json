@@ -1,0 +1,32 @@
+{
+  "name": "@we-debug/core",
+  "version": "0.1.0",
+  "description": "a useful debug tool",
+  "author": "dlhandsome",
+  "miniprogram": "dist/component",
+  "main": "dist/libs/index.js",
+  "scripts": {
+    "test": "npm run build && jest",
+    "test:coverage": "npm run build && jest --coverage"
+  },
+  "verpub": {
+    "tag": "v{version}",
+    "publish": false
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": -10
+      }
+    }
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@we-debug/plugin-error": "^0.1.0",
+    "@we-debug/plugin-router": "^0.1.0"
+  },
+  "dependencies": {}
+}

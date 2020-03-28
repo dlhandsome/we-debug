@@ -1,0 +1,30 @@
+@import '../less/animate.less';
+
+.mask {
+  opacity: 0;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  &__modal {
+    position: fixed;
+    background: #ffffff;
+    border-radius: 24rpx 24rpx 0 0;
+    padding: 24rpx 48rpx 90rpx 48rpx;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__modal-title {
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 32rpx;
+    line-height: 66rpx;
+    height: 66rpx;
+    text-align: center;
+  }
+}

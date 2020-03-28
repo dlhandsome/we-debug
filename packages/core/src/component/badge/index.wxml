@@ -1,0 +1,11 @@
+<view
+  class="badge"
+  wx:if="{{show}}"
+  bindtouchstart="bindTouchStartHandler"
+  catchtouchmove="bindTouchMoveHandler"
+  bindtouchend="bindTouchEndHandler"
+  bindtouchcancel="bindTouchCancelHandler"
+  bindtap="bindTapHandler"
+  style="{{position ? 'position: fixed; z-index: 99999;' : ''}} {{position.left !== undefined ? 'left:' + position.left + 'px;' : ''}} {{position.top !== undefined ? 'top:' + position.top + 'px;' : ''}} {{position.right !== undefined ? 'right:' + position.right + 'px;' : ''}} {{position.bottom !== undefined ? 'bottom:' + position.bottom + 'px;' : ''}}">
+    <view wx:if="{{key !== undefined && key !== ''}}" class="badge-subject">{{key}}</view><view wx:if="{{value !== undefined && value !== ''}}" class="badge-value bg-{{color || 'brightgreen'}}">{{value}}</view>
+</view>

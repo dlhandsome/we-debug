@@ -1,0 +1,20 @@
+<slot></slot>
+
+<mask show="{{showMask}}">
+  <cell>
+    <rule
+      wx:for="{{rules}}"
+      wx:key="id"
+      config="{{item}}"
+    />
+    <slot name="modal"></slot>
+  </cell>
+</mask>
+
+<view class="badges-group">
+  <badge
+    wx:for="{{badges}}"
+    wx:key="id"
+    config="{{item}}"
+  />
+</view>

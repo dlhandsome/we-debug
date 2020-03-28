@@ -1,0 +1,49 @@
+{
+  "name": "we-debug",
+  "version": "0.0.0",
+  "description": "",
+  "main": "",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "node ./scripts/build.js",
+    "build:core": "rollup -w -c scripts/config.js --environment TARGET:core",
+    "build:plugin-error": "rollup -w -c scripts/config.js --environment TARGET:plugin-error",
+    "build:plugin-router": "rollup -w -c scripts/config.js --environment TARGET:plugin-router",
+    "bootstrap": "node ./scripts/bootstrap.js",
+    "test": "npm run lint && npm run test:cov",
+    "test:unit": "node ./scripts/unittest.js",
+    "test:cov": "nyc npm run test:unit",
+    "release": "./node_modules/.bin/verpub publish",
+    "release:dry": "./node_modules/.bin/verpub publish --dry-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dlhandsome/we-debug.git"
+  },
+  "keywords": [
+    "we-debug",
+    "weapp",
+    "miniprogram",
+    "miniapp",
+    "we-plugin",
+    "debug"
+  ],
+  "author": "dlhandsome",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dlhandsome/we-debug/issues"
+  },
+  "homepage": "https://github.com/dlhandsome/we-debug#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "fs-extra": "^9.0.0",
+    "rollup": "^2.2.0",
+    "rollup-plugin-buble": "^0.19.8",
+    "rollup-plugin-replace": "^2.2.0",
+    "verpub": "^0.1.2",
+    "zlib": "^1.0.5"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "@we-debug/plugin-router",
+  "version": "0.1.0",
+  "description": "router plugin for we-debug",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "we-debug"
+  ],
+  "author": "dlhandsome",
+  "license": "MIT"
+}
