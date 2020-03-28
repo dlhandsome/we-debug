@@ -23,7 +23,7 @@
     "test:unit": "node ./scripts/unittest.js",
     "test:cov": "nyc npm run test:unit",
     "lint": "eslint ./ --ext .js --fix",
-    "release": "./node_modules/.bin/verpub publish",
+    "release": "npm run build && npm run test && ./node_modules/.bin/verpub publish",
     "release:dry": "./node_modules/.bin/verpub publish --dry-run"
   },
   "repository": {
