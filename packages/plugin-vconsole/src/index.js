@@ -25,6 +25,8 @@ vConsolePlugin.install = function (weDebug, options = {}) {
         handler: {
           bindChange(state) {
             if (!state.disabled) {
+              store.vConsoleRuleState.set(state.checked);
+
               wx.setEnableDebug({
                 enableDebug: state.checked
               });
