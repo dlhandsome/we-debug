@@ -5,7 +5,7 @@
   "author": {
     "name": "dlhandsome"
   },
-  "miniprogram": "dist/component",
+  "miniprogram": "dist",
   "main": "dist/libs/index.js",
   "scripts": {
     "test": "jest"
