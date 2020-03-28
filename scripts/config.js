@@ -31,6 +31,17 @@ const builds = {
     lessSrc: 'packages/plugin-router/src/**/*.less',
     copySrc: ['packages/plugin-router/src/**/*.{wxml,json}'],
     dest: 'packages/plugin-router/dist/'
+  },
+  'plugin-vconsole': {
+    name: 'plugin-vconsole',
+    option: {
+      base: 'packages/plugin-vconsole/src',
+      allowEmpty: true
+    },
+    scriptsSrc: 'packages/plugin-vconsole/src/**/*.js',
+    lessSrc: 'packages/plugin-vconsole/src/**/*.less',
+    copySrc: ['packages/plugin-vconsole/src/**/*.{wxml,json}'],
+    dest: 'packages/plugin-vconsole/dist/'
   }
 };
 

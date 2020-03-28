@@ -1,0 +1,17 @@
+{
+  "name": "@we-debug/plugin-vconsole",
+  "version": "0.1.0",
+  "description": "vconsole plugin for we-debug",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "we-debug"
+  ],
+  "author": {
+    "name": "dlhandsome"
+  },
+  "license": "MIT",
+  "readme": "ERROR: No README data found!"
+}
