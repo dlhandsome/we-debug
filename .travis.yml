@@ -5,4 +5,5 @@ node_js:
 
 sudo: false
 script:
+    - "npm run bootstrap"
     - "npm run test"
