@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/core",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "a useful debug tool",
   "author": {
     "name": "dlhandsome"
@@ -27,6 +27,6 @@
     "@we-debug/plugin-router": "^0.1.0"
   },
   "readme": "ERROR: No README data found!",
-  "_id": "@we-debug/core@0.1.4",
-  "_commitid": "e4e4af1"
+  "_id": "@we-debug/core@0.1.5",
+  "_commitid": "0e27a21"
 }
