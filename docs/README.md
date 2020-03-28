@@ -8,7 +8,7 @@
 
 ## 简介
 
-一款灵活、易于拓展的小程序端调试工具。
+`we-debug` 是一款灵活、易于拓展的小程序端调试工具。
 
 ## 安装
 
@@ -51,9 +51,4 @@ const weDebug = require('@we-debug/core/libs/index')
 
 weDebug.init()
 ```
-
-## 相关链接
-
-- [文档 · Document](https://dlhandsome.github.io/we-debug/#/)
-- [开源协议 · The MIT License](http://opensource.org/licenses/MIT)
 

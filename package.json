@@ -14,6 +14,7 @@
     }
   },
   "scripts": {
+    "dev:doc": "npx docsify serve docs",
     "build": "gulp",
     "build:core": "cross-env TARGET=core gulp",
     "build:plugin-error": "cross-env TARGET=plugin-error gulp",
@@ -51,6 +52,7 @@
     "autoprefixer": "^9.7.5",
     "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.2",
+    "docsify-cli": "^4.4.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-prettier": "^3.1.2",
