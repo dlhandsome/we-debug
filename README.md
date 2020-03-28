@@ -1,4 +1,6 @@
 <div align="center">
+
+[![npm-version](https://img.shields.io/npm/v/@we-debug/core.svg)](https://www.npmjs.com/package/@we-debug/core)
 <h1>we-debug</h1>
 <p>一款灵活小巧的小程序调试工具 <a href="https://unpkg.com/we-cropper@1.2.0/docs/assets/online.jpg">在线体验</a></p>
 </div>
