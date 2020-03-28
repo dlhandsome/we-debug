@@ -17,7 +17,7 @@ vConsolePlugin.install = function (weDebug, options = {}) {
       {
         title: '开启 vConsole 调试工具',
         desc: 'vConsole 是微信官方推出的调试工具',
-        type: 'button',
+        type: 'switch',
         state: {
           disabled: false,
           checked: () => store.vConsoleRuleState.get()
