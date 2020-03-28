@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/core",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "a useful debug tool",
   "author": {
     "name": "dlhandsome"
@@ -27,6 +27,6 @@
   },
   "dependencies": {},
   "readme": "ERROR: No README data found!",
-  "_id": "@we-debug/core@0.1.1",
-  "_commitid": "384ab50"
+  "_id": "@we-debug/core@0.1.2",
+  "_commitid": "42118a8"
 }
