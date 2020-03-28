@@ -14,8 +14,8 @@ export function init(options = {}) {
     };
   }
 
-  if (options.plugins.error) use(ErrorPlugin, options.plugins.error.options || {});
-  if (options.plugins.router) use(RouterPlugin, options.plugins.router.options || {});
+  if (options.plugins.error) use.call(this, ErrorPlugin, options.plugins.error.options || {});
+  if (options.plugins.router) use.call(this, RouterPlugin, options.plugins.router.options || {});
 
   return this;
 }
