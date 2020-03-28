@@ -27,5 +27,5 @@ function install(name) {
 
 // eslint-disable-next-line no-unused-vars
 (function main([bin, file, ...args]) {
-  testAll(args)
+  installAll(args)
 })(process.argv)
