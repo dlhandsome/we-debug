@@ -1,6 +1,6 @@
-import Debug from '../../libs/index'
+import Debug from '../../libs/index';
 
-const store = Debug.store
+const store = Debug.store;
 
 const debugBadge = Debug.createBadge({
   key: 'debug',
@@ -12,13 +12,13 @@ const debugBadge = Debug.createBadge({
     bottom: 20
   },
   handler: {
-    bindTap () {
-      store.event.emit('debug:mask:show-modal')
+    bindTap() {
+      store.event.emit('debug:mask:show-modal');
     }
   }
-})
+});
 
-Debug.addBadge(debugBadge)
+Debug.addBadge(debugBadge);
 
 Component({
   properties: {
@@ -30,12 +30,12 @@ Component({
   observers: {
     'config.rules'(v) {
       if (v) {
-        this.setData({ rules: v })
+        this.setData({ rules: v });
       }
     },
     'config.badges'(v) {
       if (v) {
-        this.setData({ badges: v })
+        this.setData({ badges: v });
       }
     }
   },
@@ -43,6 +43,6 @@ Component({
     sys: store.sys.get(),
     rules: store.rules.get(),
     badges: store.badges.get(),
-    debugBadge,
+    debugBadge
   }
-})
+});

@@ -1,20 +1,20 @@
-import BaseManage from './base'
+import BaseManage from './base';
 
-export class FormRule extends BaseManage{
+export class FormRule extends BaseManage {
   constructor(opt = {}) {
-    super(opt)
-    this.title = opt.title || ''
-    this.desc = opt.desc || ''
-    this.meta = opt.meta || ''
-    this.type = opt.type || ''
-    this.state = opt.state || {}
+    super(opt);
+    this.title = opt.title || '';
+    this.desc = opt.desc || '';
+    this.meta = opt.meta || '';
+    this.type = opt.type || '';
+    this.state = opt.state || {};
   }
 
   get prefix() {
-    return 'debug:rule-' + this.id
+    return 'debug:rule-' + this.id;
   }
 }
 
 export function createFormRule(opt = {}) {
-  return new FormRule(opt)
+  return new FormRule(opt);
 }

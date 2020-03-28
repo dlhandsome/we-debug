@@ -1,13 +1,13 @@
-import store from '../store/index'
+import store from '../store/index';
 
-export { createBadge } from '../manage/index'
+export { createBadge } from '../manage/index';
 
 /**
  * 新增状态角标对象
  * @param {Badge} badges
  */
 export function addBadge(badges) {
-  store.badges.add(badges)
+  store.badges.add(badges);
 }
 
 /**
@@ -15,12 +15,12 @@ export function addBadge(badges) {
  * @param {*} badges
  */
 export function removeBadge(badges) {
-  store.badges.remove(badges)
+  store.badges.remove(badges);
 }
 
 /**
  * 获取状态角标对象集合
  */
 export function getBadge() {
-  return store.badges.get()
+  return store.badges.get();
 }

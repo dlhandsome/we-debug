@@ -6,12 +6,7 @@
   "miniprogram": "dist/component",
   "main": "dist/libs/index.js",
   "scripts": {
-    "test": "npm run build && jest",
-    "test:coverage": "npm run build && jest --coverage"
-  },
-  "verpub": {
-    "tag": "v{version}",
-    "publish": false
+    "test": "jest"
   },
   "jest": {
     "coverageThreshold": {

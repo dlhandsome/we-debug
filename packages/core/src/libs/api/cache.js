@@ -1,14 +1,14 @@
-import { CacheData } from '../base/cache'
+import { CacheData } from '../base/cache';
 
 /**
  * 创建缓存
  * @param {*} cacheKey
  */
 export function createCache(cacheKey) {
-  let v = null
+  let v = null;
   try {
-    v = wx.getStorageSync(cacheKey)
+    v = wx.getStorageSync(cacheKey);
   } catch (e) {}
 
-  return new CacheData(cacheKey, v)
+  return new CacheData(cacheKey, v);
 }

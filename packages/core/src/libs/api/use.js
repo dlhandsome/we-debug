@@ -1,18 +1,18 @@
-import { isFunc } from '../base/utils'
+import { isFunc } from '../base/utils';
 
-const installedPlugins = []
+const installedPlugins = [];
 
 export function use(plugin = {}, ...args) {
   if (installedPlugins.indexOf(plugin) > -1) {
-    return this
+    return this;
   }
-  args.unshift(this)
+  args.unshift(this);
   if (isFunc(plugin.install)) {
-    plugin.install.apply(plugin, args)
-  } else if (isFunc(plugin)){
-    plugin.apply(null, args)
+    plugin.install.apply(plugin, args);
+  } else if (isFunc(plugin)) {
+    plugin.apply(null, args);
   }
-  installedPlugins.push(plugin)
+  installedPlugins.push(plugin);
 
-  return this
+  return this;
 }

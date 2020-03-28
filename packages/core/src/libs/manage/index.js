@@ -1,2 +1,2 @@
-export * from './rule'
-export * from './badge'
+export * from './rule';
+export * from './badge';

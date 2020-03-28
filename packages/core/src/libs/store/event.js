@@ -1,3 +1,3 @@
-import { Event } from '../base/event'
+import { Event } from '../base/event';
 
-export default new Event()
+export default new Event();

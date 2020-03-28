@@ -1,14 +1,14 @@
-import Debug from '../../libs/index'
+import Debug from '../../libs/index';
 
-const store = Debug.store
+const store = Debug.store;
 
-const animateDuration = 300
+const animateDuration = 300;
 const animateClassName = {
   fadeIn: 'fadeIn',
   fadeOut: 'fadeOut',
   slideInUp: 'slideInUp',
-  slideOutDown: 'slideOutDown',
-}
+  slideOutDown: 'slideOutDown'
+};
 
 Component({
   properties: {
@@ -18,18 +18,16 @@ Component({
     },
     title: {
       type: String,
-      value: '',
+      value: ''
     },
     contentHeight: {
       type: Number,
-      value: 500,
-    },
+      value: 500
+    }
   },
   observers: {
     show(v) {
-      v
-        ? this.showMaskHandler()
-        : this.closeMaskHandler()
+      v ? this.showMaskHandler() : this.closeMaskHandler();
     }
   },
   data: {
@@ -39,50 +37,50 @@ Component({
     animateClassName: {
       mask: animateClassName.fadeIn,
       modal: animateClassName.slideInUp
-    },
+    }
   },
   externalClasses: ['my-class'],
   methods: {
     noop() {},
     closeMaskHandler() {
-      store.event.emit('debug:mask:hide-modal')
+      store.event.emit('debug:mask:hide-modal');
     },
     showMask() {
       this.setData({
         animateClassName: {
           mask: animateClassName.fadeIn,
-          modal: animateClassName.slideInUp,
+          modal: animateClassName.slideInUp
         },
-        showMask: true,
-      })
+        showMask: true
+      });
     },
     closeMask() {
       this.setData({
         animateClassName: {
           mask: animateClassName.fadeOut,
-          modal: animateClassName.slideOutDown,
-        },
-      })
+          modal: animateClassName.slideOutDown
+        }
+      });
 
       setTimeout(() => {
         this.setData({
-          showMask: false,
-        })
-      }, animateDuration)
+          showMask: false
+        });
+      }, animateDuration);
     },
     addListeners() {
-      store.event.on('debug:mask:show-modal', this.showMask.bind(this))
-      store.event.on('debug:mask:hide-modal', this.closeMask.bind(this))
+      store.event.on('debug:mask:show-modal', this.showMask.bind(this));
+      store.event.on('debug:mask:hide-modal', this.closeMask.bind(this));
     },
     removeListeners() {
-      store.event.off('debug:mask:show-modal', this.showMask.bind(this))
-      store.event.off('debug:mask:hide-modal', this.showMask.bind(this))
+      store.event.off('debug:mask:show-modal', this.showMask.bind(this));
+      store.event.off('debug:mask:hide-modal', this.showMask.bind(this));
     }
   },
   attached() {
-    this.addListeners()
+    this.addListeners();
   },
   detached() {
-    this.removeListeners()
-  },
-})
+    this.removeListeners();
+  }
+});

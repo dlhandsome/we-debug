@@ -6,6 +6,13 @@
   "directories": {
     "doc": "docs"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run test",
+      "commit-msg": "npx validate-commit-msg"
+    }
+  },
   "scripts": {
     "build": "gulp",
     "build:core": "cross-env TARGET=core gulp",
@@ -15,6 +22,7 @@
     "test": "npm run lint && npm run test:cov",
     "test:unit": "node ./scripts/unittest.js",
     "test:cov": "nyc npm run test:unit",
+    "lint": "eslint ./ --ext .js --fix",
     "release": "./node_modules/.bin/verpub publish",
     "release:dry": "./node_modules/.bin/verpub publish --dry-run"
   },
@@ -40,13 +48,22 @@
     "@babel/core": "^7.9.0",
     "@babel/plugin-transform-modules-commonjs": "^7.9.0",
     "autoprefixer": "^9.7.5",
+    "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-less": "^4.0.1",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-watch": "^5.0.1",
+    "husky": "^4.2.3",
+    "jest": "^25.2.3",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.2",
+    "validate-commit-msg": "^2.14.0",
     "verpub": "^0.1.2"
   }
 }
