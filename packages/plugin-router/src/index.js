@@ -6,6 +6,9 @@ const RoutePlugin = {};
  * @param {*} [options={}]
  */
 RoutePlugin.install = function (weDebug, options = {}) {
+  if (RoutePlugin.installed) return;
+  RoutePlugin.installed = true;
+
   const pathRule = options.pathRule || {};
   const queryRule = options.queryRule || {};
 
