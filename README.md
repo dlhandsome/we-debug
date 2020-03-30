@@ -1,14 +1,15 @@
 <div align="center">
-<h1>we-debug</h1>
+<br>
+<br>
+<h1 style="display: inline-block; margin-right: 8px;">we-debug</h1>
+
+<img src="https://user-images.githubusercontent.com/16918885/77879578-4c0b8500-728d-11ea-934f-b6e55f6dbab0.png" width=32 />
 
 [![Build Status](https://travis-ci.com/dlhandsome/we-debug.svg?token=PfDv3SxcBYsJDq3kuspS&branch=master)](https://travis-ci.com/dlhandsome/we-debug) [![npm-version](https://img.shields.io/npm/v/@we-debug/core.svg)](https://www.npmjs.com/package/@we-debug/core)
 
-<img src=https://user-images.githubusercontent.com/16918885/77829191-6e9d8100-715b-11ea-8776-dbe26431622a.gif width=150 />
+<p>一款灵活、易于拓展的小程序端调试工具</p>
 </div>
 
-## 简介
-
-一款灵活、易于拓展的小程序端调试工具。
 
 ## 安装
 
@@ -51,6 +52,12 @@ const weDebug = require('@we-debug/core/libs/index')
 
 weDebug.init()
 ```
+
+## 在线体验
+
+<br>
+<img src=https://user-images.githubusercontent.com/16918885/77880177-9d684400-728e-11ea-9dc8-0b4be8042caf.jpg width=156/>
+<br>
 
 ## 相关链接
 
