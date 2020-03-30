@@ -7,6 +7,11 @@ const vConsolePlugin = {};
  */
 
 vConsolePlugin.install = function (weDebug, options = {}) {
+  if (vConsolePlugin.installed) return;
+  vConsolePlugin.installed = true;
+
+  const ruleOption = options.rule || {};
+
   const store = {
     vConsoleRuleState: weDebug.createCache('__vConsoleRuleState__')
   };
@@ -34,7 +39,7 @@ vConsolePlugin.install = function (weDebug, options = {}) {
           }
         }
       },
-      options
+      ruleOption
     )
   );
 
