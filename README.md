@@ -1,9 +1,9 @@
 <div align="center">
 <br>
 <br>
-<h1 style="display: inline-block; margin-right: 8px;">we-debug</h1>
-
-<img src="https://user-images.githubusercontent.com/16918885/77879578-4c0b8500-728d-11ea-934f-b6e55f6dbab0.png" width=32 />
+<img src="https://user-images.githubusercontent.com/16918885/77879578-4c0b8500-728d-11ea-934f-b6e55f6dbab0.png" width=64 />
+  
+<h1>we-debug</h1>
 
 [![Build Status](https://travis-ci.com/dlhandsome/we-debug.svg?token=PfDv3SxcBYsJDq3kuspS&branch=master)](https://travis-ci.com/dlhandsome/we-debug) [![npm-version](https://img.shields.io/npm/v/@we-debug/core.svg)](https://www.npmjs.com/package/@we-debug/core)
 
