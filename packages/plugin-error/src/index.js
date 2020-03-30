@@ -20,8 +20,12 @@ const errManage = {
 };
 
 ErrorPlugin.install = function (weDebug, options = {}) {
+  if (ErrorPlugin.installed) return;
+  ErrorPlugin.installed = true;
+
   const badgeOption = options.badge || {};
-  const ruleOption = options.ruleOption || {};
+  const copyOption = options.copyRule || {};
+  const clearOption = options.clearRule || {};
 
   const errorBadge = weDebug.createBadge(
     Object.assign(
@@ -46,7 +50,7 @@ ErrorPlugin.install = function (weDebug, options = {}) {
       {},
       {
         title: '错误信息',
-        desc: '复制当前错误信息到剪切板',
+        desc: '复制错误信息到剪切板',
         type: 'button',
         state: {
           disabled: false
@@ -61,17 +65,38 @@ ErrorPlugin.install = function (weDebug, options = {}) {
           }
         }
       },
-      ruleOption
+      copyOption
+    )
+  );
+
+  const clearErrStackRule = weDebug.createFormRule(
+    Object.assign(
+      {},
+      {
+        title: '错误信息',
+        desc: '清空错误信息',
+        type: 'button',
+        state: {
+          disabled: false
+        },
+        handler: {
+          bindTap(state) {
+            if (!state.disabled) {
+              errManage.clear();
+              updateState();
+            }
+          }
+        }
+      },
+      clearOption
     )
   );
 
   weDebug.addBadge([errorBadge]);
 
-  weDebug.addFormRule([copyErrStackRule]);
+  weDebug.addFormRule([copyErrStackRule, clearErrStackRule]);
 
-  wx.onError(err => {
-    errManage.add(err);
-
+  function updateState() {
     const errStack = errManage.get();
     const errLen = errStack.length;
 
@@ -82,6 +107,15 @@ ErrorPlugin.install = function (weDebug, options = {}) {
     copyErrStackRule.emit({
       meta: errLen
     });
+  }
+
+  wx.onError(err => {
+    errManage.add(err);
+    updateState();
+  });
+
+  wx.onAppRoute(() => {
+    updateState();
   });
 };
 
