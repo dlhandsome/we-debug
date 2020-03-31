@@ -1,0 +1,24 @@
+{
+  "name": "@we-debug/gulp-tool",
+  "version": "0.1.0",
+  "description": "we-debug, gulp",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "we-debug",
+    "gulp"
+  ],
+  "author": "dlhandsome",
+  "license": "MIT",
+  "dependencies": {
+    "lead": "^1.0.0",
+    "plugin-error": "^1.0.1",
+    "pumpify": "^2.0.1",
+    "through2": "^3.0.1"
+  }
+}
