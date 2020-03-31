@@ -18,8 +18,8 @@ export function init(options = {}) {
     options
   );
 
-  if (options.plugins.error) use.call(this, ErrorPlugin, options.plugins.error.options || {});
-  if (options.plugins.router) use.call(this, RouterPlugin, options.plugins.router.options || {});
+  if (options.plugin.error) use.call(this, ErrorPlugin, options.plugin.error || {});
+  if (options.plugin.router) use.call(this, RouterPlugin, options.plugin.router || {});
 
   return this;
 }
