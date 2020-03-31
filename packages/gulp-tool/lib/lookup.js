@@ -12,7 +12,7 @@ exports.lookupPages = function (projectDir) {
     const appJson = require(appPath);
 
     pages = appJson.pages;
-    subpackages = appJson.subpackages;
+    subpackages = appJson.subpackages || [];
 
     pages = pages.map(p => {
       return path.resolve(projectDir, p);
