@@ -24,7 +24,8 @@
   "devDependencies": {},
   "dependencies": {
     "@we-debug/plugin-error": "^0.1.0",
-    "@we-debug/plugin-router": "^0.1.0"
+    "@we-debug/plugin-router": "^0.1.0",
+    "deepmerge": "^4.2.2"
   },
   "readme": "ERROR: No README data found!",
   "_id": "@we-debug/core@0.1.5",
