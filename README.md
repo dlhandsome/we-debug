@@ -63,4 +63,5 @@ weDebug.init()
 
 - [文档 · Document](https://dlhandsome.github.io/we-debug/#/)
 - [开源协议 · The MIT License](http://opensource.org/licenses/MIT)
+- [代码示例 · Example](https://github.com/dlhandsome/sail-laboratory/tree/master/miniprogram/pages/we-debug)
 
