@@ -5,7 +5,7 @@
   
 <h1>we-debug</h1>
 
-[![Build Status](https://travis-ci.com/dlhandsome/we-debug.svg?token=PfDv3SxcBYsJDq3kuspS&branch=master)](https://travis-ci.com/dlhandsome/we-debug) [![npm-version](https://img.shields.io/npm/v/@we-debug/core.svg)](https://www.npmjs.com/package/@we-debug/core)
+[![Build Status](https://travis-ci.com/dlhandsome/we-debug.svg?token=PfDv3SxcBYsJDq3kuspS&branch=master)](https://travis-ci.com/dlhandsome/we-debug) [![npm-version](https://img.shields.io/npm/v/@we-debug/core.svg)](https://www.npmjs.com/package/@we-debug/core) ![npm](https://img.shields.io/npm/dt/@we-debug/core)
 
 <p>一款灵活、易于拓展的小程序端调试工具</p>
 </div>
