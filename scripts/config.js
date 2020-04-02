@@ -10,6 +10,17 @@ const builds = {
     copySrc: ['packages/core/src/**/*.{wxml,json}'],
     dest: 'packages/core/dist/'
   },
+  'plugin-launcher': {
+    name: 'plugin-launcher',
+    option: {
+      base: 'packages/plugin-launcher/src',
+      allowEmpty: true
+    },
+    scriptsSrc: 'packages/plugin-launcher/src/**/*.js',
+    lessSrc: 'packages/plugin-launcher/src/**/*.less',
+    copySrc: ['packages/plugin-launcher/src/**/*.{wxml,json}'],
+    dest: 'packages/plugin-launcher/dist/'
+  },
   'plugin-error': {
     name: 'plugin-error',
     option: {
