@@ -1,18 +1,22 @@
 # we-debug launcher plugin
 
+we-debug 启动器插件
+
 ## 安装
 
-```bash
-npm install @we-debug/plugin-launcher --save-dev
-```
+这是一个 we-debug 内置插件，开发者无需额外安装
 
 ## 使用
 
 ```javascript
 import weDebug from '@we-debug/core/libs/index'
-import LauncherPlugin from '@we-debug/plugin-launcher'
 
-weDebug.use(LauncherPlugin, { someOption })
+// 通过 init 方法初始化启动器
+weDebug.init({
+  launcher : { 
+    // 启动器配置
+  }
+})
 ```
 
 ## 配置
