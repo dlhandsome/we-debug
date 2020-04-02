@@ -26,10 +26,11 @@
 
 - **详细：**
 
-| 参数 | 说明 | 类型 | 默认值 |
-| -- | -- | -- | -- |
-| plugins.error | 是否使用异常调试插件 | boolean | true |
-| plugins.route | 是否使用路由调试插件 | boolean | true |
+| 参数 | 说明 | 类型 | 默认值 | 说明 |
+| -- | -- | -- | -- | -- |
+| launcher | 启动器 | boolean \| object | true | object 类型参考 [配置](https://github.com/dlhandsome/we-debug/tree/master/packages/plugin-launcher) |
+| plugin.error | 是否使用异常调试插件 | boolean \| object | true | object 类型参考 [配置](https://github.com/dlhandsome/we-debug/tree/master/packages/plugin-error) |
+| plugin.route | 是否使用路由调试插件 | boolean \| object | true | object 类型参考 [配置](https://github.com/dlhandsome/we-debug/tree/master/packages/plugin-router) |
 
 
 #### weDebug.createCache(name)
