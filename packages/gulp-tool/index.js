@@ -12,16 +12,22 @@ const PLUGIN_NAME = '@we-debug/gulp-tool';
 let pages = [];
 
 module.exports = function mpGlobalComp(options = {}) {
+  //
   let baseDir = options.baseDir || 'src';
   const wxmlRaw = options.wxml || '<we-debug />';
   let compName = options.compName || 'we-debug';
   let compPath = options.compPath || '@we-debug/core/component/index/index';
+  let entryFile = options.entryFile || 'we-debug/index.js';
 
   baseDir = getAbsolutePath(baseDir);
   const isModule = compPath.indexOf('@we-debug/core') === 0;
 
   if (!isModule && path.isAbsolute(compPath)) {
     compPath = path.relative(baseDir, compPath);
+  }
+
+  if (path.isAbsolute(entryFile)) {
+    entryFile = path.relative(baseDir, entryFile);
   }
 
   /**
@@ -97,7 +103,31 @@ module.exports = function mpGlobalComp(options = {}) {
     });
   }
 
-  const pipeline = [init(), parseWxml(), parseJson()];
+  /**
+   * 处理 js
+   *
+   * @returns
+   */
+  function parseScript() {
+    return through.obj((file, encoding, callback) => {
+      if (file.isNull()) return callback(null, file);
+
+      // 如果不是 JS 文件, 则跳过
+      if (file.extname !== '.js') return callback(null, file);
+
+      // 如果是 app.js
+      if (belongsApp(file.path, baseDir)) {
+        let code = file.contents.toString();
+
+        code = `require('${entryFile}')\n` + code;
+        file.contents = Buffer.from(code);
+      }
+
+      callback(null, file);
+    });
+  }
+
+  const pipeline = [init(), parseWxml(), parseJson(), parseScript()];
 
   return lead(pumpify.obj(pipeline));
 };
