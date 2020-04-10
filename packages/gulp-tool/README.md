@@ -1,5 +1,7 @@
 # @we-debug/gulp-tool
 
+we-debug 全局组件注入插件
+
 ## 安装
 
 ```
@@ -23,5 +25,5 @@ gulp.src('src/**/*.{json,wxml}')
 -|-|-|-|-|
 baseDir | 项目源码位置 | `string` | `src` | - |
 wxml | we-debug wxml 模板 | `string` | `<we-debug />` | - |
-compName | we-debug 全局组件名 | `string` | `we-debug` | - |
-compPath | we-debug 全局组件位置 | `string` | `@we-debug/core/component/index/index` | - |
+compName | we-debug 全局组件名 | `string` | `we-debug` | - |
+compPath | we-debug 全局组件位置 | `string` | `@we-debug/core/component/index/index` | - |
