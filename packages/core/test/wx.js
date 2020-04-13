@@ -1,6 +1,9 @@
 let _storage = {};
 
 global.wx = {
+  onAppRoute(cb) {
+    cb();
+  },
   onError(cb) {
     const e = new Error('wx.onError');
 
