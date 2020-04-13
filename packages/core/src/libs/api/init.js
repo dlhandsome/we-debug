@@ -14,6 +14,7 @@ export function init(options = {}) {
     {
       launcher: true,
       plugin: {
+        network: true,
         error: true,
         router: true
       }
