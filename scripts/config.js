@@ -21,6 +21,17 @@ const builds = {
     copySrc: ['packages/plugin-launcher/src/**/*.{wxml,json}'],
     dest: 'packages/plugin-launcher/dist/'
   },
+  'plugin-network': {
+    name: 'plugin-network',
+    option: {
+      base: 'packages/plugin-network/src',
+      allowEmpty: true
+    },
+    scriptsSrc: 'packages/plugin-network/src/**/*.js',
+    lessSrc: 'packages/plugin-network/src/**/*.less',
+    copySrc: ['packages/plugin-network/src/**/*.{wxml,json}'],
+    dest: 'packages/plugin-network/dist/'
+  },
   'plugin-error': {
     name: 'plugin-error',
     option: {
