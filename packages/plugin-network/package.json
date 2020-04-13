@@ -1,0 +1,16 @@
+{
+  "name": "@we-debug/plugin-network",
+  "version": "0.1.0",
+  "description": "network plugin for we-debug",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "we-debug"
+  ],
+  "author": {
+    "name": "dlhandsome"
+  },
+  "license": "MIT"
+}
