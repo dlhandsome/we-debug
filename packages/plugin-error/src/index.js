@@ -49,7 +49,7 @@ ErrorPlugin.install = function (weDebug, options = {}) {
     Object.assign(
       {},
       {
-        title: '错误信息',
+        title: '获取错误信息',
         desc: '复制错误信息到剪切板',
         type: 'button',
         state: {
@@ -73,8 +73,8 @@ ErrorPlugin.install = function (weDebug, options = {}) {
     Object.assign(
       {},
       {
-        title: '错误信息',
-        desc: '清空错误信息',
+        title: '清空错误信息',
+        desc: '',
         type: 'button',
         state: {
           disabled: false
