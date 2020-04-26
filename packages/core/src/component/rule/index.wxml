@@ -6,6 +6,6 @@
     </view>
     <view class="cell-body-minor">{{desc}}</view>
   </view>
-  <switch wx:if="{{type === 'switch'}}" slot="foot" checked="{{state.checked}}" disabled="{{state.disabled}}" bindchange="bindChangeHandler" color="#4ea766" />
+  <switch class="switch" wx:if="{{type === 'switch'}}" slot="foot" checked="{{state.checked}}" disabled="{{state.disabled}}" bindchange="bindChangeHandler" color="#4ea766" />
   <view wx:else slot="foot" class="btn {{state.disabled ? 'btn-disabled' : 'btn-default'}}" bindtap="bindTapHandler">获取</view>
 </cell-item>
