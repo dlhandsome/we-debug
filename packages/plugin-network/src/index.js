@@ -60,8 +60,10 @@ class NetworkPlugin {
    */
   createProxy() {
     this.networkCallee.forEach(method => {
-      Object.defineProperty(wx, method, {
-        get: () => (opt = {}) => this.proxyHandler(method, opt)
+      setTimeout(() => {
+        Object.defineProperty(wx, method, {
+          get: () => (opt = {}) => this.proxyHandler(method, opt)
+        });
       });
     });
   }
