@@ -1,7 +1,6 @@
 import requestManage from './networkManage';
 
 const Network = {};
-const _request = wx.request;
 
 wx.onAppRoute(() => {
   // 路由信息更新时，请求队列清空
@@ -60,15 +59,14 @@ class NetworkPlugin {
    */
   createProxy() {
     this.networkCallee.forEach(method => {
-      setTimeout(() => {
-        Object.defineProperty(wx, method, {
-          get: () => (opt = {}) => this.proxyHandler(method, opt)
-        });
+      const networkFunc = wx[method];
+      Object.defineProperty(wx, method, {
+        get: () => (opt = {}) => this.proxyHandler(networkFunc, opt)
       });
     });
   }
 
-  proxyHandler(method, opt = {}) {
+  proxyHandler(networkFunc, opt = {}) {
     const that = this;
     const { isFunc } = that.weDebug.util;
 
@@ -100,7 +98,7 @@ class NetworkPlugin {
       isFunc(opt.fail) && opt.fail.apply(this, arguments);
     };
 
-    return _request.call(this, out);
+    return networkFunc.call(this, out);
   }
 }
 
