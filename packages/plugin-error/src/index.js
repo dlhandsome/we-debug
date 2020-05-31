@@ -77,6 +77,7 @@ ErrorPlugin.install = function (weDebug, options = {}) {
         desc: '',
         type: 'button',
         state: {
+          name: '清空',
           disabled: false
         },
         handler: {
