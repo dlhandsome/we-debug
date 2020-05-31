@@ -7,9 +7,10 @@
   "navigationBarTextStyle": "black",
   "component": true,
   "usingComponents": {
-    "mask": "../mask/index",
-    "cell": "../cell/index",
-    "rule": "../rule/index",
-    "badge": "../badge/index"
+    "w-mask": "../mask/index",
+    "w-cell": "../cell/index",
+    "w-rule": "../rule/index",
+    "w-badge": "../badge/index",
+    "w-ui-check": "../ui-check/index"
   }
 }

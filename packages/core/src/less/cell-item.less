@@ -1,0 +1,24 @@
+@import './_variable.less';
+
+.@{prefix}-cell-item {
+  display: flex;
+  align-items: center;
+  padding: @padding-sm @padding-md @padding-sm 0;
+  margin-left: 34rpx;
+  font-size: @font-size-md;
+  border-bottom: 1rpx solid #dddddd;
+
+  &:last-child {
+    border-bottom-width: 0;
+  }
+
+  .@{prefix}-cell-body {
+    flex: 1;
+    padding-right: @padding-base * 1.5;
+  }
+
+  .@{prefix}-cell-foot {
+    text-align: right;
+    color: @gray-7;
+  }
+}

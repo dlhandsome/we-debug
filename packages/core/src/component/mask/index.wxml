@@ -1,7 +1,7 @@
-  <view class="mask animated {{animateClassName.mask}}" hidden="{{!showMask}}" bindtap="closeMaskHandler">
-      <view class="mask__modal animated {{animateClassName.modal}}" catchtap="noop">
-          <view class="mask__modal-title">{{title}}</view>
-          <scroll-view class="mask__modal-content" scroll-y="true" style="height:{{contentHeight}}rpx;">
+  <view class="w-mask animated {{animateClassName.mask}}" hidden="{{!showMask}}" bindtap="closeMaskHandler">
+      <view class="w-mask__modal animated {{animateClassName.modal}}" catchtap="noop">
+          <view class="w-mask__modal-title">{{title}}</view>
+          <scroll-view class="w-mask__modal-content" scroll-y="true" style="height:{{contentHeight}}rpx;">
             <slot></slot>
           </scroll-view>
       </view>

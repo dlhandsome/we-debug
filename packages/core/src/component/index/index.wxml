@@ -1,18 +1,19 @@
 <slot></slot>
 
-<mask show="{{showMask}}">
-  <cell>
-    <rule
+<w-ui-check></w-ui-check>
+<w-mask show="{{showMask}}">
+  <w-cell>
+    <w-rule
       wx:for="{{rules}}"
       wx:key="id"
       config="{{item}}"
     />
     <slot name="modal"></slot>
-  </cell>
-</mask>
+  </w-cell>
+</w-mask>
 
-<view class="badges-group">
-  <badge
+<view class="w-badges-group">
+  <w-badge
     wx:for="{{badges}}"
     wx:key="id"
     config="{{item}}"

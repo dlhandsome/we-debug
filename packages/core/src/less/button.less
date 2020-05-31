@@ -1,0 +1,32 @@
+@import './_variable.less';
+
+.@{prefix}-btn {
+  width: 100rpx;
+  height: 52rpx;
+  text-align: center;
+  line-height: 52rpx;
+  font-weight: @font-weight-bold;
+  border-radius: @padding-base;
+  color: @white;
+  background-color: @wechatgreen;
+
+  .theme(@property, @background-color, @color) {
+    &--@{property} {
+      background-color: @background-color;
+      color: @color;
+    }
+  }
+
+  .theme(default, @wechatgreen, @white);
+  .theme(brightgreen, @brightgreen, @white);
+  .theme(orange, @orange, @white);
+  .theme(yellow, @yellow, @white);
+  .theme(blueviolet, @blueviolet, @white);
+  .theme(pink, @pink, @white);
+  .theme(red, @red, @white);
+  .theme(blue, @blue, @white);
+
+  &--disabled {
+    opacity: @disabled-opacity;
+  }
+}
