@@ -32,13 +32,17 @@ Component({
       this.setData({ type: v });
     },
     'config.state'(state) {
+      let nameState = '';
       let checkedState = false;
       let disabledState = false;
 
       if (state) {
+        const name = state.name;
         const checked = state.checked;
         const disabled = state.disabled;
 
+        nameState = isFunc(name) ? name() : name;
+        
         checkedState = isFunc(checked) ? checked() : checked;
 
         disabledState = isFunc(disabled) ? disabled() : disabled;
@@ -46,6 +50,7 @@ Component({
 
       this.setData({
         state: {
+          name: nameState,
           checked: !!checkedState,
           disabled: !!disabledState
         }
@@ -55,6 +60,8 @@ Component({
   data: {
     prefix,
     state: {
+      // 名称，如果是按钮则展示在按钮上
+      name: '',
       checked: false,
       // 是否禁用按钮或switch
       disabled: false
