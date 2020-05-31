@@ -6,7 +6,7 @@ const builds = {
       allowEmpty: true
     },
     scriptsSrc: 'packages/core/src/**/*.js',
-    lessSrc: 'packages/core/src/**/*.less',
+    lessSrc: ['packages/core/src/**/*.less', '!packages/core/src/less/*.*'],
     copySrc: ['packages/core/src/**/*.{wxml,json}'],
     dest: 'packages/core/dist/'
   },
