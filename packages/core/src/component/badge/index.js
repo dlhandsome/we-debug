@@ -65,6 +65,9 @@ Component({
       const show = isFunc(v) ? v() : v;
 
       this.setData({ show });
+    },
+    'config.handler'(v) {
+      this.setData({ handler: v });
     }
   },
   data: {
@@ -75,7 +78,8 @@ Component({
     color: 'brightgreen',
     position: null,
     // 是否允许拖动
-    draggable: false
+    draggable: false,
+    handler: null
   },
   externalClasses: ['my-class'],
   methods: {
@@ -208,7 +212,7 @@ Component({
       this.bindTouchEnd();
     },
     bindTapHandler() {
-      const handler = this.properties.config.handler;
+      const handler = this.data.handler;
 
       if (handler && handler.bindTap && isFunc(handler.bindTap)) {
         handler.bindTap.call(this);
