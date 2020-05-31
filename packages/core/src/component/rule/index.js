@@ -42,7 +42,7 @@ Component({
         const disabled = state.disabled;
 
         nameState = isFunc(name) ? name() : name;
-        
+
         checkedState = isFunc(checked) ? checked() : checked;
 
         disabledState = isFunc(disabled) ? disabled() : disabled;

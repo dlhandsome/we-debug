@@ -1,23 +1,16 @@
 import Debug from '../../libs/index';
-import { prefix, _closeBadge } from './plugin'
+import { prefix, _closeBadge } from './plugin';
 
-let _timer
-let _pixelTimer
-let _y = 0
+let _timer;
+let _pixelTimer;
+let _y = 0;
 // 屏幕安全区域
-const safeArea = wx.getSystemInfoSync().safeArea
+const safeArea = wx.getSystemInfoSync().safeArea;
 // 滑块容器的头尾预留高度
-const reservedDistance = 150
+const reservedDistance = 150;
 
 Component({
-  properties: {
-    myProperty:{
-      type:String,
-      value:'',
-      observer: function(){}
-    },
-
-  },
+  properties: {},
   data: {
     safeArea,
     url: '',
@@ -48,111 +41,111 @@ Component({
     }
   },
   methods: {
-    otherBadgesHandler ({ show = false } = {}) {
-      const badges = Debug.getBadge()
+    otherBadgesHandler({ show = false } = {}) {
+      const badges = Debug.getBadge();
       badges.forEach(badge => {
         badge.emit({
           show
-        })
-      })
+        });
+      });
     },
-    imgLoad (e) {
-      const { width, height } = e.detail
-      const safeAreaWidth = this.data.safeArea.width
-      const ratio = safeAreaWidth / width
-      const moveViewHeight = height * ratio
+    imgLoad(e) {
+      const { width, height } = e.detail;
+      const safeAreaWidth = this.data.safeArea.width;
+      const ratio = safeAreaWidth / width;
+      const moveViewHeight = height * ratio;
 
       this.setData({
         'moveView.width': safeAreaWidth,
         'moveView.height': moveViewHeight
-      })
+      });
     },
-    slideChanging (e) {
-      const opacity = e.detail.value
+    slideChanging(e) {
+      const opacity = e.detail.value;
       this.setData({
         'moveView.opacity': opacity / 100
-      })
-      this.toggleOperationBar({ immediate: false })
+      });
+      this.toggleOperationBar({ immediate: false });
     },
-    showOperationBar () {
+    showOperationBar() {
       this.setData({
         'operationBar.visible': true
-      })
+      });
     },
-    hideOperationBar () {
+    hideOperationBar() {
       this.setData({
         'operationBar.visible': false
-      })
+      });
     },
-    moveViewChange (e) {
+    moveViewChange(e) {
       // 更新偏移量
-      _y = e.detail.y
+      _y = e.detail.y;
     },
-    toggleOperationBar ({ immediate = true } = {}) {
+    toggleOperationBar({ immediate = true } = {}) {
       if (!this.data.operationBar.visible) {
-        this.showOperationBar()
+        this.showOperationBar();
       } else {
-        immediate && this.hideOperationBar()
+        immediate && this.hideOperationBar();
       }
-      clearTimeout(_timer)
+      clearTimeout(_timer);
       _timer = setTimeout(() => {
-        this.hideOperationBar()
-      }, 5000)
+        this.hideOperationBar();
+      }, 5000);
     },
-    moveViewRising () {
-      clearTimeout(_pixelTimer)
+    moveViewRising() {
+      clearTimeout(_pixelTimer);
       this.setData({
         'moveView.y': --_y
-      })
-      this.toggleOperationBar({ immediate: false })
+      });
+      this.toggleOperationBar({ immediate: false });
       // 60fps
       _pixelTimer = setTimeout(() => {
-        this.moveViewRising()
-      }, 16)
+        this.moveViewRising();
+      }, 16);
     },
-    moveViewFalling () {
-      clearTimeout(_pixelTimer)
+    moveViewFalling() {
+      clearTimeout(_pixelTimer);
       this.setData({
         'moveView.y': ++_y
-      })
-      this.toggleOperationBar({ immediate: false })
+      });
+      this.toggleOperationBar({ immediate: false });
       // 60fps
       _pixelTimer = setTimeout(() => {
-        this.moveViewFalling()
-      }, 16)
+        this.moveViewFalling();
+      }, 16);
     },
-    increaseTouchstart () {
-      this.moveViewRising()
+    increaseTouchstart() {
+      this.moveViewRising();
     },
-    increaseTouchend () {
-      clearTimeout(_pixelTimer)
+    increaseTouchend() {
+      clearTimeout(_pixelTimer);
     },
-    decreaseTouchstart () {
-      this.moveViewFalling()
+    decreaseTouchstart() {
+      this.moveViewFalling();
     },
-    decreaseTouchend () {
-      clearTimeout(_pixelTimer)
+    decreaseTouchend() {
+      clearTimeout(_pixelTimer);
     }
   },
-  ready (){
-    const event = Debug.store.event
-    event.on(prefix + 'upload:done', (url) => {
+  ready() {
+    const event = Debug.store.event;
+    event.on(prefix + 'upload:done', url => {
       this.setData({
         url
-      })
-      event.emit('debug:mask:hide-modal')
-      this.otherBadgesHandler({ show: false })
-      
+      });
+      event.emit('debug:mask:hide-modal');
+      this.otherBadgesHandler({ show: false });
+
       _closeBadge.emit({
         show: true,
         handler: {
           bindTap: () => {
-            this.setData({ url: '' })
-            this.otherBadgesHandler({ show: true })
-            _closeBadge.emit({ show: false })
+            this.setData({ url: '' });
+            this.otherBadgesHandler({ show: true });
+            _closeBadge.emit({ show: false });
           }
         }
-      })
-    })
-  },
+      });
+    });
+  }
 });
