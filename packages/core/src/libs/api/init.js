@@ -3,6 +3,7 @@ import ErrorPlugin from '@we-debug/plugin-error';
 import RouterPlugin from '@we-debug/plugin-router';
 import LauncherPlugin from '@we-debug/plugin-launcher';
 import networkPlugin from '@we-debug/plugin-network';
+import uiCheckPlugin from '../../component/ui-check/plugin';
 import merge from 'deepmerge';
 
 /**
@@ -16,7 +17,8 @@ export function init(options = {}) {
       plugin: {
         network: true,
         error: true,
-        router: true
+        router: true,
+        uiCheck: true
       }
     },
     options
@@ -26,6 +28,7 @@ export function init(options = {}) {
   if (options.plugin.network) use.call(this, networkPlugin, options.plugin.network || {});
   if (options.plugin.error) use.call(this, ErrorPlugin, options.plugin.error || {});
   if (options.plugin.router) use.call(this, RouterPlugin, options.plugin.router || {});
+  if (options.plugin.uiCheck) use.call(this, uiCheckPlugin, options.plugin.uiCheck || {});
 
   return this;
 }
