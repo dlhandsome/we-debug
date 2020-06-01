@@ -1,14 +1,12 @@
 const uiCheckPlugin = {};
 
 export const prefix = 'debug:ui-check:';
-
-export let _Debug;
-
-export let _closeBadge;
+export let Debug;
+export let closeBadge;
 
 uiCheckPlugin.install = function (weDebug, options = {}) {
   if (uiCheckPlugin.installed) return;
-  _Debug = weDebug;
+  Debug = weDebug;
 
   const event = weDebug.store.event;
 
@@ -30,10 +28,9 @@ uiCheckPlugin.install = function (weDebug, options = {}) {
                 sizeType: ['original', 'compressed'],
                 sourceType: ['album', 'camera'],
                 success(res) {
-                  // tempFilePath可以作为img标签的src属性显示图片
                   const tempFilePaths = res.tempFilePaths;
 
-                  event.emit(prefix + 'upload:done', tempFilePaths[0]);
+                  event.emit(prefix + 'init', tempFilePaths[0]);
                 }
               });
             }
@@ -43,18 +40,23 @@ uiCheckPlugin.install = function (weDebug, options = {}) {
       options
     )
   );
-  _closeBadge = weDebug.createBadge({
+
+  closeBadge = weDebug.createBadge({
     key: 'close',
     show: false,
     draggable: true,
     position: {
       right: 10,
       top: 10
+    },
+    handler: {
+      bindTap() {
+        event.emit(prefix + 'destory');
+      }
     }
   });
 
-  weDebug.addBadge([_closeBadge]);
-
+  weDebug.addBadge([closeBadge]);
   weDebug.addFormRule([rule]);
 };
 

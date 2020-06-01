@@ -1,5 +1,5 @@
 import Debug from '../../libs/index';
-import { prefix, _closeBadge } from './plugin';
+import { prefix, closeBadge } from './plugin';
 
 let _timer;
 let _pixelTimer;
@@ -8,6 +8,7 @@ let _y = 0;
 const safeArea = wx.getSystemInfoSync().safeArea;
 // 滑块容器的头尾预留高度
 const reservedDistance = 150;
+const store = Debug.store;
 
 Component({
   properties: {},
@@ -41,13 +42,16 @@ Component({
     }
   },
   methods: {
-    otherBadgesHandler({ show = false } = {}) {
+    badges({ show = false } = {}) {
       const badges = Debug.getBadge();
-      badges.forEach(badge => {
-        badge.emit({
-          show
+      badges
+        .filter(badge => badge !== closeBadge)
+        .forEach(badge => {
+          badge.emit({ show });
         });
-      });
+    },
+    closeBadge({ show = false } = {}) {
+      closeBadge.emit({ show });
     },
     imgLoad(e) {
       const { width, height } = e.detail;
@@ -59,6 +63,12 @@ Component({
         'moveView.width': safeAreaWidth,
         'moveView.height': moveViewHeight
       });
+    },
+    removeImg() {
+      this.setData({ url: '' });
+    },
+    addImg(url) {
+      this.setData({ url });
     },
     slideChanging(e) {
       const opacity = e.detail.value;
@@ -125,27 +135,32 @@ Component({
     },
     decreaseTouchend() {
       clearTimeout(_pixelTimer);
+    },
+    init(url) {
+      this.addImg(url);
+      this.badges({ show: false });
+      this.closeBadge({ show: true });
+      store.event.emit('debug:mask:hide-modal');
+    },
+    destory() {
+      this.removeImg();
+      this.badges({ show: true });
+      this.closeBadge({ show: false });
+    },
+    addListeners() {
+      store.event.on(prefix + 'init', this.init.bind(this));
+      store.event.on(prefix + 'destory', this.destory.bind(this));
+    },
+
+    removeListeners() {
+      store.event.off(prefix + 'init', this.init.bind(this));
+      store.event.off(prefix + 'destory', this.destory.bind(this));
     }
   },
-  ready() {
-    const event = Debug.store.event;
-    event.on(prefix + 'upload:done', url => {
-      this.setData({
-        url
-      });
-      event.emit('debug:mask:hide-modal');
-      this.otherBadgesHandler({ show: false });
-
-      _closeBadge.emit({
-        show: true,
-        handler: {
-          bindTap: () => {
-            this.setData({ url: '' });
-            this.otherBadgesHandler({ show: true });
-            _closeBadge.emit({ show: false });
-          }
-        }
-      });
-    });
+  attached() {
+    this.addListeners();
+  },
+  detached() {
+    this.removeListeners();
   }
 });
