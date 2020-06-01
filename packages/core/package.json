@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/core",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "a useful debug tool",
   "author": {
     "name": "dlhandsome"
@@ -30,6 +30,6 @@
     "deepmerge": "^4.2.2"
   },
   "readme": "ERROR: No README data found!",
-  "_id": "@we-debug/core@0.3.0",
-  "_commitid": "66942ea"
+  "_id": "@we-debug/core@0.3.1",
+  "_commitid": "1209645"
 }
