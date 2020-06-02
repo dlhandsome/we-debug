@@ -37,24 +37,30 @@ uiCheckPlugin.install = function (weDebug, options = {}) {
           }
         }
       },
-      options
+      options.rule
     )
   );
 
-  closeBadge = weDebug.createBadge({
-    key: 'close',
-    show: false,
-    draggable: true,
-    position: {
-      right: 10,
-      top: 10
-    },
-    handler: {
-      bindTap() {
-        event.emit(prefix + 'destory');
-      }
-    }
-  });
+  closeBadge = weDebug.createBadge(
+    Object.assign(
+      {},
+      {
+        key: 'close',
+        show: false,
+        draggable: true,
+        position: {
+          right: 10,
+          top: 10
+        },
+        handler: {
+          bindTap() {
+            event.emit(prefix + 'destory');
+          }
+        }
+      },
+      options.closeBadge
+    )
+  );
 
   weDebug.addBadge([closeBadge]);
   weDebug.addFormRule([rule]);
