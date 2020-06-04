@@ -42,7 +42,7 @@ class NetworkPlugin {
       handler: {
         bindTap() {
           wx.setClipboardData({
-            data: JSON.stringify(requestManage.get())
+            data: JSON.stringify(requestManage.get(), null, 2)
           });
         }
       }

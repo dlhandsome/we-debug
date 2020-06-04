@@ -26,7 +26,7 @@ RoutePlugin.install = function (weDebug, options = {}) {
                 route = pages[pages.length - 1].route;
 
               wx.setClipboardData({
-                data: JSON.stringify(route)
+                data: JSON.stringify(route, null, 2)
               });
             }
           }
@@ -50,7 +50,7 @@ RoutePlugin.install = function (weDebug, options = {}) {
                 ops = pages[pages.length - 1].options;
 
               wx.setClipboardData({
-                data: JSON.stringify(ops)
+                data: JSON.stringify(ops, null, 2)
               });
             }
           }
