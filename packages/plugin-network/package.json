@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/plugin-network",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "network plugin for we-debug",
   "main": "dist/index.js",
   "scripts": {
@@ -14,6 +14,6 @@
   },
   "license": "MIT",
   "readme": "ERROR: No README data found!",
-  "_id": "@we-debug/plugin-network@0.1.4",
-  "_commitid": "b47e8c6"
+  "_id": "@we-debug/plugin-network@0.1.5",
+  "_commitid": "f155b5a"
 }
