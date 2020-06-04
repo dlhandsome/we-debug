@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/plugin-router",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "router plugin for we-debug",
   "main": "dist/index.js",
   "scripts": {
@@ -14,6 +14,6 @@
   },
   "license": "MIT",
   "readme": "ERROR: No README data found!",
-  "_id": "@we-debug/plugin-router@0.1.3",
-  "_commitid": "991dcc0"
+  "_id": "@we-debug/plugin-router@0.1.4",
+  "_commitid": "22212d5"
 }
