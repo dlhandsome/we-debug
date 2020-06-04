@@ -70,7 +70,7 @@ Page({
 - **用法：**
 
 辅助函数，可用于插件开发。
-  
+
 ```javascript
 // 用于判断变量是否为指定类型
 weDebug.util.isStr(v)
@@ -190,9 +190,9 @@ const routeRule = new FormRule({
       bindTap(state) {
         const pages = getCurrentPages(),
           route = pages[pages.length - 1].route
-  
+
         wx.setClipboardData({
-          data: JSON.stringify(route),
+          data: JSON.stringify(route, null, 2),
         })
       }
     }

@@ -59,7 +59,7 @@ ErrorPlugin.install = function (weDebug, options = {}) {
           bindTap(state) {
             if (!state.disabled) {
               wx.setClipboardData({
-                data: JSON.stringify(errManage.get())
+                data: JSON.stringify(errManage.get(), null, 2)
               });
             }
           }
