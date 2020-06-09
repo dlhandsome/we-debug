@@ -1,14 +1,16 @@
 import Debug from '../../libs/index';
 import { prefix, closeBadge } from './plugin';
+import { MoveAreaHelper } from './utils';
 
 let _timer;
 let _pixelTimer;
 let _y = 0;
-// 屏幕安全区域
-const safeArea = wx.getSystemInfoSync().safeArea;
 // 滑块容器的头尾预留高度
 const reservedDistance = 150;
 const store = Debug.store;
+
+const maHelper = new MoveAreaHelper();
+const { safeArea } = maHelper.systemInfo;
 
 Component({
   properties: {},
@@ -18,10 +20,10 @@ Component({
     moveArea: {
       // 滑块容器的头尾预留高度
       reservedDistance,
-      top: -(safeArea.top + reservedDistance),
-      left: safeArea.left,
-      width: safeArea.width,
-      height: safeArea.height + safeArea.top + reservedDistance * 2
+      top: maHelper.getTop(reservedDistance),
+      left: maHelper.getLeft(),
+      width: maHelper.getWidth(),
+      height: maHelper.getHeight(reservedDistance)
     },
     moveView: {
       y: _y,
@@ -59,9 +61,14 @@ Component({
       const ratio = safeAreaWidth / width;
       const moveViewHeight = height * ratio;
 
+      const deltaHeight = moveViewHeight - maHelper.systemInfo.windowHeight;
+      const newReservedDistance = deltaHeight > reservedDistance ? deltaHeight : reservedDistance;
+
       this.setData({
         'moveView.width': safeAreaWidth,
-        'moveView.height': moveViewHeight
+        'moveView.height': moveViewHeight,
+        'moveArea.top': maHelper.getTop(newReservedDistance),
+        'moveArea.height': maHelper.getHeight(newReservedDistance)
       });
     },
     removeImg() {
