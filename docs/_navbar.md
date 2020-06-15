@@ -1,3 +1,3 @@
-- [首页](readme.md)
+- [首页](README.md)
 - [API](api.md)
 - [介绍](learn.md)
