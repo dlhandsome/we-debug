@@ -2,28 +2,28 @@
 <h1>we-debug</h1>
 
 [![Build Status](https://travis-ci.com/dlhandsome/we-debug.svg?token=PfDv3SxcBYsJDq3kuspS&branch=master)](https://travis-ci.com/dlhandsome/we-debug) [![npm-version](https://img.shields.io/npm/v/@we-debug/core.svg)](https://www.npmjs.com/package/@we-debug/core)
-
-<img src=https://user-images.githubusercontent.com/16918885/77829191-6e9d8100-715b-11ea-8776-dbe26431622a.gif width=150 />
 </div>
 
 ## 简介
 
 `we-debug` 是一款灵活、易于拓展的小程序端调试工具。
 
-## 安装
+## 功能 
 
-- 通过 npm 安装（推荐）
+- 网络请求抓包
+
+- 错误日志抓取
+
+- 路由信息获取
+
+- UI对比
+
+- ...
+
+## 安装
 
 ```bash
 npm install @we-debug/core --save
-```
-
-- 下载代码
-
-克隆项目至本地，并将`dist`目录拷贝到自己的项目中
-
-```bash
-https://github.com/dlhandsome/we-debug.git
 ```
 
 ## 使用
