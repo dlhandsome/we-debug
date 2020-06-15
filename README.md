@@ -24,18 +24,8 @@
 
 ## 安装
 
-- 通过 npm 安装（推荐）
-
 ```bash
 npm install @we-debug/core --save
-```
-
-- 下载代码
-
-克隆项目至本地，并将`dist`目录拷贝到自己的项目中
-
-```bash
-https://github.com/dlhandsome/we-debug.git
 ```
 
 ## 使用
