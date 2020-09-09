@@ -1,49 +1,39 @@
-const vConsolePlugin = {};
-/**
- * vConsole 插件
- *
- * @param {*} weDebug
- * @param {*} [options={}]
- */
+const NavigatePlugin = {};
 
-vConsolePlugin.install = function (weDebug, options = {}) {
-  if (vConsolePlugin.installed) return;
-  vConsolePlugin.installed = true;
+NavigatePlugin.install = function (weDebug, options) {
+  if (!Array.isArray(options)) options = [options];
 
-  const ruleOption = options.rule || {};
+  const rules = [];
 
-  const store = {
-    vConsoleRuleState: weDebug.createCache('__vConsoleRuleState__')
-  };
-
-  const vConsoleRule = weDebug.createFormRule(
-    Object.assign(
-      {},
-      {
-        title: '开启 vConsole 调试工具',
-        desc: 'vConsole 是微信官方推出的调试工具',
-        type: 'switch',
-        state: {
-          disabled: false,
-          checked: () => store.vConsoleRuleState.get()
-        },
-        handler: {
-          bindChange(state) {
-            if (!state.disabled) {
-              store.vConsoleRuleState.set(state.checked);
-
-              wx.setEnableDebug({
-                enableDebug: state.checked
-              });
+  options.forEach(o => {
+    const rule = weDebug.createFormRule(
+      Object.assign(
+        {},
+        {
+          title: o.title || '',
+          state: {
+            name: o.name || '前往'
+          },
+          desc: o.desc || '',
+          type: 'button',
+          handler: {
+            bindTap(state) {
+              if (!state.disabled) {
+                wx.navigateTo({
+                  url: o.url
+                });
+              }
             }
           }
-        }
-      },
-      ruleOption
-    )
-  );
+        },
+        options
+      )
+    );
 
-  weDebug.addFormRule([vConsoleRule]);
+    rules.push(rule);
+  });
+
+  weDebug.addFormRule(rules);
 };
 
-export default vConsolePlugin;
+export default NavigatePlugin;
