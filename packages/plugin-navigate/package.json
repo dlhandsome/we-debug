@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/plugin-navigate",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "navigate plugin for we-debug",
   "main": "dist/index.js",
   "scripts": {
@@ -14,6 +14,6 @@
   },
   "license": "MIT",
   "readme": "ERROR: No README data found!",
-  "_id": "@we-debug/plugin-navigate@0.1.1",
-  "_commitid": "d79b8ef"
+  "_id": "@we-debug/plugin-navigate@0.1.2",
+  "_commitid": "d1e9ad9"
 }
