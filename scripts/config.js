@@ -64,6 +64,17 @@ const builds = {
     lessSrc: 'packages/plugin-vconsole/src/**/*.less',
     copySrc: ['packages/plugin-vconsole/src/**/*.{wxml,json}'],
     dest: 'packages/plugin-vconsole/dist/'
+  },
+  'plugin-navigate': {
+    name: 'plugin-navigate',
+    option: {
+      base: 'packages/plugin-navigate/src',
+      allowEmpty: true
+    },
+    scriptsSrc: 'packages/plugin-navigate/src/**/*.js',
+    lessSrc: 'packages/plugin-navigate/src/**/*.less',
+    copySrc: ['packages/plugin-navigate/src/**/*.{wxml,json}'],
+    dest: 'packages/plugin-navigate/dist/'
   }
 };
 
