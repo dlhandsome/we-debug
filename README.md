@@ -60,6 +60,10 @@ weDebug.init()
 <img src=https://user-images.githubusercontent.com/16918885/77880177-9d684400-728e-11ea-9dc8-0b4be8042caf.jpg width=156/>
 <br>
 
+## 插件列表
+
+- [自定义页面跳转](https://github.com/dlhandsome/we-debug/tree/master/packages/plugin-navigate)
+
 ## 相关链接
 
 - [文档 · Document](https://dlhandsome.github.io/we-debug/#/)
