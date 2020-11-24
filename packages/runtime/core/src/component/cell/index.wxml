@@ -1,3 +1,0 @@
-<view class="w-cell">
-  <slot></slot>
-</view>
