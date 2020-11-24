@@ -10,6 +10,17 @@ const builds = {
     copySrc: ['packages/runtime/core/src/**/*.{wxml,json}'],
     dest: 'packages/runtime/core/dist/'
   },
+  miniprogram: {
+    name: 'miniprogram',
+    option: {
+      base: 'packages/runtime/miniprogram/src',
+      allowEmpty: true
+    },
+    scriptsSrc: 'packages/runtime/miniprogram/src/**/*.js',
+    lessSrc: ['packages/runtime/miniprogram/src/**/*.less', '!packages/runtime/miniprogram/src/less/*.*'],
+    copySrc: ['packages/runtime/miniprogram/src/**/*.{wxml,json}'],
+    dest: 'packages/runtime/miniprogram/dist/'
+  },
   'plugin-launcher': {
     name: 'plugin-launcher',
     option: {
@@ -75,6 +86,17 @@ const builds = {
     lessSrc: 'packages/runtime/plugin-navigate/src/**/*.less',
     copySrc: ['packages/runtime/plugin-navigate/src/**/*.{wxml,json}'],
     dest: 'packages/runtime/plugin-navigate/dist/'
+  },
+  'plugin-ui-check': {
+    name: 'plugin-ui-check',
+    option: {
+      base: 'packages/runtime/plugin-ui-check/src',
+      allowEmpty: true
+    },
+    scriptsSrc: 'packages/runtime/plugin-ui-check/src/**/*.js',
+    lessSrc: 'packages/runtime/plugin-ui-check/src/**/*.less',
+    copySrc: ['packages/runtime/plugin-ui-check/src/**/*.{wxml,json}'],
+    dest: 'packages/runtime/plugin-ui-check/dist/'
   }
 };
 
