@@ -2,79 +2,79 @@ const builds = {
   core: {
     name: 'core',
     option: {
-      base: 'packages/core/src',
+      base: 'packages/runtime/core/src',
       allowEmpty: true
     },
-    scriptsSrc: 'packages/core/src/**/*.js',
-    lessSrc: ['packages/core/src/**/*.less', '!packages/core/src/less/*.*'],
-    copySrc: ['packages/core/src/**/*.{wxml,json}'],
-    dest: 'packages/core/dist/'
+    scriptsSrc: 'packages/runtime/core/src/**/*.js',
+    lessSrc: ['packages/runtime/core/src/**/*.less', '!packages/runtime/core/src/less/*.*'],
+    copySrc: ['packages/runtime/core/src/**/*.{wxml,json}'],
+    dest: 'packages/runtime/core/dist/'
   },
   'plugin-launcher': {
     name: 'plugin-launcher',
     option: {
-      base: 'packages/plugin-launcher/src',
+      base: 'packages/runtime/plugin-launcher/src',
       allowEmpty: true
     },
-    scriptsSrc: 'packages/plugin-launcher/src/**/*.js',
-    lessSrc: 'packages/plugin-launcher/src/**/*.less',
-    copySrc: ['packages/plugin-launcher/src/**/*.{wxml,json}'],
-    dest: 'packages/plugin-launcher/dist/'
+    scriptsSrc: 'packages/runtime/plugin-launcher/src/**/*.js',
+    lessSrc: 'packages/runtime/plugin-launcher/src/**/*.less',
+    copySrc: ['packages/runtime/plugin-launcher/src/**/*.{wxml,json}'],
+    dest: 'packages/runtime/plugin-launcher/dist/'
   },
   'plugin-network': {
     name: 'plugin-network',
     option: {
-      base: 'packages/plugin-network/src',
+      base: 'packages/runtime/plugin-network/src',
       allowEmpty: true
     },
-    scriptsSrc: 'packages/plugin-network/src/**/*.js',
-    lessSrc: 'packages/plugin-network/src/**/*.less',
-    copySrc: ['packages/plugin-network/src/**/*.{wxml,json}'],
-    dest: 'packages/plugin-network/dist/'
+    scriptsSrc: 'packages/runtime/plugin-network/src/**/*.js',
+    lessSrc: 'packages/runtime/plugin-network/src/**/*.less',
+    copySrc: ['packages/runtime/plugin-network/src/**/*.{wxml,json}'],
+    dest: 'packages/runtime/plugin-network/dist/'
   },
   'plugin-error': {
     name: 'plugin-error',
     option: {
-      base: 'packages/plugin-error/src',
+      base: 'packages/runtime/plugin-error/src',
       allowEmpty: true
     },
-    scriptsSrc: 'packages/plugin-error/src/**/*.js',
-    lessSrc: 'packages/plugin-error/src/**/*.less',
-    copySrc: ['packages/plugin-error/src/**/*.{wxml,json}'],
-    dest: 'packages/plugin-error/dist/'
+    scriptsSrc: 'packages/runtime/plugin-error/src/**/*.js',
+    lessSrc: 'packages/runtime/plugin-error/src/**/*.less',
+    copySrc: ['packages/runtime/plugin-error/src/**/*.{wxml,json}'],
+    dest: 'packages/runtime/plugin-error/dist/'
   },
   'plugin-router': {
     name: 'plugin-router',
     option: {
-      base: 'packages/plugin-router/src',
+      base: 'packages/runtime/plugin-router/src',
       allowEmpty: true
     },
-    scriptsSrc: 'packages/plugin-router/src/**/*.js',
-    lessSrc: 'packages/plugin-router/src/**/*.less',
-    copySrc: ['packages/plugin-router/src/**/*.{wxml,json}'],
-    dest: 'packages/plugin-router/dist/'
+    scriptsSrc: 'packages/runtime/plugin-router/src/**/*.js',
+    lessSrc: 'packages/runtime/plugin-router/src/**/*.less',
+    copySrc: ['packages/runtime/plugin-router/src/**/*.{wxml,json}'],
+    dest: 'packages/runtime/plugin-router/dist/'
   },
   'plugin-vconsole': {
     name: 'plugin-vconsole',
     option: {
-      base: 'packages/plugin-vconsole/src',
+      base: 'packages/runtime/plugin-vconsole/src',
       allowEmpty: true
     },
-    scriptsSrc: 'packages/plugin-vconsole/src/**/*.js',
-    lessSrc: 'packages/plugin-vconsole/src/**/*.less',
-    copySrc: ['packages/plugin-vconsole/src/**/*.{wxml,json}'],
-    dest: 'packages/plugin-vconsole/dist/'
+    scriptsSrc: 'packages/runtime/plugin-vconsole/src/**/*.js',
+    lessSrc: 'packages/runtime/plugin-vconsole/src/**/*.less',
+    copySrc: ['packages/runtime/plugin-vconsole/src/**/*.{wxml,json}'],
+    dest: 'packages/runtime/plugin-vconsole/dist/'
   },
   'plugin-navigate': {
     name: 'plugin-navigate',
     option: {
-      base: 'packages/plugin-navigate/src',
+      base: 'packages/runtime/plugin-navigate/src',
       allowEmpty: true
     },
-    scriptsSrc: 'packages/plugin-navigate/src/**/*.js',
-    lessSrc: 'packages/plugin-navigate/src/**/*.less',
-    copySrc: ['packages/plugin-navigate/src/**/*.{wxml,json}'],
-    dest: 'packages/plugin-navigate/dist/'
+    scriptsSrc: 'packages/runtime/plugin-navigate/src/**/*.js',
+    lessSrc: 'packages/runtime/plugin-navigate/src/**/*.less',
+    copySrc: ['packages/runtime/plugin-navigate/src/**/*.{wxml,json}'],
+    dest: 'packages/runtime/plugin-navigate/dist/'
   }
 };
 
