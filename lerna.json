@@ -1,0 +1,19 @@
+{
+  "packages": [
+    "packages/*"
+  ],
+  "command": {
+    "version": {
+      "allowBranch": "master",
+      "conventionalCommits": true,
+      "exact": true,
+      "message": "chore(release): %s"
+    },
+    "bootstrap": {
+      "npmClientArgs": [
+        "--no-package-lock"
+      ]
+    }
+  },
+  "version": "0.1.0"
+}

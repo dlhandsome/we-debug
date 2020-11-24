@@ -20,13 +20,13 @@
     "build:plugin-error": "cross-env TARGET=plugin-error gulp",
     "build:plugin-router": "cross-env TARGET=plugin-router gulp",
     "build:plugin-vconsole": "cross-env TARGET=plugin-vconsole gulp",
-    "bootstrap": "node ./scripts/bootstrap.js && npm run build",
+    "bootstrap": "./node_modules/.bin/lerna bootstrap",
     "test": "npm run lint && npm run test:cov",
     "test:unit": "node ./scripts/unittest.js",
     "test:cov": "nyc npm run test:unit",
     "lint": "eslint ./ --ext .js --fix",
-    "release": "npm run build && npm run test && ./node_modules/.bin/verpub publish",
-    "release:dry": "./node_modules/.bin/verpub publish --dry-run"
+    "prepublish": "npm run build && npm run test",
+    "release": "./node_modules/.bin/lerna publish"
   },
   "repository": {
     "type": "git",
@@ -64,6 +64,7 @@
     "gulp-watch": "^5.0.1",
     "husky": "^4.2.3",
     "jest": "^25.2.3",
+    "lerna": "^3.22.1",
     "nyc": "^15.0.0",
     "prettier": "^2.0.2",
     "validate-commit-msg": "^2.14.0",
