@@ -11,6 +11,6 @@
     "w-cell": "../cell/index",
     "w-rule": "../rule/index",
     "w-badge": "../badge/index",
-    "w-ui-check": "@we-debug/ui-check/index"
+    "w-ui-check": "@we-debug/plugin-ui-check/index"
   }
 }
