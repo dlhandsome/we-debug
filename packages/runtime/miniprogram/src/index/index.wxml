@@ -1,0 +1,21 @@
+<slot></slot>
+
+<w-ui-check></w-ui-check>
+<w-mask show="{{showMask}}">
+  <w-cell>
+    <w-rule
+      wx:for="{{rules}}"
+      wx:key="id"
+      config="{{item}}"
+    />
+    <slot name="modal"></slot>
+  </w-cell>
+</w-mask>
+
+<view class="w-badges-group">
+  <w-badge
+    wx:for="{{badges}}"
+    wx:key="id"
+    config="{{item}}"
+  />
+</view>

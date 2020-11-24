@@ -1,0 +1,8 @@
+<view class="w-cell-item">
+  <view class="w-cell-body">
+    <slot name="body"></slot>
+  </view>
+  <view class="w-cell-foot" catchtap="noop">
+    <slot name="foot"></slot>
+  </view>
+</view>

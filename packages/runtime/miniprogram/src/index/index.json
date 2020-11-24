@@ -1,0 +1,16 @@
+{
+  "navigationBarTitleText": "微信收款商业版",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#f5f5f5",
+  "backgroundColor": "#f5f5f5",
+  "navigationBarTextStyle": "black",
+  "component": true,
+  "usingComponents": {
+    "w-mask": "../mask/index",
+    "w-cell": "../cell/index",
+    "w-rule": "../rule/index",
+    "w-badge": "../badge/index",
+    "w-ui-check": "@we-debug/ui-check/index"
+  }
+}

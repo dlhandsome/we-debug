@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "cell-item": "../cell-item/index"
+  }
+}

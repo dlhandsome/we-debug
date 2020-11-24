@@ -1,0 +1,49 @@
+@import './_variable.less';
+
+.@{prefix}-badge {
+	display: inline-block;
+	border-radius: @border-radius-md;
+	text-shadow: none;
+	font-size: @font-size-sm;
+	color: @white;
+	line-height: 15px;
+	background-color: #ABBAC3;
+  margin-bottom: 5px;
+
+  &__subject {
+    display: inline-block;
+    background-color: #4D4D4D;
+    padding: @padding-base;
+    
+    &:first-child {
+      padding-left: @padding-base * 1.5;
+      border-top-left-radius: @border-radius-md;
+      border-bottom-left-radius: @border-radius-md;
+    }
+
+    &:last-child {
+      padding-right: @padding-base * 1.5;
+      border-top-right-radius: @border-radius-md;
+      border-bottom-right-radius: @border-radius-md;
+    }
+
+    .theme(@property, @value) {
+      &--@{property} {
+        background-color: @value !important;
+      }
+    }
+  
+    .theme(brightgreen, @brightgreen);
+    .theme(orange, @orange);
+    .theme(yellow, @yellow);
+    .theme(blueviolet, @blueviolet);
+    .theme(pink, @pink);
+    .theme(red, @red);
+    .theme(blue, @blue);
+    .theme(lightgrey, @lightgrey);
+    .theme(lightgray, @lightgray);
+    .theme(grey, @grey);
+    .theme(gray, @gray);
+  }
+
+}
