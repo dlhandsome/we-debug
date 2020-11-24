@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/plugin-router",
-  "version": "0.3.7",
+  "version": "0.4.0",
   "description": "router plugin for we-debug",
   "main": "dist/index.js",
   "scripts": {

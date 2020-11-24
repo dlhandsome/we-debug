@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/core",
-  "version": "0.3.7",
+  "version": "0.4.0",
   "description": "a useful debug tool",
   "author": {
     "name": "dlhandsome"
@@ -22,10 +22,10 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@we-debug/plugin-error": "0.3.7",
-    "@we-debug/plugin-launcher": "0.3.7",
-    "@we-debug/plugin-network": "0.3.7",
-    "@we-debug/plugin-router": "0.3.7",
+    "@we-debug/plugin-error": "0.4.0",
+    "@we-debug/plugin-launcher": "0.4.0",
+    "@we-debug/plugin-network": "0.4.0",
+    "@we-debug/plugin-router": "0.4.0",
     "deepmerge": "^4.2.2"
   },
   "readme": "ERROR: No README data found!",

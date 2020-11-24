@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/dlhandsome/we-debug/compare/v0.3.7...v0.4.0) (2020-11-24)
+
+
+### Features
+
+* **miniprogram:** add package ([cd06c00](https://github.com/dlhandsome/we-debug/commit/cd06c00c01dc040d6dd550b783dbe26513becde8))
+* **plugin-ui-check:** added package ([b2942fc](https://github.com/dlhandsome/we-debug/commit/b2942fc3582db418415142a2106c714fa51d51e3))
+
+
+
+
+
 ## [0.3.7](https://github.com/dlhandsome/we-debug/compare/v0.3.6...v0.3.7) (2020-11-24)
 
 **Note:** Version bump only for package we-debug
