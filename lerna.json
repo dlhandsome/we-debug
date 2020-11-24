@@ -1,6 +1,7 @@
 {
   "packages": [
-    "packages/*"
+    "packages/runtime/*",
+    "packages/compiler/*"
   ],
   "command": {
     "version": {
