@@ -1,0 +1,20 @@
+{
+  "name": "@we-debug/plugin-ui-check",
+  "version": "0.3.7",
+  "description": "we-debug ui-check plugin",
+  "miniprogram": "dist",
+  "main": "dist/plugin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dlhandsome/we-debug.git"
+  },
+  "author": "dlhandsome",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dlhandsome/we-debug/issues"
+  },
+  "homepage": "https://github.com/dlhandsome/we-debug#readme"
+}
