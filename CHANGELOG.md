@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.3](https://github.com/dlhandsome/we-debug/compare/v0.4.2...v0.4.3) (2020-11-24)
+
+
+### Bug Fixes
+
+* **miniprogram:** fixed ui-check dependence ([5505e34](https://github.com/dlhandsome/we-debug/commit/5505e34ca987f8de998740417a7b912f0af95990))
+
+
+
+
+
 ## [0.4.2](https://github.com/dlhandsome/we-debug/compare/v0.4.1...v0.4.2) (2020-11-24)
 
 **Note:** Version bump only for package we-debug
