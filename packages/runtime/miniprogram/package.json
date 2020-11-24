@@ -6,6 +6,9 @@
     "name": "dlhandsome"
   },
   "miniprogram": "dist",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "jest"
   },

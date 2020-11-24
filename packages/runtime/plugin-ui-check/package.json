@@ -4,6 +4,9 @@
   "description": "we-debug ui-check plugin",
   "miniprogram": "dist",
   "main": "dist/plugin.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,5 +19,6 @@
   "bugs": {
     "url": "https://github.com/dlhandsome/we-debug/issues"
   },
-  "homepage": "https://github.com/dlhandsome/we-debug#readme"
+  "homepage": "https://github.com/dlhandsome/we-debug#readme",
+  "gitHead": "46dba1ba30cb46ae91bf2d08fdafbeab1fb84118"
 }
