@@ -3,7 +3,7 @@ import ErrorPlugin from '@we-debug/plugin-error';
 import RouterPlugin from '@we-debug/plugin-router';
 import LauncherPlugin from '@we-debug/plugin-launcher';
 import networkPlugin from '@we-debug/plugin-network';
-import uiCheckPlugin from '../../component/ui-check/plugin';
+import uiCheckPlugin from '@we-debug/plugin-ui-check/plugin';
 import merge from 'deepmerge';
 
 /**
