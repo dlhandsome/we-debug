@@ -1,4 +1,4 @@
-import Debug from '../../libs/index';
+import Debug from '@we-debug/core';
 
 const store = Debug.store;
 
