@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.1](https://github.com/dlhandsome/we-debug/compare/v0.6.0...v0.6.1) (2020-11-25)
+
+
+### Bug Fixes
+
+* **plugin-ui-check:** add peer peerDependencies ([ae17181](https://github.com/dlhandsome/we-debug/commit/ae1718109f373e430db2b0ff4498a27b258c39a3))
+
+
+
+
+
 # [0.6.0](https://github.com/dlhandsome/we-debug/compare/v0.5.0...v0.6.0) (2020-11-25)
 
 
