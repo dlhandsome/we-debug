@@ -6,6 +6,7 @@
     "name": "dlhandsome"
   },
   "miniprogram": "dist",
+  "main": "dist/index.js",
   "publishConfig": {
     "access": "public"
   },
