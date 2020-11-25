@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/dlhandsome/we-debug/compare/v0.4.4...v0.5.0) (2020-11-25)
+
+
+### Features
+
+* **miniprogram:** add entry file ([bf071c3](https://github.com/dlhandsome/we-debug/commit/bf071c3cdb3ff372ea9820681015f8960200fb16))
+
+
+
+
+
 ## [0.4.4](https://github.com/dlhandsome/we-debug/compare/v0.4.3...v0.4.4) (2020-11-24)
 
 **Note:** Version bump only for package @we-debug/miniprogram
