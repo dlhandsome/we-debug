@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/core",
-  "version": "0.6.0",
+  "version": "0.6.2",
   "description": "a useful debug tool",
   "author": {
     "name": "dlhandsome"

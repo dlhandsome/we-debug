@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.2](https://github.com/dlhandsome/we-debug/compare/v0.6.1...v0.6.2) (2020-12-04)
+
+
+### Bug Fixes
+
+* **runtime/core:** 补充包描述文件依赖包 ([debcf9a](https://github.com/dlhandsome/we-debug/commit/debcf9a337b366bb9de183e1a0d07ea00159f2c3))
+
+
+
+
+
 # [0.6.0](https://github.com/dlhandsome/we-debug/compare/v0.5.0...v0.6.0) (2020-11-25)
 
 
