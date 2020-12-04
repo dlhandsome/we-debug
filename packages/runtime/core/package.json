@@ -25,6 +25,7 @@
     "@we-debug/plugin-launcher": "0.6.0",
     "@we-debug/plugin-network": "0.6.0",
     "@we-debug/plugin-router": "0.6.0",
+    "@we-debug/plugin-ui-check": "^0.6.1",
     "deepmerge": "^4.2.2"
   },
   "readme": "ERROR: No README data found!",
