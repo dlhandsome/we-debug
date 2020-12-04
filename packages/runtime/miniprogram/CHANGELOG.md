@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.3](https://github.com/dlhandsome/we-debug/compare/v0.6.2...v0.6.3) (2020-12-04)
+
+
+### Bug Fixes
+
+* **runtime/miniprogram:** support multiple slots ([dc1a86c](https://github.com/dlhandsome/we-debug/commit/dc1a86ca03533150bb1a99b69dfb19b8343c0388))
+
+
+
+
+
 ## [0.6.2](https://github.com/dlhandsome/we-debug/compare/v0.6.1...v0.6.2) (2020-12-04)
 
 **Note:** Version bump only for package @we-debug/miniprogram
