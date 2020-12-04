@@ -8,8 +8,8 @@
       wx:key="id"
       config="{{item}}"
     />
-    <slot name="modal"></slot>
   </w-cell>
+  <slot name="modal"></slot>
 </w-mask>
 
 <view class="w-badges-group">

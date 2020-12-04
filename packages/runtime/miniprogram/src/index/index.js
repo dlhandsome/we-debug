@@ -3,6 +3,9 @@ import Debug from '@we-debug/core';
 const store = Debug.store;
 
 Component({
+  options: {
+    multipleSlots: true
+  },
   properties: {
     config: {
       type: Object,
