@@ -42,6 +42,9 @@ Component({
   externalClasses: ['my-class'],
   methods: {
     noop() {},
+    showMaskHandler() {
+      store.event.emit('debug:mask:show-modal');
+    },
     closeMaskHandler() {
       store.event.emit('debug:mask:hide-modal');
     },
