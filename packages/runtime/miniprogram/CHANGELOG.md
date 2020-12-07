@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.4](https://github.com/dlhandsome/we-debug/compare/v0.6.3...v0.6.4) (2020-12-07)
+
+
+### Bug Fixes
+
+* **runtime/miniprogram:** fixed mask component ([e6497e1](https://github.com/dlhandsome/we-debug/commit/e6497e1936071cefc5dec7a889e906cf84337f02))
+
+
+
+
+
 ## [0.6.3](https://github.com/dlhandsome/we-debug/compare/v0.6.2...v0.6.3) (2020-12-04)
 
 
