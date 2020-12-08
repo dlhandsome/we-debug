@@ -26,7 +26,8 @@
     "test:cov": "nyc npm run test:unit",
     "lint": "eslint ./ --ext .js --fix",
     "prepublish": "npm run build && npm run test",
-    "release": "./node_modules/.bin/lerna publish"
+    "release": "./node_modules/.bin/lerna publish",
+    "release:ci": "./node_modules/.bin/lerna publish --yes"
   },
   "repository": {
     "type": "git",

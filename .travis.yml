@@ -16,7 +16,7 @@ before_deploy:
   - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
 deploy:
   provider: script
-  script: "npm run release"
+  script: "npm run release:ci"
   skip_cleanup: true
   on:
     node: "10"
