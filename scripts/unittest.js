@@ -2,7 +2,7 @@ const path = require('path');
 const { spawnSync } = require('child_process');
 
 const packages = [
-  'core'
+  'runtime/core'
   // 'plugin-error',
   // 'plugin-router'
 ];
