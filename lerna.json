@@ -3,9 +3,6 @@
     "packages/runtime/*",
     "packages/compiler/*"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "command": {
     "version": {
       "allowBranch": "master",
