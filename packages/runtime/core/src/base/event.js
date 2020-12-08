@@ -57,8 +57,8 @@ export class Event {
   emit(key, ...args) {
     const fns = this._fns[key];
     if (fns && fns.length) {
-      fns.forEach(fn => {
-        fn.apply(this, args);
+      return fns.map(fn => {
+        return fn.apply(this, args);
       });
     }
   }
