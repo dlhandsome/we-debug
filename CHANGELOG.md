@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/dlhandsome/we-debug/compare/v0.6.4...v0.7.0) (2020-12-08)
+
+
+### Bug Fixes
+
+* **runtime/core:** fixed import path ([1a9a00a](https://github.com/dlhandsome/we-debug/commit/1a9a00a2f43098e2c43a355101e15cf3dec34e1d))
+
+
+### Features
+
+* **runtime/core:** support async event ([f1d45c0](https://github.com/dlhandsome/we-debug/commit/f1d45c05213f7c6864426453aa5008ce011b5efb))
+
+
+
+
+
 ## [0.6.4](https://github.com/dlhandsome/we-debug/compare/v0.6.3...v0.6.4) (2020-12-07)
 
 
