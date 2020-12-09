@@ -22,11 +22,20 @@ Component({
       if (v) {
         this.setData({ badges: v });
       }
+    },
+    'config.modal'(v) {
+      if (v) {
+        this.setData({ modal: v });
+      }
     }
   },
   data: {
     sys: store.sys.get(),
     rules: store.rules.get(),
-    badges: store.badges.get()
+    badges: store.badges.get(),
+    modal: {
+      logo: './logo.png',
+      scrollHeight: 500
+    }
   }
 });

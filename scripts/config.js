@@ -18,7 +18,12 @@ const builds = {
     },
     scriptsSrc: 'packages/runtime/miniprogram/src/**/*.js',
     lessSrc: ['packages/runtime/miniprogram/src/**/*.less', '!packages/runtime/miniprogram/src/less/*.*'],
-    copySrc: ['packages/runtime/miniprogram/src/**/*.{wxml,json}'],
+    copySrc: [
+      'packages/runtime/miniprogram/src/**',
+      '!packages/runtime/miniprogram/src/**.ts',
+      '!packages/runtime/miniprogram/src/**.js',
+      '!packages/runtime/miniprogram/src/**.ts'
+    ],
     dest: 'packages/runtime/miniprogram/dist/'
   },
   'plugin-launcher': {

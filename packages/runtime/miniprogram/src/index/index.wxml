@@ -1,15 +1,21 @@
 <slot></slot>
 
 <w-ui-check></w-ui-check>
-<w-mask show="{{showMask}}">
-  <w-cell>
-    <w-rule
-      wx:for="{{rules}}"
-      wx:key="id"
-      config="{{item}}"
-    />
-  </w-cell>
-  <slot name="modal"></slot>
+<w-mask>
+  <view class="w-mask__modal-header">
+    <image class="w-mask__modal-logo" src="{{modal.logo}}" mode="aspectFit" lazy-load="false" binderror="" bindload=""></image>
+  </view>
+  <scroll-view class="w-mask__modal-content" scroll-y="true" style="height:{{modal.scrollHeight}}rpx;">
+    <w-cell>
+      <w-rule
+        wx:for="{{rules}}"
+        wx:key="id"
+        config="{{item}}"
+      />
+    </w-cell>
+    <slot name="modal-body"></slot>
+  </scroll-view>
+  <slot name="modal-footer"></slot>
 </w-mask>
 
 <view class="w-badges-group">
