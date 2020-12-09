@@ -15,14 +15,6 @@ Component({
     show: {
       type: Boolean,
       value: false
-    },
-    title: {
-      type: String,
-      value: ''
-    },
-    contentHeight: {
-      type: Number,
-      value: 500
     }
   },
   observers: {

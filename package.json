@@ -15,6 +15,7 @@
   },
   "scripts": {
     "dev:doc": "npx docsify serve docs",
+    "dev": "cross-env NODE_ENV=development gulp",
     "build": "gulp",
     "build:core": "cross-env TARGET=core gulp",
     "build:plugin-error": "cross-env TARGET=plugin-error gulp",
