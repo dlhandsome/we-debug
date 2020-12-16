@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/dlhandsome/we-debug/compare/v0.8.0...v0.9.0) (2020-12-16)
+
+
+### Features
+
+* **runtime/core:** added env file ([2ee73a9](https://github.com/dlhandsome/we-debug/commit/2ee73a9c0171a952ce84f03736791b7707a0b250))
+
+
+
+
+
 # [0.8.0](https://github.com/dlhandsome/we-debug/compare/v0.7.0...v0.8.0) (2020-12-09)
 
 **Note:** Version bump only for package @we-debug/core

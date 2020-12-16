@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/dlhandsome/we-debug/compare/v0.8.0...v0.9.0) (2020-12-16)
+
+
+### Bug Fixes
+
+* **runtime/plugin-ui-check:** support qq miniprogram ([b0c41e2](https://github.com/dlhandsome/we-debug/commit/b0c41e2ea3c87ce27ec438668a2e3e9a8fbe9c1c))
+
+
+### Features
+
+* **runtime/core:** added env file ([2ee73a9](https://github.com/dlhandsome/we-debug/commit/2ee73a9c0171a952ce84f03736791b7707a0b250))
+
+
+
+
+
 # [0.8.0](https://github.com/dlhandsome/we-debug/compare/v0.7.0...v0.8.0) (2020-12-09)
 
 
