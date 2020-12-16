@@ -25,6 +25,7 @@
   },
   "globals": {
     "wx",
+    "qq",
     "getCurrentPages",
     "Component",
     "expect"
