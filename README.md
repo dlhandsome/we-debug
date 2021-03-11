@@ -62,7 +62,7 @@ weDebug.init()
 
 ## 插件列表
 
-- [自定义页面跳转](https://github.com/dlhandsome/we-debug/tree/master/packages/plugin-navigate)
+- [自定义页面跳转](./packages/runtime/plugin-navigate)
 
 ## 相关链接
 
