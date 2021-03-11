@@ -25,7 +25,7 @@
 ## 安装
 
 ```bash
-npm install @we-debug/core --save
+npm install @we-debug/miniprogram --save
 ```
 
 ## 使用
@@ -35,7 +35,7 @@ npm install @we-debug/core --save
 ```json
 {
   "usingComponents": {
-    "we-debug": "@we-debug/core/component/index/index"
+    "we-debug": "@we-debug/miniprogram/index/index"
   }
 }
 ```
@@ -49,7 +49,7 @@ npm install @we-debug/core --save
 3. 在 app.js 中初始化 we-debug 相关配置
 
 ```javascript
-const weDebug = require('@we-debug/core/libs/index')
+const weDebug = require('@we-debug/miniprogram')
 
 weDebug.init()
 ```
