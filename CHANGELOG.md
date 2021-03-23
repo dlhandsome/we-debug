@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.2](https://github.com/dlhandsome/we-debug/compare/v0.10.1...v0.10.2) (2021-03-23)
+
+
+### Bug Fixes
+
+* **plugin-ui-check:** removed core dependency ([1dc6a69](https://github.com/dlhandsome/we-debug/commit/1dc6a69920587f8726e3e25805ed932ac41e5ef2))
+
+
+
+
+
 ## [0.10.1](https://github.com/dlhandsome/we-debug/compare/v0.10.0...v0.10.1) (2021-03-23)
 
 
