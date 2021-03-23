@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.1](https://github.com/dlhandsome/we-debug/compare/v0.10.0...v0.10.1) (2021-03-23)
+
+
+### Bug Fixes
+
+* **core:** fixed ui-check plugin import path ([b8a75d9](https://github.com/dlhandsome/we-debug/commit/b8a75d95838ba61750483c65f71499c187319b3f))
+
+
+
+
+
 # [0.10.0](https://github.com/dlhandsome/we-debug/compare/v0.9.0...v0.10.0) (2020-12-17)
 
 
