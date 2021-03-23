@@ -1,13 +1,9 @@
-import Debug from '@we-debug/core';
-
-const { store, ENV_TYPE, getEnv } = Debug;
-
 export class MoveAreaHelper {
-  constructor() {
-    this.systemInfo = store.sys.get();
+  constructor(Debug) {
+    this.systemInfo = Debug.store.sys.get();
     const { screenWidth, statusBarHeight, screenHeight } = this.systemInfo;
 
-    if (getEnv() === ENV_TYPE.QQ) {
+    if (Debug.getEnv() === Debug.ENV_TYPE.QQ) {
       this.systemInfo.safeArea = {
         left: 0,
         right: screenWidth,

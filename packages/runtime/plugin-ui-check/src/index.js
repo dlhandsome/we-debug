@@ -1,29 +1,25 @@
-import Debug from '@we-debug/core';
-import { prefix, closeBadge } from './plugin';
+import { Debug, prefix, closeBadge } from './plugin';
 import { MoveAreaHelper } from './utils';
 
 let _timer;
 let _pixelTimer;
 let _y = 0;
+let _maHelper;
 // 滑块容器的头尾预留高度
 const reservedDistance = 150;
-const store = Debug.store;
-
-const maHelper = new MoveAreaHelper();
-const { safeArea } = maHelper.systemInfo;
 
 Component({
   properties: {},
   data: {
-    safeArea,
+    safeArea: null,
     url: '',
     moveArea: {
       // 滑块容器的头尾预留高度
       reservedDistance,
-      top: maHelper.getTop(reservedDistance),
-      left: maHelper.getLeft(),
-      width: maHelper.getWidth(),
-      height: maHelper.getHeight(reservedDistance)
+      top: 0,
+      left: 0,
+      width: 0,
+      height: 0
     },
     moveView: {
       y: _y,
@@ -55,7 +51,33 @@ Component({
     closeBadge({ show = false } = {}) {
       closeBadge.emit({ show });
     },
+    getMaHelper() {
+      if (!_maHelper) {
+        _maHelper = new MoveAreaHelper(Debug);
+      }
+      return _maHelper;
+    },
+    initSafeArea() {
+      const maHelper = this.getMaHelper();
+      const { safeArea } = maHelper.systemInfo;
+
+      this.setData({ safeArea });
+    },
+    initMoveArea() {
+      const maHelper = this.getMaHelper();
+
+      this.setData({
+        // 滑块容器的头尾预留高度
+        reservedDistance,
+        top: maHelper.getTop(reservedDistance),
+        left: maHelper.getLeft(),
+        width: maHelper.getWidth(),
+        height: maHelper.getHeight(reservedDistance)
+      });
+    },
     imgLoad(e) {
+      const maHelper = this.getMaHelper();
+
       const { width, height } = e.detail;
       const safeAreaWidth = this.data.safeArea.width;
       const ratio = safeAreaWidth / width;
@@ -144,10 +166,12 @@ Component({
       clearTimeout(_pixelTimer);
     },
     init(url) {
+      this.initSafeArea();
+      this.initMoveArea();
       this.addImg(url);
       this.badges({ show: false });
       this.closeBadge({ show: true });
-      store.event.emit('debug:mask:hide-modal');
+      Debug.store.event.emit('debug:mask:hide-modal');
     },
     destory() {
       this.removeImg();
@@ -155,13 +179,13 @@ Component({
       this.closeBadge({ show: false });
     },
     addListeners() {
-      store.event.on(prefix + 'init', this.init.bind(this));
-      store.event.on(prefix + 'destory', this.destory.bind(this));
+      Debug.store.event.on(prefix + 'init', this.init.bind(this));
+      Debug.store.event.on(prefix + 'destory', this.destory.bind(this));
     },
 
     removeListeners() {
-      store.event.off(prefix + 'init', this.init.bind(this));
-      store.event.off(prefix + 'destory', this.destory.bind(this));
+      Debug.store.event.off(prefix + 'init', this.init.bind(this));
+      Debug.store.event.off(prefix + 'destory', this.destory.bind(this));
     }
   },
   attached() {
