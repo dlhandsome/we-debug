@@ -180,13 +180,19 @@ Component({
       this.closeBadge({ show: false });
     },
     addListeners() {
-      Debug.store.event.on(prefix + 'init', this.init.bind(this));
-      Debug.store.event.on(prefix + 'destory', this.destory.bind(this));
+      if (Debug) {
+        Debug.store.event.on(prefix + 'init', this.init.bind(this));
+        Debug.store.event.on(prefix + 'destory', this.destory.bind(this));
+      } else {
+        console.warn(`[we-debug]: please init before component attached`);
+      }
     },
 
     removeListeners() {
-      Debug.store.event.off(prefix + 'init', this.init.bind(this));
-      Debug.store.event.off(prefix + 'destory', this.destory.bind(this));
+      if (Debug) {
+        Debug.store.event.off(prefix + 'init', this.init.bind(this));
+        Debug.store.event.off(prefix + 'destory', this.destory.bind(this));
+      }
     }
   },
   attached() {
