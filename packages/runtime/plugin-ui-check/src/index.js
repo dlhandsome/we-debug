@@ -1,5 +1,5 @@
 import { Debug, prefix, closeBadge } from './plugin';
-import uiCheckPlugin from './plugin';
+// import uiCheckPlugin from './plugin';
 import { MoveAreaHelper } from './utils';
 
 let _timer;
@@ -200,4 +200,4 @@ Component({
 // 小程序开发工具 npm 构建机制
 // 不支持 package.json 同时混用 miniprogram、main 字段
 // 小程序开发工具检测到 package.json 中含有 miniprogram 字段时，自动忽略 main 字段，并复制 miniprogram 字段指定的目录至 miniprogram_npm 中
-export default uiCheckPlugin;
+// export default uiCheckPlugin;
