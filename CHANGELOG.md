@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.5](https://github.com/dlhandsome/we-debug/compare/v0.10.4...v0.10.5) (2021-03-24)
+
+
+### Bug Fixes
+
+* **plugin-ui-check:** fixed debug object not exist ([bd70e93](https://github.com/dlhandsome/we-debug/commit/bd70e9324d5c46428e1081316969a214412ac4c4))
+
+
+
+
+
 ## [0.10.4](https://github.com/dlhandsome/we-debug/compare/v0.10.3...v0.10.4) (2021-03-24)
 
 
