@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/core",
-  "version": "0.10.3",
+  "version": "0.10.4",
   "description": "a useful debug tool",
   "author": {
     "name": "dlhandsome"
@@ -25,7 +25,7 @@
     "@we-debug/plugin-launcher": "0.10.0",
     "@we-debug/plugin-network": "0.10.0",
     "@we-debug/plugin-router": "0.10.0",
-    "@we-debug/plugin-ui-check": "0.10.3",
+    "@we-debug/plugin-ui-check": "0.10.4",
     "deepmerge": "^4.2.2"
   },
   "readme": "ERROR: No README data found!",

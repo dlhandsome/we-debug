@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.4](https://github.com/dlhandsome/we-debug/compare/v0.10.3...v0.10.4) (2021-03-24)
+
+
+### Bug Fixes
+
+* fixed miniprogram npm import ([65fe03e](https://github.com/dlhandsome/we-debug/commit/65fe03ee3f74b241586096863cecbf992ef3cc1a))
+
+
+
+
+
 ## [0.10.3](https://github.com/dlhandsome/we-debug/compare/v0.10.2...v0.10.3) (2021-03-23)
 
 

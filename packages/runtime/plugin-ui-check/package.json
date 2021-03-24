@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/plugin-ui-check",
-  "version": "0.10.3",
+  "version": "0.10.4",
   "description": "we-debug ui-check plugin",
   "miniprogram": "dist",
   "main": "dist/plugin.js",
