@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/miniprogram",
-  "version": "0.10.5",
+  "version": "0.11.0",
   "description": "we-debug miniprogram component",
   "author": {
     "name": "dlhandsome"
@@ -25,12 +25,12 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@we-debug/core": "0.10.5",
-    "@we-debug/plugin-error": "0.10.0",
-    "@we-debug/plugin-launcher": "0.10.0",
-    "@we-debug/plugin-network": "0.10.0",
-    "@we-debug/plugin-router": "0.10.0",
-    "@we-debug/plugin-ui-check": "0.10.5",
+    "@we-debug/core": "0.11.0",
+    "@we-debug/plugin-error": "0.11.0",
+    "@we-debug/plugin-launcher": "0.11.0",
+    "@we-debug/plugin-network": "0.11.0",
+    "@we-debug/plugin-router": "0.11.0",
+    "@we-debug/plugin-ui-check": "0.11.0",
     "deepmerge": "^4.2.2"
   },
   "readme": "ERROR: No README data found!",
