@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.1](https://github.com/dlhandsome/we-debug/compare/v0.12.0...v0.12.1) (2021-04-25)
+
+
+### Bug Fixes
+
+* **miniprogram:** fixed badge styles ([3e47e3b](https://github.com/dlhandsome/we-debug/commit/3e47e3b420a9d7c7080b9b00da0d11e292060da6))
+
+
+
+
+
 # [0.12.0](https://github.com/dlhandsome/we-debug/compare/v0.11.0...v0.12.0) (2021-04-25)
 
 
