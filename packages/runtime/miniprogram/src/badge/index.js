@@ -63,7 +63,7 @@ Component({
     },
     'config.styles'(v) {
       if (v) {
-        this.setData({ color: v });
+        this.setData({ styles: v });
       }
     },
     'config.textOnly'(v) {
