@@ -61,6 +61,14 @@ Component({
         this.setData({ color: v });
       }
     },
+    'config.styles'(v) {
+      if (v) {
+        this.setData({ color: v });
+      }
+    },
+    'config.textOnly'(v) {
+      this.setData({ textOnly: v });
+    },
     'config.show'(v) {
       const show = isFunc(v) ? v() : v;
 
@@ -77,6 +85,8 @@ Component({
     value: '',
     color: 'brightgreen',
     position: null,
+    styles: '',
+    textOnly: false,
     // 是否允许拖动
     draggable: false,
     handler: null

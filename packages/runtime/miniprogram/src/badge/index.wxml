@@ -6,7 +6,12 @@
   bindtouchend="bindTouchEndHandler"
   bindtouchcancel="bindTouchCancelHandler"
   bindtap="bindTapHandler"
-  style="{{position ? 'position: fixed;' : ''}} {{position.left !== undefined ? 'left:' + position.left + 'px;' : ''}} {{position.top !== undefined ? 'top:' + position.top + 'px;' : ''}} {{position.right !== undefined ? 'right:' + position.right + 'px;' : ''}} {{position.bottom !== undefined ? 'bottom:' + position.bottom + 'px;' : ''}}">
-    <view wx:if="{{key !== undefined && key !== ''}}" class="w-badge__subject">{{key}}</view>
-    <view wx:if="{{value !== undefined && value !== ''}}" class="w-badge__subject w-badge__subject--{{color || 'brightgreen'}}">{{value}}</view>
+  style="{{position ? 'position: fixed;' : ''}} {{position.left !== undefined ? 'left:' + position.left + 'px;' : ''}} {{position.top !== undefined ? 'top:' + position.top + 'px;' : ''}} {{position.right !== undefined ? 'right:' + position.right + 'px;' : ''}} {{position.bottom !== undefined ? 'bottom:' + position.bottom + 'px;' : ''}} {{ styles }}">
+    <block wx:if="{{textOnly}}">
+      {{value}}
+    </block>
+    <block wx:else>
+      <view wx:if="{{key !== undefined && key !== ''}}" class="w-badge__subject">{{key}}</view>
+      <view wx:if="{{value !== undefined && value !== ''}}" class="w-badge__subject w-badge__subject--{{color || 'brightgreen'}}">{{value}}</view>
+    </block>
 </view>
