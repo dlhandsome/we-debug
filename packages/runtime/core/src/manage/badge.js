@@ -12,6 +12,7 @@ export class Badge extends BaseManage {
     this.show = opt.show || false;
     this.draggable = opt.draggable;
     this.position = opt.position;
+    this.styles = opt.styles || '';
   }
 
   get prefix() {
