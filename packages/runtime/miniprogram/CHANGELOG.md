@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/dlhandsome/we-debug/compare/v0.11.0...v0.12.0) (2021-04-25)
+
+
+### Features
+
+* **miniprogram:** support textOnly ([f43abe6](https://github.com/dlhandsome/we-debug/commit/f43abe660a43dfda8b4e85d6c1734d6311ceedb6))
+
+
+
+
+
 # [0.11.0](https://github.com/dlhandsome/we-debug/compare/v0.10.5...v0.11.0) (2021-03-30)
 
 
