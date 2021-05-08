@@ -4,6 +4,7 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const rename = require('gulp-rename');
 const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
 const builds = require('./scripts/config');
 
 const genCopyTaskName = suffix => 'copy:' + suffix;
@@ -28,6 +29,7 @@ const buildTasks = builds
             plugins: ['@babel/plugin-transform-modules-commonjs']
           })
         )
+        .pipe(uglify())
         .pipe(gulp.dest(p.dest));
     });
 
