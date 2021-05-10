@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.2](https://github.com/dlhandsome/we-debug/compare/v0.12.1...v0.12.2) (2021-05-10)
+
+
+### Features
+
+* add uglify ([47fe3ec](https://github.com/dlhandsome/we-debug/commit/47fe3ecb46ed8d99a83c1560d44b8fa5c94435b8))
+
+
+
+
+
 ## [0.12.1](https://github.com/dlhandsome/we-debug/compare/v0.12.0...v0.12.1) (2021-04-25)
 
 
