@@ -6,6 +6,7 @@ import { init } from './api/init';
 import { createCache } from './api/cache';
 import { createBadge, getBadge, addBadge, removeBadge } from './api/badge';
 import { createFormRule, getFormRule, addFormRule, removeFormRule } from './api/rule';
+import { setBridgeInfo, getBridgeInfo } from './api/bridge';
 import { ENV_TYPE, getEnv } from './utils/env';
 
 const event = store.event;
@@ -26,7 +27,9 @@ export {
   createFormRule,
   getFormRule,
   addFormRule,
-  removeFormRule
+  removeFormRule,
+  setBridgeInfo,
+  getBridgeInfo
 };
 
 export default {
@@ -38,14 +41,14 @@ export default {
   event,
   store,
   util,
-
   createBadge,
   getBadge,
   addBadge,
   removeBadge,
-
   createFormRule,
   getFormRule,
   addFormRule,
-  removeFormRule
+  removeFormRule,
+  setBridgeInfo,
+  getBridgeInfo
 };
