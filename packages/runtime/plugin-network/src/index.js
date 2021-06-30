@@ -61,7 +61,10 @@ class NetworkPlugin {
     this.networkCallee.forEach(method => {
       const networkFunc = wx[method];
       Object.defineProperty(wx, method, {
-        get: () => (opt = {}) => this.proxyHandler(networkFunc, opt)
+        get:
+          () =>
+          (opt = {}) =>
+            this.proxyHandler(networkFunc, opt)
       });
     });
   }
