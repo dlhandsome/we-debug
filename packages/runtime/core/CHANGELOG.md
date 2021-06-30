@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://github.com/dlhandsome/we-debug/compare/v0.12.2...v0.13.0) (2021-06-30)
+
+
+### Features
+
+* **runtime/core:** 支持桥接数据共享 ([d5d8e6e](https://github.com/dlhandsome/we-debug/commit/d5d8e6e1a89927b6e3937e1d7668e988c5291588))
+
+
+
+
+
 ## [0.12.2](https://github.com/dlhandsome/we-debug/compare/v0.12.1...v0.12.2) (2021-05-10)
 
 **Note:** Version bump only for package @we-debug/core
