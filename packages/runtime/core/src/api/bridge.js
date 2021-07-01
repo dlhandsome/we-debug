@@ -37,5 +37,5 @@ export function getBridgeInfo(key) {
   const enterOptions = wx.getEnterOptionsSync();
   const extraData = enterOptions.referrerInfo.extraData;
 
-  return extraData && extraData.__WEDEBUG_INTO__ && extraData.__WEDEBUG_INTO__[key];
+  return extraData && extraData[bridgeKey] && extraData[bridgeKey][key];
 }
