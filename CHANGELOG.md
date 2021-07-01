@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.3](https://github.com/dlhandsome/we-debug/compare/v0.14.2...v0.14.3) (2021-07-01)
+
+
+### Bug Fixes
+
+* **runtime/core:** 修复下游小程序获取桥接数据时机的问题 ([e85572e](https://github.com/dlhandsome/we-debug/commit/e85572ed8f46631235a172cd81b022f073fb3f36))
+
+
+
+
+
 ## [0.14.2](https://github.com/dlhandsome/we-debug/compare/v0.14.1...v0.14.2) (2021-07-01)
 
 
