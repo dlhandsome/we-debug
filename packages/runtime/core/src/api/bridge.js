@@ -27,9 +27,6 @@ bridgeApi.forEach(method => {
 });
 
 export function setBridgeInfo(key, value) {
-  if (typeof value === 'function') {
-    value = value();
-  }
   bridge.set(key, value);
 }
 
