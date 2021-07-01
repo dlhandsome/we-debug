@@ -5,10 +5,13 @@ function set(k, v) {
 }
 
 function get(k) {
-  return _bridge[k];
+  return typeof _bridge[k] === 'function' ? _bridge[k]() : _bridge[k];
 }
 
 function getAll() {
+  Object.keys(_bridge).forEach(k => {
+    _bridge[k] = typeof _bridge[k] === 'function' ? _bridge[k]() : _bridge[k];
+  });
   return _bridge;
 }
 
