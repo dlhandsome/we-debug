@@ -30,9 +30,12 @@ export function setBridgeInfo(key, value) {
   bridge.set(key, value);
 }
 
-export function getBridgeInfo(key) {
-  const enterOptions = wx.getEnterOptionsSync();
-  const extraData = enterOptions.referrerInfo.extraData;
-
-  return extraData && extraData[bridgeKey] && extraData[bridgeKey][key];
+export function getBridgeInfo(key, callback) {
+  if (getBridgeInfo._hasEventBind) return;
+  getBridgeInfo._hasEventBind = true;
+  wx.onAppShow(res => {
+    const extraData = res.referrerInfo.extraData;
+    const bridgeInfo = extraData && extraData[bridgeKey] && extraData[bridgeKey][key];
+    callback(bridgeInfo);
+  });
 }
