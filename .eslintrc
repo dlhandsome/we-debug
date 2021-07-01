@@ -28,7 +28,8 @@
     "qq",
     "getCurrentPages",
     "Component",
-    "expect"
+    "expect",
+    "__VERSION__"
   },
   "extends": ["eslint:recommended", "plugin:prettier/recommended"],
   "plugins": ["prettier"]

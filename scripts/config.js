@@ -8,7 +8,8 @@ const builds = {
     scriptsSrc: 'packages/runtime/core/src/**/*.js',
     lessSrc: ['packages/runtime/core/src/**/*.less', '!packages/runtime/core/src/less/*.*'],
     copySrc: ['packages/runtime/core/src/**/*.{wxml,json}'],
-    dest: 'packages/runtime/core/dist/'
+    dest: 'packages/runtime/core/dist/',
+    pkg: 'packages/runtime/core/package.json'
   },
   miniprogram: {
     name: 'miniprogram',
@@ -24,7 +25,8 @@ const builds = {
       '!packages/runtime/miniprogram/src/**.js',
       '!packages/runtime/miniprogram/src/**.ts'
     ],
-    dest: 'packages/runtime/miniprogram/dist/'
+    dest: 'packages/runtime/miniprogram/dist/',
+    pkg: 'packages/runtime/miniprogram/package.json'
   },
   'plugin-launcher': {
     name: 'plugin-launcher',
@@ -35,7 +37,8 @@ const builds = {
     scriptsSrc: 'packages/runtime/plugin-launcher/src/**/*.js',
     lessSrc: 'packages/runtime/plugin-launcher/src/**/*.less',
     copySrc: ['packages/runtime/plugin-launcher/src/**/*.{wxml,json}'],
-    dest: 'packages/runtime/plugin-launcher/dist/'
+    dest: 'packages/runtime/plugin-launcher/dist/',
+    pkg: 'packages/runtime/plugin-launcher/package.json'
   },
   'plugin-network': {
     name: 'plugin-network',
@@ -46,7 +49,8 @@ const builds = {
     scriptsSrc: 'packages/runtime/plugin-network/src/**/*.js',
     lessSrc: 'packages/runtime/plugin-network/src/**/*.less',
     copySrc: ['packages/runtime/plugin-network/src/**/*.{wxml,json}'],
-    dest: 'packages/runtime/plugin-network/dist/'
+    dest: 'packages/runtime/plugin-network/dist/',
+    pkg: 'packages/runtime/plugin-network/package.json'
   },
   'plugin-error': {
     name: 'plugin-error',
@@ -57,7 +61,8 @@ const builds = {
     scriptsSrc: 'packages/runtime/plugin-error/src/**/*.js',
     lessSrc: 'packages/runtime/plugin-error/src/**/*.less',
     copySrc: ['packages/runtime/plugin-error/src/**/*.{wxml,json}'],
-    dest: 'packages/runtime/plugin-error/dist/'
+    dest: 'packages/runtime/plugin-error/dist/',
+    pkg: 'packages/runtime/plugin-error/package.json'
   },
   'plugin-router': {
     name: 'plugin-router',
@@ -68,7 +73,8 @@ const builds = {
     scriptsSrc: 'packages/runtime/plugin-router/src/**/*.js',
     lessSrc: 'packages/runtime/plugin-router/src/**/*.less',
     copySrc: ['packages/runtime/plugin-router/src/**/*.{wxml,json}'],
-    dest: 'packages/runtime/plugin-router/dist/'
+    dest: 'packages/runtime/plugin-router/dist/',
+    pkg: 'packages/runtime/plugin-router/package.json'
   },
   'plugin-vconsole': {
     name: 'plugin-vconsole',
@@ -79,7 +85,8 @@ const builds = {
     scriptsSrc: 'packages/runtime/plugin-vconsole/src/**/*.js',
     lessSrc: 'packages/runtime/plugin-vconsole/src/**/*.less',
     copySrc: ['packages/runtime/plugin-vconsole/src/**/*.{wxml,json}'],
-    dest: 'packages/runtime/plugin-vconsole/dist/'
+    dest: 'packages/runtime/plugin-vconsole/dist/',
+    pkg: 'packages/runtime/plugin-vconsole/package.json'
   },
   'plugin-navigate': {
     name: 'plugin-navigate',
@@ -90,7 +97,8 @@ const builds = {
     scriptsSrc: 'packages/runtime/plugin-navigate/src/**/*.js',
     lessSrc: 'packages/runtime/plugin-navigate/src/**/*.less',
     copySrc: ['packages/runtime/plugin-navigate/src/**/*.{wxml,json}'],
-    dest: 'packages/runtime/plugin-navigate/dist/'
+    dest: 'packages/runtime/plugin-navigate/dist/',
+    pkg: 'packages/runtime/plugin-navigate/package.json'
   },
   'plugin-ui-check': {
     name: 'plugin-ui-check',
@@ -101,7 +109,8 @@ const builds = {
     scriptsSrc: 'packages/runtime/plugin-ui-check/src/**/*.js',
     lessSrc: 'packages/runtime/plugin-ui-check/src/**/*.less',
     copySrc: ['packages/runtime/plugin-ui-check/src/**/*.{wxml,json}'],
-    dest: 'packages/runtime/plugin-ui-check/dist/'
+    dest: 'packages/runtime/plugin-ui-check/dist/',
+    pkg: 'packages/runtime/plugin-ui-check/package.json'
   }
 };
 
