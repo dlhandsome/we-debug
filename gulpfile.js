@@ -1,3 +1,4 @@
+const path = require('path');
 const gulp = require('gulp');
 const less = require('gulp-less');
 const postcss = require('gulp-postcss');
@@ -5,6 +6,7 @@ const autoprefixer = require('autoprefixer');
 const rename = require('gulp-rename');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
+const replace = require('gulp-replace');
 const builds = require('./scripts/config');
 
 const genCopyTaskName = suffix => 'copy:' + suffix;
@@ -16,6 +18,7 @@ const buildTasks = builds
     const copyTask = genCopyTaskName(p.name);
     const scriptTask = genScriptTaskName(p.name);
     const lessTask = genLessTaskName(p.name);
+    const pkgPath = path.resolve(__dirname, p.pkg);
 
     gulp.task(copyTask, () => {
       return gulp.src(p.copySrc, p.option).pipe(gulp.dest(p.dest));
@@ -24,6 +27,7 @@ const buildTasks = builds
     gulp.task(scriptTask, () => {
       return gulp
         .src(p.scriptsSrc, p.option)
+        .pipe(replace('__VERSION__', JSON.stringify(require(pkgPath).version)))
         .pipe(
           babel({
             plugins: ['@babel/plugin-transform-modules-commonjs']
