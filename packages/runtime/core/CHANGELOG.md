@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/dlhandsome/we-debug/compare/v0.13.0...v0.14.0) (2021-07-01)
+
+
+### Features
+
+* **runtime/core:** 支持 version 字段 ([a4bdb4f](https://github.com/dlhandsome/we-debug/commit/a4bdb4f983c974d0f2ccaa761e584154e5e032cf))
+
+
+
+
+
 # [0.13.0](https://github.com/dlhandsome/we-debug/compare/v0.12.2...v0.13.0) (2021-06-30)
 
 
