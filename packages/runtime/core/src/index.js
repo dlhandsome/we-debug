@@ -8,6 +8,7 @@ import { createBadge, getBadge, addBadge, removeBadge } from './api/badge';
 import { createFormRule, getFormRule, addFormRule, removeFormRule } from './api/rule';
 import { setBridgeInfo, getBridgeInfo } from './api/bridge';
 import { ENV_TYPE, getEnv } from './utils/env';
+import { version } from './version';
 
 const event = store.event;
 
@@ -29,7 +30,8 @@ export {
   addFormRule,
   removeFormRule,
   setBridgeInfo,
-  getBridgeInfo
+  getBridgeInfo,
+  version
 };
 
 export default {
@@ -50,5 +52,6 @@ export default {
   addFormRule,
   removeFormRule,
   setBridgeInfo,
-  getBridgeInfo
+  getBridgeInfo,
+  version
 };
