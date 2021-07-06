@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/dlhandsome/we-debug/compare/v0.14.3...v0.15.0) (2021-07-06)
+
+
+### Bug Fixes
+
+* 修复file.path变量 ([f1dbd78](https://github.com/dlhandsome/we-debug/commit/f1dbd78f82ea2c5d83f20ec448d8facae540d184))
+
+
+### Features
+
+* gulp-tool支持配置filter ([c1ee232](https://github.com/dlhandsome/we-debug/commit/c1ee23272235200e5430d98f90e9c0e717dfffbe))
+
+
+
+
+
 # [0.14.0](https://github.com/dlhandsome/we-debug/compare/v0.13.0...v0.14.0) (2021-07-01)
 
 **Note:** Version bump only for package @we-debug/gulp-tool
