@@ -15,6 +15,7 @@ module.exports = function mpGlobalComp(options = {}) {
   //
   let baseDir = options.baseDir || 'src';
   const wxmlRaw = options.wxml || '<we-debug />';
+  const filter = options.filter || '';
   let compName = options.compName || 'we-debug';
   let compPath = options.compPath || '@we-debug/core/component/index/index';
   let entryFile = options.entryFile || 'we-debug/index.js';
@@ -54,6 +55,15 @@ module.exports = function mpGlobalComp(options = {}) {
 
       // 如果不是 wxml 文件, 则跳过
       if (file.extname !== '.wxml') return callback(null, file);
+
+      // 如果命中filter，则跳过
+      if (
+        (typeof filter === 'function' && !filter(file.path)) ||
+        (typeof filter === 'string' && file.path.indexOf(filter) >= 0) ||
+        (filter instanceof RegExp && filter.test(file.path))
+      ) {
+        return callback(null, file);
+      }
 
       // 如果属于 Page
       if (belongsPage(file.path, pages)) {

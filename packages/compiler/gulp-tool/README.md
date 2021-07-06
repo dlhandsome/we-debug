@@ -24,7 +24,7 @@ npm install @we-debug/gulp-tool gulp-mp-npm -D
 
 ```javascript
 const gulp = require('gulp')
-const weDebugTool = require('@we-debug/gulp-tool')
+const weDebug = require('@we-debug/gulp-tool')
 const mpNpm = require('gulp-mp-npm')
 
 gulp
@@ -44,6 +44,7 @@ gulp
 -|-|-|-|-|
 baseDir | 项目源码位置 | `string` | `src` | - |
 wxml | we-debug wxml 模板 | `string` | `<we-debug />` | - |
+filter | 页面过滤参数，可以为函数或正则 | `function|reg|string` | `''` | - |
 compName | we-debug 全局组件名 | `string` | `we-debug` | - |
 compPath | we-debug 全局组件位置，可填绝对路径/相对baseDir的路径 | `string` | `@we-debug/core/component/index/index` | - |
 entryFile | we-debug 初始化文件位置，可填绝对路径/相对baseDir的路径 | `string` | `./we-debug/index.js` | - |
