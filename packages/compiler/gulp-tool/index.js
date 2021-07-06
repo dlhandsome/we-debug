@@ -58,7 +58,7 @@ module.exports = function mpGlobalComp(options = {}) {
 
       // 如果命中filter，则跳过
       if (
-        (typeof filter === 'function' && !filter(path)) ||
+        (typeof filter === 'function' && !filter(file.path)) ||
         (typeof filter === 'string' && file.path.indexOf(filter) >= 0) ||
         (filter instanceof RegExp && filter.test(file.path))
       ) {
