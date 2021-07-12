@@ -57,12 +57,15 @@ module.exports = function mpGlobalComp(options = {}) {
       if (file.extname !== '.wxml') return callback(null, file);
 
       // 如果命中filter，则跳过
-      if (
-        (typeof filter === 'function' && !filter(file.path)) ||
-        (typeof filter === 'string' && file.path.indexOf(filter) >= 0) ||
-        (filter instanceof RegExp && filter.test(file.path))
-      ) {
-        return callback(null, file);
+      if(filter) {
+        if(Array.isArray(filter)) {
+          const result = filter.some(item => {
+            return isDoFilter(item, file.path)
+          })
+          if(result) return callback(null, file);
+        } else {
+          if(isDoFilter(filter, file.path)) return callback(null, file);
+        }
       }
 
       // 如果属于 Page
@@ -76,6 +79,20 @@ module.exports = function mpGlobalComp(options = {}) {
 
       callback(null, file);
     });
+  }
+
+  /**
+   * 是否需要过滤
+   * @returns [Boolean] true-需要过滤；false-不需要过滤
+   */
+  function isDoFilter(filter, path) {
+    if ((typeof filter === 'function' && !filter(path)) ||
+        (typeof filter === 'string' && path.indexOf(filter) >= 0) ||
+        (filter instanceof RegExp && filter.test(path))) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   /**
