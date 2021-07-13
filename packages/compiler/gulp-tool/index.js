@@ -57,15 +57,15 @@ module.exports = function mpGlobalComp(options = {}) {
       if (file.extname !== '.wxml') return callback(null, file);
 
       // 如果命中filter，则跳过
-      if(filter) {
+      if (filter) {
         const pathStr = file.path.split(path.sep).join('/'); // 兼容不同操作系统的路径分隔符
-        if(Array.isArray(filter)) {
+        if (Array.isArray(filter)) {
           const result = filter.some(item => {
-            return isDoFilter(item, pathStr)
-          })
-          if(result) return callback(null, file);
+            return isDoFilter(item, pathStr);
+          });
+          if (result) return callback(null, file);
         } else {
-          if(isDoFilter(filter, pathStr)) return callback(null, file);
+          if (isDoFilter(filter, pathStr)) return callback(null, file);
         }
       }
 
@@ -87,9 +87,11 @@ module.exports = function mpGlobalComp(options = {}) {
    * @returns [Boolean] true-需要过滤；false-不需要过滤
    */
   function isDoFilter(filter, path) {
-    return (typeof filter === 'function' && !filter(path)) ||
-    (typeof filter === 'string' && path.indexOf(filter) >= 0) ||
-    (filter instanceof RegExp && filter.test(path))
+    return (
+      (typeof filter === 'function' && !filter(path)) ||
+      (typeof filter === 'string' && path.indexOf(filter) >= 0) ||
+      (filter instanceof RegExp && filter.test(path))
+    );
   }
 
   /**
