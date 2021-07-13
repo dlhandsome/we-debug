@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0](https://github.com/dlhandsome/we-debug/compare/v0.15.0...v0.16.0) (2021-07-13)
+
+
+### Features
+
+* filter支持数组类型或不填写 ([3fd6e40](https://github.com/dlhandsome/we-debug/commit/3fd6e40e3eee1f25866c245b98c5353002c5a1d6))
+
+
+
+
+
 # [0.15.0](https://github.com/dlhandsome/we-debug/compare/v0.14.3...v0.15.0) (2021-07-06)
 
 
