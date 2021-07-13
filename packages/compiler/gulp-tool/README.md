@@ -44,7 +44,7 @@ gulp
 -|-|-|-|-|
 baseDir | 项目源码位置 | `string` | `src` | - |
 wxml | we-debug wxml 模板 | `string` | `<we-debug />` | - |
-filter | 页面过滤参数，可以是正则、字符串、函数或这三者组成的数组 | `reg &#124;string &#124;func &#124;array` | `''` | - |
+filter | 页面过滤参数，可以是正则、字符串、函数或这三者组成的数组 | `reg|string|func|array` | `''` | - |
 compName | we-debug 全局组件名 | `string` | `we-debug` | - |
 compPath | we-debug 全局组件位置，可填绝对路径/相对baseDir的路径 | `string` | `@we-debug/core/component/index/index` | - |
 entryFile | we-debug 初始化文件位置，可填绝对路径/相对baseDir的路径 | `string` | `./we-debug/index.js` | - |
