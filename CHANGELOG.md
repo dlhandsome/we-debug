@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](https://github.com/dlhandsome/we-debug/compare/v0.16.1...v0.17.0) (2021-08-02)
+
+
+### Features
+
+* **core:** 桥接数据支持 query 传递 ([28f40cf](https://github.com/dlhandsome/we-debug/commit/28f40cf9f53219b34f49fbe3d493e3226876b2bf))
+
+
+
+
+
 ## [0.16.1](https://github.com/dlhandsome/we-debug/compare/v0.16.0...v0.16.1) (2021-07-14)
 
 **Note:** Version bump only for package we-debug
