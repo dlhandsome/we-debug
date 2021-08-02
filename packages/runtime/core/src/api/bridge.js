@@ -35,7 +35,16 @@ export function getBridgeInfo(key, callback) {
   getBridgeInfo._hasEventBind = true;
   wx.onAppShow(res => {
     const extraData = res.referrerInfo.extraData;
-    const bridgeInfo = extraData && extraData[bridgeKey] && extraData[bridgeKey][key];
+    const queryData = res.query;
+
+    const bridgeInfoFromQuery =
+      queryData &&
+      queryData[bridgeKey] &&
+      JSON.parse(decodeURIComponent(queryData[bridgeKey])) &&
+      JSON.parse(decodeURIComponent(queryData[bridgeKey]))[key];
+    const bridgeInfoFromExtra = extraData && extraData[bridgeKey] && extraData[bridgeKey][key];
+    // query 优先
+    const bridgeInfo = Object.assign({}, bridgeInfoFromExtra, bridgeInfoFromQuery);
     callback(bridgeInfo);
   });
 }
