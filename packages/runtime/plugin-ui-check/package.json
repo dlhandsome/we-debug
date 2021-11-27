@@ -2,7 +2,6 @@
   "name": "@we-debug/plugin-ui-check",
   "version": "0.17.0",
   "description": "we-debug ui-check plugin",
-  "miniprogram": "dist",
   "main": "dist/plugin.js",
   "publishConfig": {
     "access": "public"

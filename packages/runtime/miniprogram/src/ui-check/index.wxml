@@ -1,0 +1,42 @@
+<movable-area class="w-ui-check" wx:if="{{url}}" style="top: {{moveArea.top}}px; left: {{moveArea.left}}px; width: {{moveArea.width}}px; height: {{moveArea.height}}px;">
+  <movable-view direction="{{moveView.direction}}"
+    y="{{moveView.y}}"
+    animation="{{false}}"
+    out-of-bounds="{{true}}"
+    inertia="{{true}}"
+    bindchange="moveViewChange"
+    bindtap="toggleOperationBar"
+    style="width: {{moveView.width}}px; height: {{moveView.height}}px;">
+    <image src="{{url}}" style="width: {{safeArea.width}}px; opacity: {{moveView.opacity}}" mode="widthFix" bindload="imgLoad"/>
+  </movable-view>
+  <block wx:if="{{operationBar.visible}}">
+    <view class="w-ui-check__operation-bar" style="top: {{safeArea.height - safeArea.top - 100 }}px;">
+      <view class="w-ui-check__operation-bar-hd">
+        <view class="w-ui-check__hd-title">UI 透明度</view>
+        <slider class="w-ui-check__hd-slider"
+          show-value
+          bindchanging="slideChanging"
+          value="{{moveView.opacity * 100}}"
+          min="{{operationBar.slider.min}}"
+          max="{{operationBar.slider.max}}"
+          block-color="{{operationBar.slider.blockColor}}"
+          activeColor="{{operationBar.slider.activeColor}}"
+          backgroundColor="{{operationBar.slider.backgroundColor}}" />
+      </view>
+      <view class="w-ui-check__operation-bar-ft">
+        <view class="w-ui-check__ft-btn"
+          hover-class="active"
+          catchtouchstart="increaseTouchstart"
+          catchtouchend="increaseTouchend">
+          <view class="triangle up"></view>
+        </view>
+        <view class="w-ui-check__ft-btn"
+          hover-class="active"
+          catchtouchstart="decreaseTouchstart"
+          bindtouchend="decreaseTouchend">
+          <view class="triangle down"></view>
+        </view>
+      </view>
+    </view>
+  </block>
+</movable-area>
