@@ -1,10 +1,4 @@
-// import { Debug, prefix, closeBadge } from './plugin';
 import { Debug, prefix, closeBadge, MoveAreaHelper } from '@we-debug/plugin-ui-check';
-// import uiCheckPlugin from './plugin';
-// import { MoveAreaHelper } from './utils';
-// import { MoveAreaHelper } from './utils';
-
-// import { } 
 
 let _timer;
 let _pixelTimer;
