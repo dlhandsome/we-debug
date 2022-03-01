@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/miniprogram",
-  "version": "0.17.0",
+  "version": "0.17.1",
   "description": "we-debug miniprogram component",
   "author": {
     "name": "dlhandsome"
@@ -25,8 +25,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@we-debug/core": "0.17.0",
-    "@we-debug/plugin-error": "0.17.0",
+    "@we-debug/core": "0.17.1",
+    "@we-debug/plugin-error": "0.17.1",
     "@we-debug/plugin-launcher": "0.17.0",
     "@we-debug/plugin-network": "0.17.0",
     "@we-debug/plugin-router": "0.17.0",
