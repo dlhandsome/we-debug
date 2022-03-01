@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.2](https://github.com/dlhandsome/we-debug/compare/v0.17.1...v0.17.2) (2022-03-01)
+
+
+### Bug Fixes
+
+* **plugin-network:** 兼容插件环境 ([126ec58](https://github.com/dlhandsome/we-debug/commit/126ec58e5b602fae3e4fe21979942f3721345eff))
+
+
+
+
+
 # [0.17.0](https://github.com/dlhandsome/we-debug/compare/v0.16.1...v0.17.0) (2021-08-02)
 
 **Note:** Version bump only for package @we-debug/plugin-network
