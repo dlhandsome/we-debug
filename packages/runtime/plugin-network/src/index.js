@@ -2,10 +2,11 @@ import requestManage from './networkManage';
 
 const Network = {};
 
-wx.onAppRoute(() => {
-  // 路由信息更新时，请求队列清空
-  requestManage.clear();
-});
+wx.onAppRoute &&
+  wx.onAppRoute(() => {
+    // 路由信息更新时，请求队列清空
+    requestManage.clear();
+  });
 
 /**
  * weDebug: weDebug 实例
