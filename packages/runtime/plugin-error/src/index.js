@@ -109,13 +109,13 @@ ErrorPlugin.install = function (weDebug, options = {}) {
       meta: errLen
     });
   }
-
-  wx.onError(err => {
+  // 小程序插件不支持
+  wx.onError && wx.onError(err => {
     errManage.add(err);
     updateState();
   });
 
-  wx.onAppRoute(() => {
+  wx.onAppRoute && wx.onAppRoute(() => {
     updateState();
   });
 };
