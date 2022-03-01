@@ -110,14 +110,16 @@ ErrorPlugin.install = function (weDebug, options = {}) {
     });
   }
   // 小程序插件不支持
-  wx.onError && wx.onError(err => {
-    errManage.add(err);
-    updateState();
-  });
+  wx.onError &&
+    wx.onError(err => {
+      errManage.add(err);
+      updateState();
+    });
 
-  wx.onAppRoute && wx.onAppRoute(() => {
-    updateState();
-  });
+  wx.onAppRoute &&
+    wx.onAppRoute(() => {
+      updateState();
+    });
 };
 
 export default ErrorPlugin;
