@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.17.3](https://github.com/dlhandsome/we-debug/compare/v0.17.2...v0.17.3) (2022-03-02)
+
+
+### Bug Fixes
+
+* **miniprogram:** 修复组件在 attach 阶段数据更新的问题 ([ca98e2d](https://github.com/dlhandsome/we-debug/commit/ca98e2d8a6696c0243253e0dbd3ecce2d39abef5))
+
+
+
+
+
 ## [0.17.2](https://github.com/dlhandsome/we-debug/compare/v0.17.1...v0.17.2) (2022-03-01)
 
 **Note:** Version bump only for package @we-debug/miniprogram
