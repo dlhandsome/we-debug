@@ -37,5 +37,23 @@ Component({
       logo: './logo.png',
       scrollHeight: 500
     }
+  },
+  methods: {
+    setSys() {
+      this.setData({ sys: store.sys.get() });
+    },
+    setRules() {
+      this.setData({ rules: store.rules.get() });
+    },
+    setBadges() {
+      this.setData({ badges: store.badges.get() });
+    }
+  },
+  lifetimes: {
+    attached() {
+      this.setSys();
+      this.setRules();
+      this.setBadges();
+    }
   }
 });
