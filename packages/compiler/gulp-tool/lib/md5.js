@@ -1,6 +1,6 @@
 const crypto = require('crypto');
 
-const md5 = (src) => {
+const md5 = src => {
   if (typeof src !== 'string') {
     return '';
   }
@@ -9,5 +9,5 @@ const md5 = (src) => {
 };
 
 module.exports = {
-  md5,
+  md5
 };

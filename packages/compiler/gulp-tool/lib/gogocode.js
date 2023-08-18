@@ -20,20 +20,20 @@ const setAttributeToAST = (ast, attrName, attrValue) => {
     attrs.push({
       key: {
         type: 'token:attribute-key',
-        content: attrName,
+        content: attrName
       },
       startWrapper: {
         type: 'token:attribute-value-wrapper-start',
-        content: '"',
+        content: '"'
       },
       value: {
         type: 'token:attribute-value',
-        content: attrValue,
+        content: attrValue
       },
       endWrapper: {
         type: 'token:attribute-value-wrapper-end',
-        content: '"',
-      },
+        content: '"'
+      }
     });
   }
   ast.attr('content.attributes', attrs);
@@ -57,5 +57,5 @@ const getAttributeValueWithAST = (ast, attrName) => {
 
 module.exports = {
   setAttributeToAST,
-  getAttributeValueWithAST,
+  getAttributeValueWithAST
 };

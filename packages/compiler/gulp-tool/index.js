@@ -6,7 +6,7 @@ const PluginError = require('plugin-error');
 const { lookupPages } = require('./lib/lookup');
 const { belongsPage, belongsApp } = require('./lib/belongs');
 const { getAbsolutePath } = require('./lib/path');
-const injectComponentId = require('./lib/inject-component-id')
+const injectComponentId = require('./lib/inject-component-id');
 
 const PLUGIN_NAME = '@we-debug/gulp-tool';
 
@@ -157,7 +157,7 @@ function mpGlobalComp(options = {}) {
   const pipeline = [init(), parseWxml(), parseJson(), parseScript()];
 
   return lead(pumpify.obj(pipeline));
-};
+}
 
 mpGlobalComp.injectComponentId = injectComponentId;
 

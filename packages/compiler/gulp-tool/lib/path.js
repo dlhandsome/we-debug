@@ -4,7 +4,7 @@ const path = require('path');
 const getAbsolutePath = (p, src) => (path.isAbsolute(p) ? p : path.resolve(src || process.cwd(), p));
 
 /** 通过项目入口，获取app.json的绝对路径 */
-const getAppJsonPath = (projectDir) => {
+const getAppJsonPath = projectDir => {
   const projectDirAbsolute = getAbsolutePath(projectDir);
   return path.format({ dir: projectDirAbsolute, name: 'app', ext: '.json' });
 };
@@ -18,5 +18,5 @@ const getAbsoluteComponentPath = (componentPath = '', baseDir = '') => {
 module.exports = {
   getAbsolutePath,
   getAppJsonPath,
-  getAbsoluteComponentPath,
+  getAbsoluteComponentPath
 };
