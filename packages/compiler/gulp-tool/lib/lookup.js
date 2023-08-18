@@ -1,5 +1,5 @@
 const path = require('path');
-const { getAbsolutePath } = require('./utils');
+const { getAbsolutePath } = require('./path');
 
 exports.lookupPages = function (projectDir) {
   let pages = [];

@@ -5,13 +5,14 @@ const through = require('through2');
 const PluginError = require('plugin-error');
 const { lookupPages } = require('./lib/lookup');
 const { belongsPage, belongsApp } = require('./lib/belongs');
-const { getAbsolutePath } = require('./lib/utils');
+const { getAbsolutePath } = require('./lib/path');
+const injectComponentId = require('./lib/inject-component-id')
 
 const PLUGIN_NAME = '@we-debug/gulp-tool';
 
 let pages = [];
 
-module.exports = function mpGlobalComp(options = {}) {
+function mpGlobalComp(options = {}) {
   //
   let baseDir = options.baseDir || 'src';
   const wxmlRaw = options.wxml || '<we-debug />';
@@ -157,3 +158,7 @@ module.exports = function mpGlobalComp(options = {}) {
 
   return lead(pumpify.obj(pipeline));
 };
+
+mpGlobalComp.injectComponentId = injectComponentId;
+
+module.exports = mpGlobalComp;
