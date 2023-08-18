@@ -18,6 +18,8 @@
   },
   "license": "MIT",
   "dependencies": {
+    "crypto": "^1.0.1",
+    "gogocode": "^1.0.55",
     "lead": "^1.0.0",
     "plugin-error": "^1.0.1",
     "pumpify": "^2.0.1",
