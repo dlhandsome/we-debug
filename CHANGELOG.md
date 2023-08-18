@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.18.0](https://github.com/dlhandsome/we-debug/compare/v0.17.3...v0.18.0) (2023-08-18)
+
+
+### Features
+
+* gulp-tool支持通过配置给未设置id的组件设置id ([13d5415](https://github.com/dlhandsome/we-debug/commit/13d54155f9c95665c13e82b8bbe10155297a5edb))
+
+
+
+
+
 ## [0.17.3](https://github.com/dlhandsome/we-debug/compare/v0.17.2...v0.17.3) (2022-03-02)
 
 
