@@ -143,7 +143,7 @@ function mpGlobalComp(options = {}) {
       if (file.extname !== '.js') return callback(null, file);
 
       // 如果是 app.js
-      if (belongsApp(file.path, baseDir)) {
+      if (belongsApp(file.path, baseDir) || file.relative === 'app.js') {
         let code = file.contents.toString();
 
         code = `require('${entryFile}')\n` + code;
