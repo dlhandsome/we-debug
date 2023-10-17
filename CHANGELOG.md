@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.18.1](https://github.com/dlhandsome/we-debug/compare/v0.18.0...v0.18.1) (2023-10-17)
+
+
+### Bug Fixes
+
+* 解决we-debug gulp tool在某些情况下无法识别app.js的问题 ([767fb71](https://github.com/dlhandsome/we-debug/commit/767fb7162d267553ea9d5321f155062948cdaaf0))
+
+
+
+
+
 # [0.18.0](https://github.com/dlhandsome/we-debug/compare/v0.17.3...v0.18.0) (2023-08-18)
 
 
