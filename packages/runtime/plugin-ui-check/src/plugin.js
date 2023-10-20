@@ -1,3 +1,7 @@
+import { MoveAreaHelper } from './utils';
+
+export { MoveAreaHelper };
+
 const uiCheckPlugin = {};
 
 export const prefix = 'debug:ui-check:';
