@@ -8,26 +8,26 @@ class Plugin {
   /** 插件元信息 */
   meta = {};
 
-  getLifecycles () {
+  getLifecycles() {
     return this.lifecycles;
   }
 
-  register (options) {
+  register(options) {
     this.lifecycles.push(options);
   }
 
-  execLifecycle (lifetime, file) {
+  execLifecycle(lifetime, file) {
     this.lifecycles.forEach(i => {
       if (typeof i[lifetime] === 'function') {
         i[lifetime].call(this, file);
       }
-    })
+    });
   }
 
   loadPlugin(pkg) {
     const pkgType = typeof pkg;
 
-    switch(pkgType) {
+    switch (pkgType) {
       case 'function':
         // 函数直接返回
         return pkg;
@@ -37,18 +37,21 @@ class Plugin {
     }
   }
 
-  initPlugin (packges, meta) {
+  initPlugin(packges, meta) {
     this.meta = meta;
-    
+
     packges.map(p => {
       try {
         // 加载插件
         let fn = this.loadPlugin(p.package);
         fn.call(this, this, p.options);
       } catch (e) {
-        throw new PluginError(PLUGIN_NAME, `load package ${p.package} error，please run 'npm install ${p.package}', ${e}`);
+        throw new PluginError(
+          PLUGIN_NAME,
+          `load package ${p.package} error: ', ${e}`
+        );
       }
-    })
+    });
   }
 }
 
