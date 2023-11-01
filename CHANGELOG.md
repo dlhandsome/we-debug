@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/dlhandsome/we-debug/compare/v0.18.1...v0.19.0) (2023-11-01)
+
+
+### Bug Fixes
+
+* fixed eslint ([c5765fe](https://github.com/dlhandsome/we-debug/commit/c5765fe4495e82f39a88894804b8b55b7ed216c8))
+
+
+### Features
+
+* **gulp-tool:** support plugins ([7eb8e97](https://github.com/dlhandsome/we-debug/commit/7eb8e97b87e5918026b0ddb27b7beaba30cf3448))
+
+
+
+
+
 ## [0.18.1](https://github.com/dlhandsome/we-debug/compare/v0.18.0...v0.18.1) (2023-10-17)
 
 
