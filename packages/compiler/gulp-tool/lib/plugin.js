@@ -46,10 +46,7 @@ class Plugin {
         let fn = this.loadPlugin(p.package);
         fn.call(this, this, p.options);
       } catch (e) {
-        throw new PluginError(
-          PLUGIN_NAME,
-          `load package ${p.package} error: ', ${e}`
-        );
+        throw new PluginError(PLUGIN_NAME, `load package ${p.package} error: ', ${e}`);
       }
     });
   }
