@@ -17,19 +17,24 @@ Component({
   },
   observers: {
     'config.id'(v) {
-      this.setData({ prefix: prefix + v });
+      const id = isFunc(v) ? v() : v;
+      this.setData({ prefix: prefix + id });
     },
     'config.title'(v) {
-      this.setData({ title: v });
+      const title = isFunc(v) ? v() : v;
+      this.setData({ title });
     },
     'config.meta'(v) {
-      this.setData({ meta: v });
+      const meta = isFunc(v) ? v() : v;
+      this.setData({ meta });
     },
     'config.desc'(v) {
-      this.setData({ desc: v });
+      const desc = isFunc(v) ? v() : v;
+      this.setData({ desc });
     },
     'config.type'(v) {
-      this.setData({ type: v });
+      const type = isFunc(v) ? v() : v;
+      this.setData({ type });
     },
     'config.state'(state) {
       let nameState = '';
