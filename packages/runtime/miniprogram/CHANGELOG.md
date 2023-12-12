@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.21.0](https://github.com/dlhandsome/we-debug/compare/v0.20.0...v0.21.0) (2023-12-12)
+
+
+### Features
+
+* **miniprogram:** rule 参数支持函数计算 ([963a4fc](https://github.com/dlhandsome/we-debug/commit/963a4fcaf024f5ac49ef27e8e169f25c3fc53d0b))
+
+
+
+
+
 # [0.20.0](https://github.com/dlhandsome/we-debug/compare/v0.19.0...v0.20.0) (2023-12-12)
 
 **Note:** Version bump only for package @we-debug/miniprogram

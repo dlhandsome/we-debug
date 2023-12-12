@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/plugin-network",
-  "version": "0.20.0",
+  "version": "0.21.0",
   "description": "network plugin for we-debug",
   "main": "dist/index.js",
   "scripts": {
