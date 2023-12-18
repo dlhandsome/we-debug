@@ -1,6 +1,7 @@
 import Debug from '@we-debug/core';
 
 const store = Debug.store;
+const sys = store.sys.get();
 
 Component({
   options: {
@@ -35,7 +36,7 @@ Component({
     badges: store.badges.get(),
     modal: {
       logo: './logo.png',
-      scrollHeight: 500
+      scrollHeight: (sys.screenHeight - 200) * (750 / sys.screenWidth)
     }
   },
   methods: {
