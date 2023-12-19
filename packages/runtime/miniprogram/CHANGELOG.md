@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://github.com/dlhandsome/we-debug/compare/v0.21.0...v0.22.0) (2023-12-19)
+
+
+### Features
+
+* **runtime/miniprogram:** 使用 page-container 重构半屏弹窗 ([508201a](https://github.com/dlhandsome/we-debug/commit/508201aa8c091076c4bf492b6b628d01a17880a5))
+* **runtime/miniprogram:** 支持插件搜索能力 ([7c3d93d](https://github.com/dlhandsome/we-debug/commit/7c3d93dae1fe739cb7f802e64689494359cefce4))
+* **runtime/miniprogram:** 调整 panel 高度 ([fee62be](https://github.com/dlhandsome/we-debug/commit/fee62bee5ac0d28bc9345f194ab3961b0cfd09fa))
+
+
+
+
+
 # [0.21.0](https://github.com/dlhandsome/we-debug/compare/v0.20.0...v0.21.0) (2023-12-12)
 
 
