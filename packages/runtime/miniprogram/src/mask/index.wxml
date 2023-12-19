@@ -1,5 +1,8 @@
-  <view class="w-mask animated {{animateClassName.mask}}" hidden="{{!showMask}}" bindtap="closeMaskHandler">
-      <view class="w-mask__modal animated {{animateClassName.modal}}" catchtap="noop">
-          <slot></slot>
-      </view>
-  </view>
+<page-container
+  show="{{showMask}}"
+  round="{{true}}"
+  z-index="{{styles.zIndex}}"
+  custom-style="{{styles.customStyle}}"
+ >
+  <slot></slot>
+</page-container>
