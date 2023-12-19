@@ -5,14 +5,18 @@
   <view class="w-mask__modal-header">
     <image class="w-mask__modal-logo" src="{{modal.logo}}" mode="aspectFit" lazy-load="false" binderror="" bindload=""></image>
   </view>
+  <view class="w-mask__modal-search">
+    <input placeholder="搜索" catchconfirm="searchConfirmHandler"/>
+  </view>
   <scroll-view class="w-mask__modal-content" scroll-y="true" style="height:{{modal.scrollHeight}}rpx;">
-    <w-cell>
+    <w-cell wx:if="{{rules.length > 0}}">
       <w-rule
         wx:for="{{rules}}"
         wx:key="id"
         config="{{item}}"
       />
     </w-cell>
+    <view wx:else class="w-mask__modal-content--empty">暂无搜索内容</view>
     <slot name="modal-body"></slot>
   </scroll-view>
   <slot name="modal-footer"></slot>
