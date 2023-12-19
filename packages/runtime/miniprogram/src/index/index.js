@@ -36,7 +36,7 @@ Component({
     badges: store.badges.get(),
     modal: {
       logo: './logo.png',
-      scrollHeight: (sys.screenHeight - 200) * (750 / sys.screenWidth)
+      scrollHeight: (sys.screenHeight - 250) * (750 / sys.screenWidth)
     }
   },
   methods: {
@@ -48,6 +48,15 @@ Component({
     },
     setBadges() {
       this.setData({ badges: store.badges.get() });
+    },
+    searchConfirmHandler(e) {
+      const rules = store.rules.get();
+      const searchStr = e.detail.value;
+
+      const filterRules = rules.filter(i => i.title.indexOf(searchStr) > -1);
+      this.setData({
+        rules: filterRules
+      });
     }
   },
   lifetimes: {

@@ -18,6 +18,31 @@
     font-size: @font-size-lg;
     height: 66rpx;
   }
+  &__modal-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input {
+      width: 100%;
+      background: #f8f8f8;
+      border-radius: 4px;
+      padding: 4px 16px;
+      margin: 14px;
+      font-size: 14px;
+    }
+  }
+  &__modal-content {
+    &--empty {
+      width: 100%;
+      height: 100%;
+      color: #d9d9d9;
+      font-size: 24px;
+      text-align: center;
+      padding-top: 50%;
+      box-sizing: border-box;
+    }
+  }
   &__modal-logo {
     height: 64rpx;
   }
