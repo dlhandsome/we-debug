@@ -21,7 +21,8 @@ Component({
     showMask: false,
     styles: {
       zIndex: 999991,
-      customStyle: 'padding: 12px 24px 24px 24px;padding-bottom: constant(safe-area-inset-bottom);padding-bottom: env(safe-area-inset-bottom);'
+      customStyle:
+        'padding: 12px 24px 24px 24px;padding-bottom: constant(safe-area-inset-bottom);padding-bottom: env(safe-area-inset-bottom);'
     }
   },
   externalClasses: ['my-class'],
