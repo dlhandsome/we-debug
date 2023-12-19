@@ -36,7 +36,7 @@ Component({
     badges: store.badges.get(),
     modal: {
       logo: './logo.png',
-      scrollHeight: (sys.screenHeight - 250) * (750 / sys.screenWidth)
+      scrollHeight: (sys.screenHeight * 3 / 5) * (750 / sys.screenWidth)
     }
   },
   methods: {
