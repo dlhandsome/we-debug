@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.22.1](https://github.com/dlhandsome/we-debug/compare/v0.22.0...v0.22.1) (2023-12-20)
+
+
+### Bug Fixes
+
+* **runtime:** 使用 variable less 变量 ([f2325d8](https://github.com/dlhandsome/we-debug/commit/f2325d8b8d5e7fa3a93a2a6571fc3da0592f23f7))
+* **runtime/miniprogram:** 修复 cell 样式问题 ([13717eb](https://github.com/dlhandsome/we-debug/commit/13717eb043e87657695df8432023e89bd2dc3f2d))
+
+
+
+
+
 # [0.22.0](https://github.com/dlhandsome/we-debug/compare/v0.21.0...v0.22.0) (2023-12-19)
 
 
