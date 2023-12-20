@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/plugin-error",
-  "version": "0.22.0",
+  "version": "0.23.0",
   "description": "error plugin for we-debug",
   "main": "dist/index.js",
   "scripts": {

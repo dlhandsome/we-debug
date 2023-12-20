@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.23.0](https://github.com/dlhandsome/we-debug/compare/v0.22.2...v0.23.0) (2023-12-20)
+
+
+### Features
+
+* **runtime/miniprogram:** 搜索框支持一键清除 ([9ee99ec](https://github.com/dlhandsome/we-debug/commit/9ee99ece3eaaf0d0f52c79e9105484fea219c6d7))
+
+
+
+
+
 ## [0.22.2](https://github.com/dlhandsome/we-debug/compare/v0.22.1...v0.22.2) (2023-12-20)
 
 
