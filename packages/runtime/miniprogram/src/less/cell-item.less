@@ -6,7 +6,17 @@
   padding: @padding-sm @padding-md @padding-sm 0;
   margin-left: 34rpx;
   font-size: @font-size-md;
-  border-bottom: 1rpx solid #dddddd;
+  
+  &:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: @border-color;
+    transform: scaleY(0.5);
+  }
 
   &:last-child {
     border-bottom-width: 0;
