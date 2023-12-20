@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.22.2](https://github.com/dlhandsome/we-debug/compare/v0.22.1...v0.22.2) (2023-12-20)
+
+
+### Bug Fixes
+
+* **runtime/miniprogram:** 修复样式问题 ([7de6b6d](https://github.com/dlhandsome/we-debug/commit/7de6b6db1258423e54f0a52c722d6d1bde1e0f34))
+
+
+
+
+
 ## [0.22.1](https://github.com/dlhandsome/we-debug/compare/v0.22.0...v0.22.1) (2023-12-20)
 
 
