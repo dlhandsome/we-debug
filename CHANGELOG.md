@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.23.1](https://github.com/dlhandsome/we-debug/compare/v0.23.0...v0.23.1) (2023-12-20)
+
+
+### Bug Fixes
+
+* **runtime/miniprogram:** 修复 logo 展示 ([3cea30b](https://github.com/dlhandsome/we-debug/commit/3cea30b1b4f8ccd8e997a2cbcb5ff5315c488f34))
+
+
+
+
+
 # [0.23.0](https://github.com/dlhandsome/we-debug/compare/v0.22.2...v0.23.0) (2023-12-20)
 
 
