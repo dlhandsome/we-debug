@@ -35,9 +35,10 @@ Component({
     rules: store.rules.get(),
     badges: store.badges.get(),
     modal: {
-      logo: './logo.png',
+      logo: '../icon/logo.png',
       scrollHeight: ((sys.screenHeight * 3) / 5) * (750 / sys.screenWidth)
-    }
+    },
+    searchStr: ''
   },
   methods: {
     setSys() {
@@ -49,14 +50,28 @@ Component({
     setBadges() {
       this.setData({ badges: store.badges.get() });
     },
-    searchConfirmHandler(e) {
+    setSearch(searchStr) {
+      this.setData({
+        searchStr
+      })
+    },
+    setfilterRule(searchStr) {
       const rules = store.rules.get();
-      const searchStr = e.detail.value;
-
       const filterRules = rules.filter(i => i.title.indexOf(searchStr) > -1);
+
       this.setData({
         rules: filterRules
       });
+    },
+    searchInputHandler(e) {
+      const searchStr = e.detail.value;
+      
+      this.setSearch(searchStr);
+      this.setfilterRule(searchStr);
+    },
+    searchCleanHandler() {
+      this.setSearch('');
+      this.setRules();
     }
   },
   lifetimes: {

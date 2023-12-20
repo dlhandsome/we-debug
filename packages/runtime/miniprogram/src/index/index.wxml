@@ -6,9 +6,11 @@
     <image class="w-mask__modal-logo" src="{{modal.logo}}" mode="aspectFit" lazy-load="false" binderror="" bindload=""></image>
   </view>
   <view class="w-mask__modal-search">
-    <input placeholder="搜索" catchconfirm="searchConfirmHandler"/>
+    <input value="{{searchStr}}" placeholder="搜索" catchinput="searchInputHandler"/>
+    <image class="search-icon--search" src="../icon/search.svg" />
+    <image class="search-icon--close" src="../icon/close.svg" wx:if="{{searchStr}}" catchtap="searchCleanHandler"/>
   </view>
-  <scroll-view class="w-mask__modal-content" scroll-y="true" style="height:{{modal.scrollHeight}}rpx;">
+  <scroll-view class="w-mask__modal-content" scroll-y="true" style="max-height:{{modal.scrollHeight}}rpx;">
     <w-cell wx:if="{{rules.length > 0}}">
       <w-rule
         wx:for="{{rules}}"
