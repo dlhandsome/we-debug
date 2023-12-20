@@ -53,7 +53,7 @@ Component({
     setSearch(searchStr) {
       this.setData({
         searchStr
-      })
+      });
     },
     setfilterRule(searchStr) {
       const rules = store.rules.get();
@@ -65,7 +65,7 @@ Component({
     },
     searchInputHandler(e) {
       const searchStr = e.detail.value;
-      
+
       this.setSearch(searchStr);
       this.setfilterRule(searchStr);
     },
