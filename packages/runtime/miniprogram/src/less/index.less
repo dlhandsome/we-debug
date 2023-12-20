@@ -19,9 +19,28 @@
     height: 66rpx;
   }
   &__modal-search {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .search-icon--search {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+    }
+    
+    .search-icon--close {
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+    }
 
     input {
       position: relative;
