@@ -1,4 +1,7 @@
+import { isStr, isArr, isEmptyArr } from '../base/utils';
 import store from '../store/index';
+import { addRuleByGroup } from './group';
+import { DEFAULT_GROUP } from '../config/group';
 
 export { createFormRule } from '../model/index';
 
@@ -6,8 +9,26 @@ export { createFormRule } from '../model/index';
  * 新增规则
  * @param {Rule} rule
  */
-export function addFormRule(rule) {
+export function addFormRule(rule, options = {}) {
   store.rules.add(rule);
+
+  // 默认分组
+  let defaultGroup = [DEFAULT_GROUP.ALL, DEFAULT_GROUP.OTHER];
+  let customGroup = options.group;
+  // 添加分组
+  if (isEmptyArr(customGroup)) {
+    customGroup = defaultGroup;
+  } else if (isArr(customGroup)) {
+    customGroup = customGroup.includes(DEFAULT_GROUP.OTHER)
+      ? Array.from(new Set(customGroup.concat(defaultGroup)))
+      : Array.from(new Set(customGroup.concat(DEFAULT_GROUP.ALL)));
+  } else if (isStr(customGroup)) {
+    customGroup = [DEFAULT_GROUP.ALL, customGroup];
+  } else {
+    customGroup = defaultGroup;
+  }
+
+  customGroup.forEach(k => addRuleByGroup(k, rule));
 }
 
 /**
