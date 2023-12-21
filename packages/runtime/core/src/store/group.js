@@ -16,14 +16,14 @@ export class Group extends Store {
     let rules = this.get(k);
 
     if (!rules) {
-      rules = this.set(k, new MySet());
+      this.set(k, new MySet());
     }
 
     // 查找是否有重复添加的规则
-    const searchDuplicateRule = rules.getById(rule.id);
+    const searchDuplicateRule = this.get(k).getById(rule.id);
 
     if (!searchDuplicateRule) {
-      rules.add(rule);
+      this.get(k).add(rule);
     }
   }
 
