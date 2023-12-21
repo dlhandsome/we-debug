@@ -108,6 +108,12 @@ Component({
         });
       }
     },
+    bindCellTapHandler() {
+      const VALID_Type = ['arrow'];
+      if (VALID_Type.includes(this.data.type)) {
+        this.bindTapHandler();
+      }
+    },
     emit(opt) {
       this.setData(opt);
     },
