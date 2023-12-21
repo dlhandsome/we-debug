@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.26.0](https://github.com/dlhandsome/we-debug/compare/v0.25.0...v0.26.0) (2023-12-21)
+
+
+### Features
+
+* **runtime/core:** 新增分组能力 ([5df1e83](https://github.com/dlhandsome/we-debug/commit/5df1e83f7fe7a169d5f29740c24dd6e69ed873d1))
+
+
+
+
+
 # [0.25.0](https://github.com/dlhandsome/we-debug/compare/v0.24.1...v0.25.0) (2023-12-21)
 
 **Note:** Version bump only for package @we-debug/core
