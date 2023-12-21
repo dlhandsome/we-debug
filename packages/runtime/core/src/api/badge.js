@@ -1,6 +1,6 @@
 import store from '../store/index';
 
-export { createBadge } from '../manage/index';
+export { createBadge } from '../model/index';
 
 /**
  * 新增状态角标对象

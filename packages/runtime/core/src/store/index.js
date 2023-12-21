@@ -1,11 +1,14 @@
+import { MySet } from '../base/set';
+import { Store } from '../base/store';
+import { Event } from '../base/event';
+import { Group } from './group';
 import sys from './sys';
-import badges from './badges';
-import rules from './rules';
-import event from './event';
 
 export default {
   sys,
-  badges,
-  rules,
-  event
+  event: new Event(),
+  badges: new MySet(),
+  rules: new MySet(),
+  group: new Group(),
+  bridge: new Store()
 };

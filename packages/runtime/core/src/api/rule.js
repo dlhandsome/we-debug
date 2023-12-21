@@ -1,6 +1,6 @@
 import store from '../store/index';
 
-export { createFormRule } from '../manage/index';
+export { createFormRule } from '../model/index';
 
 /**
  * 新增规则
