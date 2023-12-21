@@ -6,6 +6,7 @@ import { init } from './api/init';
 import { createCache } from './api/cache';
 import { createBadge, getBadge, addBadge, removeBadge } from './api/badge';
 import { createFormRule, getFormRule, addFormRule, removeFormRule } from './api/rule';
+import { getGroupsAllKeys, addRuleByGroup, getRuleByGroup, removeGroupRule } from './api/group';
 import { setBridgeInfo, getBridgeInfo } from './api/bridge';
 import { ENV_TYPE, getEnv } from './utils/env';
 import { version } from './version';
@@ -29,6 +30,10 @@ export {
   getFormRule,
   addFormRule,
   removeFormRule,
+  getGroupsAllKeys,
+  addRuleByGroup,
+  getRuleByGroup,
+  removeGroupRule,
   setBridgeInfo,
   getBridgeInfo,
   version
@@ -51,6 +56,10 @@ export default {
   getFormRule,
   addFormRule,
   removeFormRule,
+  getGroupsAllKeys,
+  addRuleByGroup,
+  getRuleByGroup,
+  removeGroupRule,
   setBridgeInfo,
   getBridgeInfo,
   version
