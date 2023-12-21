@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.27.1](https://github.com/dlhandsome/we-debug/compare/v0.27.0...v0.27.1) (2023-12-21)
+
+
+### Bug Fixes
+
+* **runtime/core:** 修复分组逻辑 ([b1c12ff](https://github.com/dlhandsome/we-debug/commit/b1c12ff3aed4451b4ab2091d78514bd72bb3ed82))
+
+
+
+
+
 # [0.27.0](https://github.com/dlhandsome/we-debug/compare/v0.26.0...v0.27.0) (2023-12-21)
 
 
