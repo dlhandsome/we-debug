@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.25.0](https://github.com/dlhandsome/we-debug/compare/v0.24.1...v0.25.0) (2023-12-21)
+
+
+### Features
+
+* **runtime/plugin-navigate:** 调整 rule 类型 ([3827381](https://github.com/dlhandsome/we-debug/commit/3827381b8bc781daedcba459b9c661ac19e13f89))
+
+
+
+
+
 # [0.24.0](https://github.com/dlhandsome/we-debug/compare/v0.23.1...v0.24.0) (2023-12-21)
 
 **Note:** Version bump only for package @we-debug/plugin-navigate
