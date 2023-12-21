@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.27.3](https://github.com/dlhandsome/we-debug/compare/v0.27.2...v0.27.3) (2023-12-21)
+
+
+### Bug Fixes
+
+* 内置插件传入分类 ([00477f9](https://github.com/dlhandsome/we-debug/commit/00477f9a5993e88d0d5b84a75115ba79c6d8060d))
+
+
+
+
+
 # [0.27.0](https://github.com/dlhandsome/we-debug/compare/v0.26.0...v0.27.0) (2023-12-21)
 
 **Note:** Version bump only for package @we-debug/plugin-ui-check
