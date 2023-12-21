@@ -63,7 +63,9 @@ uiCheckPlugin.install = function (weDebug, options = {}) {
   );
 
   weDebug.addBadge([closeBadge]);
-  weDebug.addFormRule([rule]);
+  weDebug.addFormRule([rule], {
+    group: '系统'
+  });
 };
 
 export default uiCheckPlugin;

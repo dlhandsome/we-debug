@@ -50,7 +50,9 @@ class NetworkPlugin {
     });
 
     // 添加表单到视图
-    addFormRule([that._networkRule]);
+    addFormRule([that._networkRule], {
+      group: '系统'
+    });
   }
   /**
    * 劫持实现逻辑

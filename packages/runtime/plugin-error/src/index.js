@@ -95,7 +95,9 @@ ErrorPlugin.install = function (weDebug, options = {}) {
 
   weDebug.addBadge([errorBadge]);
 
-  weDebug.addFormRule([copyErrStackRule, clearErrStackRule]);
+  weDebug.addFormRule([copyErrStackRule, clearErrStackRule], {
+    group: '系统'
+  });
 
   function updateState() {
     const errStack = errManage.get();

@@ -60,7 +60,9 @@ RoutePlugin.install = function (weDebug, options = {}) {
     )
   );
 
-  weDebug.addFormRule([copyRouteRule, copyPageOptionRule]);
+  weDebug.addFormRule([copyRouteRule, copyPageOptionRule], {
+    group: '系统'
+  });
 };
 
 export default RoutePlugin;
