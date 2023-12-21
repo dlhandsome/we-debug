@@ -67,4 +67,30 @@
   &__modal-logo {
     height: 144rpx;
   }
+  &__modal-group {
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    height: 38px;
+    width: 100%;
+    white-space: nowrap;
+
+    .group-item {
+      padding: 0px 18px;
+      line-height: 30px;
+      height: 30px;
+      margin: 4px;
+      background-color: #f8f8f8; 
+      display: inline-block;
+      border-radius: 30px;
+      font-size: 14px;
+      align-self: center;
+
+      &.actived{
+        background-color: rgba(77, 79, 236, 0.05);
+        color: rgb(77, 79, 236);
+      }
+    }
+  }
 }

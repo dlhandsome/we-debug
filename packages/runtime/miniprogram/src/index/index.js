@@ -38,7 +38,9 @@ Component({
       logo: '../icon/logo.png',
       scrollHeight: ((sys.screenHeight * 3) / 5) * (750 / sys.screenWidth)
     },
-    searchStr: ''
+    searchStr: '',
+    group: store.group.getKeys(),
+    currentGroup: '全部'
   },
   methods: {
     setSys() {
@@ -72,6 +74,15 @@ Component({
     searchCleanHandler() {
       this.setSearch('');
       this.setRules();
+    },
+    groupTapHandler(e) {
+      const group = e.currentTarget.dataset.item;
+      const rules = store.group.get(group).get();
+
+      this.setData({
+        currentGroup: group,
+        rules
+      });
     }
   },
   lifetimes: {
