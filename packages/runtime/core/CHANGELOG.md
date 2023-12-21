@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.27.0](https://github.com/dlhandsome/we-debug/compare/v0.26.0...v0.27.0) (2023-12-21)
+
+
+### Features
+
+* **runtime/core:** 添加 rule 时传入分组 ([5ef866b](https://github.com/dlhandsome/we-debug/commit/5ef866b87d838bd486f4b9227e619999cb0f5e02))
+
+
+
+
+
 # [0.26.0](https://github.com/dlhandsome/we-debug/compare/v0.25.0...v0.26.0) (2023-12-21)
 
 
