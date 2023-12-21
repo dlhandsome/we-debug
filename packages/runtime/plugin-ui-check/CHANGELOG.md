@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.24.0](https://github.com/dlhandsome/we-debug/compare/v0.23.1...v0.24.0) (2023-12-21)
+
+
+### Features
+
+* **runtime/miniprogram:** 新增 arrow 类型表单 ([e3fd07e](https://github.com/dlhandsome/we-debug/commit/e3fd07e32c39ccae16d7d32e77faaad9eb1c118f))
+
+
+
+
+
 # [0.23.0](https://github.com/dlhandsome/we-debug/compare/v0.22.2...v0.23.0) (2023-12-20)
 
 **Note:** Version bump only for package @we-debug/plugin-ui-check
