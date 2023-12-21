@@ -16,7 +16,7 @@ export class Group extends Store {
     let rules = this.get(k);
 
     if (!rules) {
-      rules = new MySet();
+      rules = this.set(k, new MySet());
     }
 
     // 查找是否有重复添加的规则
