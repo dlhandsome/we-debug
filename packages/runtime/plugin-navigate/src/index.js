@@ -15,7 +15,7 @@ NavigatePlugin.install = function (weDebug, options) {
             name: o.name || '前往'
           },
           desc: o.desc || '',
-          type: 'button',
+          type: 'arrow',
           handler: {
             bindTap(state) {
               if (!state.disabled) {
