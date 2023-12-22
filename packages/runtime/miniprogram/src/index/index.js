@@ -91,7 +91,7 @@ Component({
       const rules = store.group.get(group).get();
 
       this.setData({
-        currentGroup: group,
+        'group.actived': group,
         rules
       });
       // 设置当前分组 key 缓存
