@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.6](https://github.com/dlhandsome/we-debug/compare/v0.29.5...v0.29.6) (2023-12-22)
+
+
+### Bug Fixes
+
+* **runtim:** 修复分类排序逻辑 ([ef6e558](https://github.com/dlhandsome/we-debug/commit/ef6e5582044a56024c5fd09940aed51300acf34d))
+
+
+
+
+
 ## [0.29.5](https://github.com/dlhandsome/we-debug/compare/v0.29.4...v0.29.5) (2023-12-22)
 
 
