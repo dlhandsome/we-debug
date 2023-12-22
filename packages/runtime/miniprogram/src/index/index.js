@@ -50,16 +50,7 @@ Component({
     },
     searchStr: '',
     group: {
-      keys: store.group.getKeys(prev => {
-        // 「全部」分类放在最左边
-        if (prev === DEFAULT_GROUP.ALL) {
-          return -1;
-        }
-        // 「未分类」分类放在最右边
-        if (prev === DEFAULT_GROUP.OTHER) {
-          return 1;
-        }
-      }),
+      keys: store.group.getKeys(),
       actived: currentGroupCache.get() || DEFAULT_GROUP.ALL
     }
   },
