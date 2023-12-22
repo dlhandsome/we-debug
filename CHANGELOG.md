@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://github.com/dlhandsome/we-debug/compare/v0.28.2...v0.29.0) (2023-12-22)
+
+
+### Features
+
+* **runtime/miniprogram:** 支持缓存上一次点击的分组 ([ef5e8fc](https://github.com/dlhandsome/we-debug/commit/ef5e8fc55bb7f7ea007d1e39b3cf79de050b6035))
+
+
+
+
+
 ## [0.28.2](https://github.com/dlhandsome/we-debug/compare/v0.28.1...v0.28.2) (2023-12-22)
 
 

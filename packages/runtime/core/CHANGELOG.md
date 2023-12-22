@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://github.com/dlhandsome/we-debug/compare/v0.28.2...v0.29.0) (2023-12-22)
+
+**Note:** Version bump only for package @we-debug/core
+
+
+
+
+
 ## [0.28.1](https://github.com/dlhandsome/we-debug/compare/v0.28.0...v0.28.1) (2023-12-22)
 
 
