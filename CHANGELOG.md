@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.2](https://github.com/dlhandsome/we-debug/compare/v0.29.1...v0.29.2) (2023-12-22)
+
+
+### Bug Fixes
+
+* **runtime/miniprogram:** 修复分组缓存逻辑 ([9f44004](https://github.com/dlhandsome/we-debug/commit/9f440045362f2b9fc99cbf47b7ddc90967ddc21d))
+
+
+
+
+
 ## [0.29.1](https://github.com/dlhandsome/we-debug/compare/v0.29.0...v0.29.1) (2023-12-22)
 
 
