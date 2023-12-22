@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.4](https://github.com/dlhandsome/we-debug/compare/v0.29.3...v0.29.4) (2023-12-22)
+
+
+### Bug Fixes
+
+* **runtime/miniprogram:** 分组默认排序设定 ([cb259e2](https://github.com/dlhandsome/we-debug/commit/cb259e2ed222bde56828090430674015d6d855b5))
+
+
+
+
+
 ## [0.29.3](https://github.com/dlhandsome/we-debug/compare/v0.29.2...v0.29.3) (2023-12-22)
 
 
