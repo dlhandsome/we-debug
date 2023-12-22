@@ -1,4 +1,5 @@
 import Debug from '@we-debug/core';
+import { LOGO_BASE64 } from './logo';
 
 const store = Debug.store;
 const sys = store.sys.get();
@@ -45,7 +46,7 @@ Component({
     rules: store.rules.get(),
     badges: store.badges.get(),
     modal: {
-      logo: '../icon/logo.png',
+      logo: LOGO_BASE64,
       scrollHeight: ((sys.screenHeight * 3) / 5) * (750 / sys.screenWidth)
     },
     searchStr: '',

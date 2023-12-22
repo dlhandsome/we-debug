@@ -7,7 +7,7 @@
   </view>
   <view class="w-mask__modal-search">
     <input value="{{searchStr}}" placeholder="搜索" catchinput="searchInputHandler"/>
-    <image class="search-icon--search" src="../icon/search.svg" />
+    <image class="search-icon--search" />
     <image class="search-icon--close" src="../icon/close.svg" wx:if="{{searchStr}}" catchtap="searchCleanHandler"/>
   </view>
   <scroll-view class="w-mask__modal-content" scroll-y="true" style="height:{{modal.scrollHeight}}rpx;">
