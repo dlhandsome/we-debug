@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.30.0](https://github.com/dlhandsome/we-debug/compare/v0.29.7...v0.30.0) (2023-12-22)
+
+
+### Features
+
+* **runtime/miniprogram:** 使用内嵌图标 ([aa89221](https://github.com/dlhandsome/we-debug/commit/aa89221622b90bedb8d4269ac76f5ae77045b729))
+
+
+
+
+
 ## [0.29.7](https://github.com/dlhandsome/we-debug/compare/v0.29.6...v0.29.7) (2023-12-22)
 
 
