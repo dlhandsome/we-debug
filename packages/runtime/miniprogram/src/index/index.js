@@ -41,7 +41,7 @@ Component({
   },
   data: {
     sys: store.sys.get(),
-    rules: store.rules.get(),
+    rules: store.group.get(currentGroupCache.get() || '全部').get(),
     badges: store.badges.get(),
     modal: {
       logo: '../icon/logo.png',
