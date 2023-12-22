@@ -50,7 +50,20 @@ Component({
     },
     searchStr: '',
     group: {
-      keys: store.group.getKeys(),
+      keys: store.group.getKeys((next, prev) => {
+        if (prev === '全部') {
+          return 1;
+        }
+        if (next === '全部') {
+          return -1;
+        }
+        if (prev === '未分类') {
+          return -1;
+        }
+        if (next === '未分类') {
+          return 1;
+        }
+      }),
       actived: currentGroupCache.get() || DEFAULT_GROUP.ALL
     }
   },
