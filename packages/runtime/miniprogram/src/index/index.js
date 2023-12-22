@@ -3,6 +3,7 @@ import Debug from '@we-debug/core';
 const store = Debug.store;
 const sys = store.sys.get();
 const currentGroupCache = Debug.createCache('__wedebug_miniprogram_group_actived_key__', '');
+const DEFAULT_GROUP = Debug.DEFAULT_GROUP;
 
 Component({
   options: {
@@ -41,7 +42,7 @@ Component({
   },
   data: {
     sys: store.sys.get(),
-    rules: store.group.get(currentGroupCache.get() || '全部').get(),
+    rules: store.rules.get(),
     badges: store.badges.get(),
     modal: {
       logo: '../icon/logo.png',
@@ -50,7 +51,7 @@ Component({
     searchStr: '',
     group: {
       keys: store.group.getKeys(),
-      actived: currentGroupCache.get() || '全部'
+      actived: currentGroupCache.get() || DEFAULT_GROUP
     }
   },
   methods: {
@@ -58,7 +59,7 @@ Component({
       this.setData({ sys: store.sys.get() });
     },
     setRules() {
-      this.setData({ rules: store.rules.get() });
+      this.setData({ rules: store.group.get(currentGroupCache.get() || DEFAULT_GROUP).get() });
     },
     setBadges() {
       this.setData({ badges: store.badges.get() });

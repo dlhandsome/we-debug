@@ -9,12 +9,14 @@ import { createFormRule, getFormRule, addFormRule, removeFormRule } from './api/
 import { getGroupsAllKeys, addRuleByGroup, getRuleByGroup, removeGroupRule } from './api/group';
 import { setBridgeInfo, getBridgeInfo } from './api/bridge';
 import { ENV_TYPE, getEnv } from './utils/env';
+import { DEFAULT_GROUP } from './config/group';
 import { version } from './version';
 
 const event = store.event;
 
 export {
   ENV_TYPE,
+  DEFAULT_GROUP,
   getEnv,
   use,
   init,
@@ -41,6 +43,7 @@ export {
 
 export default {
   ENV_TYPE,
+  DEFAULT_GROUP,
   getEnv,
   use,
   init,
