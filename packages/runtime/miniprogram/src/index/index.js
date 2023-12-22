@@ -2,6 +2,7 @@ import Debug from '@we-debug/core';
 
 const store = Debug.store;
 const sys = store.sys.get();
+const currentGroupCache = Debug.createCache('__wedebug_miniprogram_group_actived_key__', '');
 
 Component({
   options: {
@@ -28,6 +29,14 @@ Component({
       if (v) {
         this.setData({ modal: v });
       }
+    },
+    'config.group'(v) {
+      if (Array.isArray(v.keys)) {
+        this.setData({ 'group.keys': v.keys });
+      }
+      if (v.actived) {
+        this.setData({ 'group.actived': v.actived });
+      }
     }
   },
   data: {
@@ -39,8 +48,10 @@ Component({
       scrollHeight: ((sys.screenHeight * 3) / 5) * (750 / sys.screenWidth)
     },
     searchStr: '',
-    group: store.group.getKeys(),
-    currentGroup: '全部'
+    group: {
+      keys: store.group.getKeys(),
+      actived: currentGroupCache.get() || '全部'
+    }
   },
   methods: {
     setSys() {
@@ -83,6 +94,8 @@ Component({
         currentGroup: group,
         rules
       });
+      // 设置当前分组 key 缓存
+      currentGroupCache.set(group);
     }
   },
   lifetimes: {
