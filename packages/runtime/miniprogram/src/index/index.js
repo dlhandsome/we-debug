@@ -50,8 +50,17 @@ Component({
     },
     searchStr: '',
     group: {
-      keys: store.group.getKeys(),
-      actived: currentGroupCache.get() || DEFAULT_GROUP
+      keys: store.group.getKeys(prev => {
+        // 「全部」分类放在最左边
+        if (prev === DEFAULT_GROUP.ALL) {
+          return -1;
+        }
+        // 「未分类」分类放在最右边
+        if (prev === DEFAULT_GROUP.OTHER) {
+          return 1;
+        }
+      }),
+      actived: currentGroupCache.get() || DEFAULT_GROUP.ALL
     }
   },
   methods: {
@@ -59,7 +68,7 @@ Component({
       this.setData({ sys: store.sys.get() });
     },
     setRules() {
-      this.setData({ rules: store.group.get(currentGroupCache.get() || DEFAULT_GROUP).get() });
+      this.setData({ rules: store.group.get(currentGroupCache.get() || DEFAULT_GROUP.ALL).get() });
     },
     setBadges() {
       this.setData({ badges: store.badges.get() });
