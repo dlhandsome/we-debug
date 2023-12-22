@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.28.1](https://github.com/dlhandsome/we-debug/compare/v0.28.0...v0.28.1) (2023-12-22)
+
+
+### Bug Fixes
+
+* **runtime/core:** fixed border style ([5d96e26](https://github.com/dlhandsome/we-debug/commit/5d96e26c8656315e7f1edeccb27d042730f32e4e))
+
+
+
+
+
 # [0.28.0](https://github.com/dlhandsome/we-debug/compare/v0.27.3...v0.28.0) (2023-12-21)
 
 
