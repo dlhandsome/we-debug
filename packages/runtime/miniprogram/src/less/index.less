@@ -68,6 +68,7 @@
     height: 144rpx;
   }
   &__modal-group {
+    position: relative;
     display:flex;
     justify-content: center;
     flex-direction: row;
@@ -75,6 +76,17 @@
     height: 38px;
     width: 100%;
     white-space: nowrap;
+
+    &::before {
+      position: absolute;
+      content: '';
+      left: -24px;
+      right: -24px;
+      top: 0;
+      height: 1px;
+      background-color: @border-color;
+      transform: scaleY(0.5);
+    }
 
     .group-item {
       padding: 0px 18px;
