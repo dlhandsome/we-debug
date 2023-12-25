@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.30.1](https://github.com/dlhandsome/we-debug/compare/v0.30.0...v0.30.1) (2023-12-25)
+
+
+### Bug Fixes
+
+* **runtime/minprogram:** 分类列表设置wx:key ([b513ac2](https://github.com/dlhandsome/we-debug/commit/b513ac262b2b46f4f9fb823f492273b431d3c4d6))
+
+
+
+
+
 # [0.30.0](https://github.com/dlhandsome/we-debug/compare/v0.29.7...v0.30.0) (2023-12-22)
 
 
