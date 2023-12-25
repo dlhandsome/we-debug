@@ -24,6 +24,7 @@
   <scroll-view class="w-mask__modal-group" scroll-x="true">
     <view class="group-item {{item === group.actived ? 'actived': ''}}" style=""
     wx:for="{{group.keys}}"
+    wx:key="*this"
     data-item="{{item}}"
     catch:tap="groupTapHandler">{{item}}</view>
   </scroll-view>
