@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/plugin-vconsole",
-  "version": "0.30.0",
+  "version": "0.31.0",
   "description": "vconsole plugin for we-debug",
   "main": "dist/index.js",
   "scripts": {
