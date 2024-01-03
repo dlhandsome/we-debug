@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.1](https://github.com/dlhandsome/we-debug/compare/v0.31.0...v0.31.1) (2024-01-03)
+
+
+### Bug Fixes
+
+* **core:** 修复引用报错问题 ([d45119d](https://github.com/dlhandsome/we-debug/commit/d45119dd4a508abd8f86810bf7133dee081fcd25))
+
+
+
+
+
 # [0.31.0](https://github.com/dlhandsome/we-debug/compare/v0.30.1...v0.31.0) (2024-01-03)
 
 
