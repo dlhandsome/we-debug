@@ -1,5 +1,6 @@
-import bridge from '../store/bridge';
+import store from '../store/index';
 
+const { bridge } = store;
 const bridgeKey = '__WEDEBUG_BRIDGE__';
 
 const bridgeApi = ['navigateToMiniProgram'];
