@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.2](https://github.com/dlhandsome/we-debug/compare/v0.31.1...v0.31.2) (2024-01-03)
+
+
+### Bug Fixes
+
+* **miniprogram:** 修复按钮样式 ([993e95b](https://github.com/dlhandsome/we-debug/commit/993e95bc4215d0f96a489440012a5a047652dc54))
+
+
+
+
+
 ## [0.31.1](https://github.com/dlhandsome/we-debug/compare/v0.31.0...v0.31.1) (2024-01-03)
 
 **Note:** Version bump only for package @we-debug/miniprogram
