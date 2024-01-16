@@ -1,11 +1,11 @@
-const path = require('path');
+import path from 'path';
 
-exports.belongsPage = function (fullPath, pages = []) {
+export function belongsPage (fullPath: string, pages: string[] = []) {
   const file = path.parse(fullPath);
   return pages.indexOf(path.join(file.dir, file.name)) > -1;
 };
 
-exports.belongsApp = function (fullPath, projectDir) {
+export function belongsApp (fullPath: string, projectDir: string) {
   const file = path.parse(fullPath);
   const app = path.format({ dir: projectDir, name: 'app' });
   return app === path.join(file.dir, file.name);

@@ -1,15 +1,24 @@
-const path = require('path');
-const { getAbsolutePath } = require('./path');
+import path from 'path';
+import {
+  getAbsolutePath
+} from './path';
+import {
+  WechatMiniprogram,
+} from './types';
 
-exports.lookupPages = function (projectDir) {
-  let pages = [];
-  let subpackages = [];
+export function lookupPages (projectDir: string) {
+  let pages: string[] = [];
+  let subpackages: WechatMiniprogram.AppJsonSubpages = [];
 
   projectDir = getAbsolutePath(projectDir);
-  const appPath = path.format({ dir: projectDir, name: 'app', ext: '.json' });
+  const appPath = path.format({
+    dir: projectDir,
+    name: 'app',
+    ext: '.json'
+  });
 
   try {
-    const appJson = require(appPath);
+    const appJson: WechatMiniprogram.IAppJson = require(appPath);
 
     pages = appJson.pages;
     subpackages = appJson.subpackages || [];

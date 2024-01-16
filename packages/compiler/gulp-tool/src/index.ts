@@ -1,24 +1,37 @@
-const path = require('path');
-const lead = require('lead');
-const pumpify = require('pumpify');
-const through = require('through2');
-const PluginError = require('plugin-error');
-const { lookupPages } = require('./lib/lookup');
-const { belongsPage, belongsApp } = require('./lib/belongs');
-const { getAbsolutePath } = require('./lib/path');
-const injectComponentId = require('./lib/inject-component-id');
-const plugin = require('./lib/plugin');
-const { PLUGIN_NAME } = require('./lib/constants');
+import path from 'path';
+import lead from 'lead';
+import pumpify from 'pumpify';
+import through from 'through2';
+import PluginError from 'plugin-error';
+import {
+  lookupPages
+} from './lookup';
+import {
+  belongsPage,
+  belongsApp
+} from './belongs';
+import {
+  getAbsolutePath
+} from './path';
+import plugin from './plugin';
+import {
+  PLUGIN_NAME
+} from './constants';
+import {
+  FilterOption,
+  ICompilerOption
+} from './types';
 
-let pages = [];
+let pages: string[] = [];
+let hasInit = false;
 
-function mpGlobalComp(options = {}) {
+function mpGlobalComp(options: ICompilerOption = {}) {
   //
   let baseDir = options.baseDir || 'src';
   const wxmlRaw = options.wxml || '<we-debug />';
   const filter = options.filter || '';
   let compName = options.compName || 'we-debug';
-  let compPath = options.compPath || '@we-debug/core/component/index/index';
+  let compPath = options.compPath || '@we-debug/miniprogram/index/index';
   let entryFile = options.entryFile || 'we-debug/index.js';
   const plugins = options.plugins || [];
 
@@ -35,11 +48,11 @@ function mpGlobalComp(options = {}) {
 
   /**
    * 初始化设置
-   *
    */
   function init() {
+    // @ts-ignore
     return through.obj((file, encoding, callback) => {
-      if (!mpGlobalComp.init) {
+      if (!hasInit) {
         // 执行 beforeInit 插件钩子
         plugin.execLifecycle('beforeInit', file);
 
@@ -49,7 +62,7 @@ function mpGlobalComp(options = {}) {
         } catch (e) {
           throw new PluginError(PLUGIN_NAME, 'look up pages failed, please check your configure');
         }
-        mpGlobalComp.init = true;
+        hasInit = true;
         // 执行 onInit 插件钩子
         plugin.execLifecycle('onInit', file);
       }
@@ -57,7 +70,11 @@ function mpGlobalComp(options = {}) {
     });
   }
 
+  /**
+   * 解析 wxml
+   */
   function parseWxml() {
+    // @ts-ignore
     return through.obj((file, encoding, callback) => {
       if (file.isNull()) return callback(null, file);
 
@@ -100,7 +117,7 @@ function mpGlobalComp(options = {}) {
    * 是否需要过滤
    * @returns [Boolean] true-需要过滤；false-不需要过滤
    */
-  function isDoFilter(filter, path) {
+  function isDoFilter(filter: FilterOption, path: string) {
     return (
       (typeof filter === 'function' && !filter(path)) ||
       (typeof filter === 'string' && path.indexOf(filter) >= 0) ||
@@ -110,9 +127,9 @@ function mpGlobalComp(options = {}) {
 
   /**
    * 处理 json
-   *
    */
   function parseJson() {
+    // @ts-ignore
     return through.obj((file, encoding, callback) => {
       if (file.isNull()) return callback(null, file);
 
@@ -147,10 +164,9 @@ function mpGlobalComp(options = {}) {
 
   /**
    * 处理 js
-   *
-   * @returns
    */
   function parseScript() {
+    // @ts-ignore
     return through.obj((file, encoding, callback) => {
       if (file.isNull()) return callback(null, file);
 
@@ -177,9 +193,7 @@ function mpGlobalComp(options = {}) {
 
   const pipeline = [init(), parseWxml(), parseJson(), parseScript()];
 
-  return lead(pumpify.obj(pipeline));
+  return lead(new pumpify.obj(pipeline));
 }
-
-mpGlobalComp.injectComponentId = injectComponentId;
 
 module.exports = mpGlobalComp;

@@ -1,4 +1,15 @@
 const builds = {
+  'gulp-tool': {
+    name: 'gulp-tool',
+    option: {
+      base: 'packages/compiler/gulp-tool/src',
+      allowEmpty: true
+    },
+    tsSrc: 'packages/compiler/gulp-tool/src/**/*.ts',
+    scriptsSrc: 'packages/compiler/gulp-tool/src/**/*.js',
+    dest: 'packages/compiler/gulp-tool/dist/',
+    pkg: 'packages/compiler/gulp-tool/package.json'
+  },
   core: {
     name: 'core',
     option: {

@@ -1,0 +1,39 @@
+{
+    "compilerOptions": {
+      "skipLibCheck": true,
+      "useUnknownInCatchVariables": false,
+      "strictNullChecks": true,
+      "noImplicitAny": true,
+      "module": "CommonJS",
+      "target": "ES5",
+      "allowJs": true,
+      "experimentalDecorators": true,
+      "noImplicitThis": true,
+      "noImplicitReturns": true,
+      "alwaysStrict": true,
+      "inlineSourceMap": true,
+      "inlineSources": true,
+      "noFallthroughCasesInSwitch": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "strict": true,
+      "removeComments": true,
+      "pretty": true,
+      "strictPropertyInitialization": true,
+      "declaration": true,
+      "typeRoots": [
+        "./node_modules/miniprogram-api-typings",
+        "./node_modules/@types",
+        "./packages/**/src/@typings",
+        "./packages/**/*/typing.d.ts"
+      ],
+      "lib": ["es5", "es2016", "scripthost"],
+      "moduleResolution": "node",
+      "baseUrl": "./packages/**/src",
+      "paths": {},
+      "esModuleInterop": true
+    },
+    "include": ["./packages/**/src/**/*.ts"],
+    "exclude": ["node_modules", "miniprogram_dist", "dist", "**/*.spec.ts", "typings"]
+  }
+  
