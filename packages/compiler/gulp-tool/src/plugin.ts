@@ -14,7 +14,9 @@ class Plugin implements IPlugin {
   /** 子插件生命周期 */
   lifecycles: IRegistration[] = [];
   /** 插件元信息 */
-  meta: Meta;
+  meta: Meta = {
+    pages: []
+  };
 
   getLifecycles() {
     return this.lifecycles;
