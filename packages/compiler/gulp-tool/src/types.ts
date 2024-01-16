@@ -44,11 +44,13 @@ export interface IRegistration {
 
 export type FilterOption = string | Function | RegExp;
 
-export interface IPlugin {
+export type Meta<T extends IAnyObject = IAnyObject>  = ICompilerOption<T> & { pages: string[] };
+
+export interface IPlugin<T extends IAnyObject = IAnyObject>  {
   /** 插件生命周期钩子声明 */
   lifecycles: IRegistration[];
   /** 插件元信息 */
-  meta: IAnyObject;
+  meta: Meta<T>;
   /** 注册插件 */
   register(options: IRegistration): void;
   /** 获取插件生命周期钩子声明 */
@@ -58,28 +60,28 @@ export interface IPlugin {
   /** 加载插件 */
   loadPlugin(pkg: string | PackageFunc): void;
   /** 初始化插件列表 */
-  initPlugin(packges: IPackageOption[], meta: IAnyObject): void;
+  initPlugin(packges: IPackageOption<T>[], meta: Meta): void;
 }
 
-export type PackageFunc = (register: IPlugin, options: IAnyObject) => void;
+export type PackageFunc<T extends IAnyObject = IAnyObject> = (register: IPlugin, options: T) => void;
 
 /**
  * 插件
  */
-export type PackageParam = string | PackageFunc;
+export type PackageParam<T extends IAnyObject = IAnyObject> = string | PackageFunc<T>;
 
 /**
  * 插件参数
  */
-export interface IPackageOption {
-  package: PackageParam;
-  options: IAnyObject;
+export interface IPackageOption<T extends IAnyObject = IAnyObject> {
+  package: PackageParam<T>;
+  options: T;
 }
 
 /**
  * 编译函数入口参数
  */
-export interface ICompilerOption {
+export interface ICompilerOption<T extends IAnyObject = IAnyObject> {
   /**  */
   baseDir?: string;
   wxml?: string;
@@ -87,5 +89,5 @@ export interface ICompilerOption {
   compName?: string;
   compPath?: string;
   entryFile?: string;
-  plugins?: IPackageOption[];
+  plugins?: IPackageOption<T>[];
 }

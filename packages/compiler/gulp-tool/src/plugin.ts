@@ -2,9 +2,9 @@ import PluginError from 'plugin-error';
 import { 
   IRegistration,
   IPackageOption,
-  IAnyObject,
   IPlugin,
-  PackageParam
+  PackageParam,
+  Meta
 } from './types';
 import File from 'vinyl';
 
@@ -14,7 +14,7 @@ class Plugin implements IPlugin {
   /** 子插件生命周期 */
   lifecycles: IRegistration[] = [];
   /** 插件元信息 */
-  meta: IAnyObject = {};
+  meta: Meta;
 
   getLifecycles() {
     return this.lifecycles;
@@ -43,7 +43,7 @@ class Plugin implements IPlugin {
     }
   }
 
-  initPlugin(packges: IPackageOption[], meta: IAnyObject) {
+  initPlugin(packges: IPackageOption[], meta: Meta) {
     this.meta = meta;
 
     packges.map(p => {
