@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.5](https://github.com/dlhandsome/we-debug/compare/v0.31.4...v0.31.5) (2024-01-16)
+
+
+### Bug Fixes
+
+* fixed type ([ca4ad26](https://github.com/dlhandsome/we-debug/commit/ca4ad26a6b8e208a6597aca0b1ce5661ac8d502b))
+* **gulp-tool:** fixed type ([5b9f2f0](https://github.com/dlhandsome/we-debug/commit/5b9f2f0bb93c2340e0f0871c509706c06a79673e))
+
+
+
+
+
 ## [0.31.4](https://github.com/dlhandsome/we-debug/compare/v0.31.3...v0.31.4) (2024-01-16)
 
 
