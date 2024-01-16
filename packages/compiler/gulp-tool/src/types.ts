@@ -1,3 +1,5 @@
+import File from 'vinyl';
+
 export interface IAnyObject {
   [key: string]: any;
 }

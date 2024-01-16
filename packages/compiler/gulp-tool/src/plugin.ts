@@ -6,6 +6,7 @@ import {
   IPlugin,
   PackageParam
 } from './types';
+import File from 'vinyl';
 
 const PLUGIN_NAME = '@we-debug/gulp-tool';
 
