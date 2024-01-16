@@ -23,54 +23,58 @@ const buildTasks = builds
     const lessTask = genLessTaskName(p.name);
     const pkgPath = path.resolve(__dirname, p.pkg);
 
-    p.copySrc && gulp.task(copyTask, () => {
-      return gulp.src(p.copySrc, p.option).pipe(gulp.dest(p.dest));
-    });
+    p.copySrc &&
+      gulp.task(copyTask, () => {
+        return gulp.src(p.copySrc, p.option).pipe(gulp.dest(p.dest));
+      });
 
-    p.tsSrc && gulp.task(tsTask, () => {
-      return gulp
-        .src(p.tsSrc, p.option)
-        .pipe(gulpTs.createProject('tsconfig.json')())
-        .pipe(replace('__VERSION__', JSON.stringify(require(pkgPath).version)))
-        .pipe(gulp.dest(p.dest));
-    });
+    p.tsSrc &&
+      gulp.task(tsTask, () => {
+        return gulp
+          .src(p.tsSrc, p.option)
+          .pipe(gulpTs.createProject('tsconfig.json')())
+          .pipe(replace('__VERSION__', JSON.stringify(require(pkgPath).version)))
+          .pipe(gulp.dest(p.dest));
+      });
 
-    p.scriptsSrc && gulp.task(scriptTask, () => {
-      return gulp
-        .src(p.scriptsSrc, p.option)
-        .pipe(replace('__VERSION__', JSON.stringify(require(pkgPath).version)))
-        .pipe(
-          babel({
-            plugins: ['@babel/plugin-transform-modules-commonjs']
-          })
-        )
-        .pipe(uglify())
-        .pipe(gulp.dest(p.dest));
-    });
+    p.scriptsSrc &&
+      gulp.task(scriptTask, () => {
+        return gulp
+          .src(p.scriptsSrc, p.option)
+          .pipe(replace('__VERSION__', JSON.stringify(require(pkgPath).version)))
+          .pipe(
+            babel({
+              plugins: ['@babel/plugin-transform-modules-commonjs']
+            })
+          )
+          .pipe(uglify())
+          .pipe(gulp.dest(p.dest));
+      });
 
-    p.lessSrc && gulp.task(lessTask, () => {
-      return gulp
-        .src(p.lessSrc, p.option)
-        .pipe(
-          less().on('error', function (e) {
-            console.error(e.message);
-            this.emit('end');
-          })
-        )
-        .pipe(postcss([autoprefixer]))
-        .pipe(
-          rename(function (path) {
-            path.extname = '.wxss';
-          })
-        )
-        .pipe(gulp.dest(p.dest));
-    });
+    p.lessSrc &&
+      gulp.task(lessTask, () => {
+        return gulp
+          .src(p.lessSrc, p.option)
+          .pipe(
+            less().on('error', function (e) {
+              console.error(e.message);
+              this.emit('end');
+            })
+          )
+          .pipe(postcss([autoprefixer]))
+          .pipe(
+            rename(function (path) {
+              path.extname = '.wxss';
+            })
+          )
+          .pipe(gulp.dest(p.dest));
+      });
 
     return [
       ...(p.copySrc ? [copyTask] : []),
       ...(p.scriptsSrc ? [scriptTask] : []),
       ...(p.tsSrc ? [tsTask] : []),
-      ...(p.lessSrc ? [lessTask] : []),
+      ...(p.lessSrc ? [lessTask] : [])
     ];
   })
   .reduce((p, n) => p.concat(n), []);

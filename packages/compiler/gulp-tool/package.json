@@ -2,7 +2,8 @@
   "name": "@we-debug/gulp-tool",
   "version": "0.31.0",
   "description": "we-debug, gulp",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/types.d.ts",
   "directories": {
     "lib": "lib"
   },
@@ -18,6 +19,8 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@types/pumpify": "^1.4.4",
+    "@types/through2": "^2.0.41",
     "crypto": "^1.0.1",
     "gogocode": "^1.0.55",
     "lead": "^1.0.0",
