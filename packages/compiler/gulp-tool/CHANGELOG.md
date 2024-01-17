@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.6](https://github.com/dlhandsome/we-debug/compare/v0.31.5...v0.31.6) (2024-01-17)
+
+
+### Bug Fixes
+
+* **gulp-tool:** fixed typo ([7eb90c3](https://github.com/dlhandsome/we-debug/commit/7eb90c31376cc27bcbbccdee6c273058256549a7))
+
+
+
+
+
 ## [0.31.5](https://github.com/dlhandsome/we-debug/compare/v0.31.4...v0.31.5) (2024-01-16)
 
 
