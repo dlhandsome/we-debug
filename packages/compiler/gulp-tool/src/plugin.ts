@@ -1,9 +1,9 @@
 import PluginError from 'plugin-error';
 import { 
   IRegistration,
-  IPackageOption,
+  ICompilerPluginOption,
   IPlugin,
-  PackageParam,
+  ICompilerPluginPackageOption,
   Meta
 } from './types';
 import File from 'vinyl';
@@ -35,7 +35,7 @@ class Plugin implements IPlugin {
     });
   }
 
-  loadPlugin(pkg: PackageParam) {
+  loadPlugin(pkg: ICompilerPluginPackageOption) {
     if (typeof pkg === 'string') {
       return require(pkg);
     }
@@ -45,7 +45,7 @@ class Plugin implements IPlugin {
     }
   }
 
-  initPlugin(packges: IPackageOption[], meta: Meta) {
+  initPlugin(packges: ICompilerPluginOption[], meta: Meta) {
     this.meta = meta;
 
     packges.map(p => {

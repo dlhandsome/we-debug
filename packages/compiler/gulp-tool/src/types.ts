@@ -58,23 +58,23 @@ export interface IPlugin<T extends IAnyObject = IAnyObject>  {
   /** 执行插件生命周期钩子声明 */
   execLifecycle(lifetime: keyof IRegistration, file: File): void;
   /** 加载插件 */
-  loadPlugin(pkg: string | PackageFunc): void;
+  loadPlugin(pkg: string | ICompilerPluginPackage): void;
   /** 初始化插件列表 */
-  initPlugin(packges: IPackageOption<T>[], meta: Meta): void;
+  initPlugin(packges: ICompilerPluginOption<T>[], meta: Meta): void;
 }
 
-export type PackageFunc<T extends IAnyObject = IAnyObject> = (register: IPlugin, options: T) => void;
+export type ICompilerPluginPackage<T extends IAnyObject = IAnyObject> = (register: IPlugin, options: T) => void;
 
 /**
  * 插件
  */
-export type PackageParam<T extends IAnyObject = IAnyObject> = string | PackageFunc<T>;
+export type ICompilerPluginPackageOption<T extends IAnyObject = IAnyObject> = string | ICompilerPluginPackage<T>;
 
 /**
  * 插件参数
  */
-export interface IPackageOption<T extends IAnyObject = IAnyObject> {
-  package: PackageParam<T>;
+export interface ICompilerPluginOption<T extends IAnyObject = IAnyObject> {
+  package: ICompilerPluginPackageOption<T>;
   options: T;
 }
 
@@ -89,5 +89,5 @@ export interface ICompilerOption<T extends IAnyObject = IAnyObject> {
   compName?: string;
   compPath?: string;
   entryFile?: string;
-  plugins?: IPackageOption<T>[];
+  plugins?: ICompilerPluginOption<T>[];
 }
