@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.8](https://github.com/dlhandsome/we-debug/compare/v0.31.7...v0.31.8) (2024-01-18)
+
+
+### Bug Fixes
+
+* **miniprogram:** fixed optional option ([fe20449](https://github.com/dlhandsome/we-debug/commit/fe20449afb616f5c857c1767006fd6567c3fc2a9))
+
+
+
+
+
 ## [0.31.7](https://github.com/dlhandsome/we-debug/compare/v0.31.6...v0.31.7) (2024-01-18)
 
 **Note:** Version bump only for package @we-debug/core
