@@ -123,3 +123,10 @@ export interface IWedebugInitOption {
     uiCheck?: IAnyObject;
   }
 }
+
+/**
+ * we-debug 插件方法声明
+ */
+export interface IPluginInstance<T extends IAnyObject = IAnyObject> {
+  install (weDebug: T, ...args: any[]): void;
+}

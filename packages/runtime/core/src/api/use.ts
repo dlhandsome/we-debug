@@ -1,9 +1,5 @@
-import { IAnyObject } from '../types';
+import { IPluginInstance } from '../types';
 import { isFunc } from '../utils/simple-type-function';
-
-interface IPluginInstance<T extends IAnyObject = IAnyObject> {
-  install (weDebug: T, ...args: any[]): void;
-}
 
 const installedPlugins: IPluginInstance[] = [];
 
