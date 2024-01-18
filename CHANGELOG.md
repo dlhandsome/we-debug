@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.10](https://github.com/dlhandsome/we-debug/compare/v0.31.9...v0.31.10) (2024-01-18)
+
+
+### Bug Fixes
+
+* **core:** fixed types ([b6541d0](https://github.com/dlhandsome/we-debug/commit/b6541d055c1b8eddcc53cfb01303022afabe759a))
+* **core:** fixed types export ([48e6672](https://github.com/dlhandsome/we-debug/commit/48e667217c602150db805020f61f771bc5324c10))
+
+
+
+
+
 ## [0.31.9](https://github.com/dlhandsome/we-debug/compare/v0.31.8...v0.31.9) (2024-01-18)
 
 **Note:** Version bump only for package we-debug
