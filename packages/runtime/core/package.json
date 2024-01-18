@@ -6,6 +6,7 @@
     "name": "dlhandsome"
   },
   "main": "dist/index.js",
+  "types": "dist/types.d.ts",
   "scripts": {
     "test": "jest"
   },
@@ -17,7 +18,9 @@
         "lines": 80,
         "statements": -10
       }
-    }
+    },
+    "preset": "ts-jest",
+    "testEnvironment": "node"
   },
   "license": "MIT",
   "dependencies": {
@@ -30,5 +33,9 @@
   },
   "readme": "ERROR: No README data found!",
   "_id": "@we-debug/core@0.3.5",
-  "_commitid": "6c3f04b"
+  "_commitid": "6c3f04b",
+  "devDependencies": {
+    "@types/jest": "^29.5.11",
+    "ts-jest": "^29.1.1"
+  }
 }

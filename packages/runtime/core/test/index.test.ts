@@ -1,5 +1,5 @@
-require('./wx');
-const Debug = require('../src/index').default;
+import './wx';
+import Debug from '../src/index';
 
 test('test event', done => {
   const badge = Debug.createBadge();
@@ -15,11 +15,11 @@ test('test event', done => {
 });
 
 test('test event emit result', done => {
-  function returnPromiseA(v) {
+  function returnPromiseA(v: number) {
     return Promise.resolve(v);
   }
 
-  function returnPromiseB(v) {
+  function returnPromiseB(v: number) {
     return Promise.resolve(++v);
   }
 

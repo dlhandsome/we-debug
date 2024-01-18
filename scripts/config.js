@@ -16,7 +16,7 @@ const builds = {
       base: 'packages/runtime/core/src',
       allowEmpty: true
     },
-    scriptsSrc: 'packages/runtime/core/src/**/*.js',
+    tsSrc: 'packages/runtime/core/src/**/*.ts',
     lessSrc: ['packages/runtime/core/src/**/*.less', '!packages/runtime/core/src/less/*.*'],
     copySrc: ['packages/runtime/core/src/**/*.{wxml,json}'],
     dest: 'packages/runtime/core/dist/',

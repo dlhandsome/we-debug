@@ -1,20 +1,22 @@
-let _storage = {};
+import { IAnyObject } from "../src/types";
 
-global.wx = {
-  onAppRoute(cb) {
+let _storage: IAnyObject = {};
+
+(global as any).wx = {
+  onAppRoute(cb: () => void) {
     cb();
   },
-  onError(cb) {
+  onError(cb: (e: Error) => void) {
     const e = new Error('wx.onError');
 
     setTimeout(() => {
       cb(e);
     }, 500);
   },
-  setStorage(obj) {
+  setStorage(obj: { key: string; value: any }) {
     _storage[obj.key] = obj.value;
   },
-  getStorage(key) {
+  getStorage(key: string) {
     return _storage[key];
   },
   getSystemInfoSync() {

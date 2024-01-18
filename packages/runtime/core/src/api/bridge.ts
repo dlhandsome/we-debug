@@ -1,17 +1,25 @@
 import store from '../store/index';
+import {
+  WxKey,
+  IAnyObject,
+  GetBridgeInfoFunc
+} from '../types';
+import {
+  isFunc
+} from '../utils/simple-type-function';
 
 const { bridge } = store;
 const bridgeKey = '__WEDEBUG_BRIDGE__';
 
-const bridgeApi = ['navigateToMiniProgram'];
+const bridgeApi: WxKey[] = ['navigateToMiniProgram'];
 
 bridgeApi.forEach(method => {
-  const bridgeFunc = wx[method];
+  const bridgeFunc: any = wx[method];
 
   Object.defineProperty(wx, method, {
     get:
       () =>
-      (opt = {}) => {
+      (opt: IAnyObject = {}) => {
         const out = Object.assign({}, opt);
         const bridgeInfo = bridge.getAll();
 
@@ -22,18 +30,18 @@ bridgeApi.forEach(method => {
         out.extraData[bridgeKey] = out.extraData[bridgeKey] || {};
         out.extraData[bridgeKey] = bridgeInfo;
 
-        return bridgeFunc(out);
+        return isFunc(bridgeFunc) && bridgeFunc(out);
       }
   });
 });
 
-export function setBridgeInfo(key, value) {
+export function setBridgeInfo(key: string, value: any) {
   bridge.set(key, value);
 }
 
-export function getBridgeInfo(key, callback) {
-  if (getBridgeInfo._hasEventBind) return;
-  getBridgeInfo._hasEventBind = true;
+export const getBridgeInfo: GetBridgeInfoFunc = (key, callback) => {
+  if (getBridgeInfo.hasEventBind) return;
+  getBridgeInfo.hasEventBind = true;
   wx.onAppShow(res => {
     const extraData = res.referrerInfo.extraData;
     const queryData = res.query;

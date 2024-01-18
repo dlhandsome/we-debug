@@ -1,13 +1,17 @@
+import { IAnyObject } from "../types";
+
 export class Store {
+  protected store: IAnyObject;
+
   constructor() {
     this.store = {};
   }
 
-  set(k, v) {
+  set(k: string, v: any) {
     this.store[k] = v;
   }
 
-  get(k) {
+  get(k: string) {
     return typeof this.store[k] === 'function' ? this.store[k]() : this.store[k];
   }
 

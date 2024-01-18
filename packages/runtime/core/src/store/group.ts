@@ -1,18 +1,23 @@
 import { MySet } from '../base/set';
 import { Store } from '../base/store';
-import { noop } from '../base/utils';
+import {
+  FormRule
+} from '../model/rule';
+import {
+  compareFn
+} from '../types';
 
 export class Group extends Store {
-  constructor(opt = {}) {
-    super(opt);
+  constructor() {
+    super();
   }
 
-  getKeys(sortFn = noop) {
+  getKeys(sortFn?: compareFn) {
     // 可传入排序函数
     return Object.keys(this.store).sort(sortFn);
   }
 
-  add(k, rule = {}) {
+  add(k: string, rule: FormRule) {
     let rules = this.get(k);
 
     if (!rules) {
@@ -27,7 +32,7 @@ export class Group extends Store {
     }
   }
 
-  remove(k, rule = {}) {
+  remove(k: string, rule: FormRule) {
     const rules = this.get(k);
 
     if (!rules) {

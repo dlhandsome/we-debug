@@ -1,12 +1,14 @@
 import store from '../store/index';
-
+import {
+  Badge
+} from '../model/index';
 export { createBadge } from '../model/index';
 
 /**
  * 新增状态角标对象
  * @param {Badge} badges
  */
-export function addBadge(badges) {
+export function addBadge(badges: Badge) {
   store.badges.add(badges);
 }
 
@@ -14,7 +16,7 @@ export function addBadge(badges) {
  * 移除状态角标对象
  * @param {*} badges
  */
-export function removeBadge(badges) {
+export function removeBadge(badges: Badge) {
   store.badges.remove(badges);
 }
 

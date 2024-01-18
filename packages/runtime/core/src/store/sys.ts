@@ -1,6 +1,6 @@
-let _sys;
+let _sys: WechatMiniprogram.SystemInfo;
 
-function set(sys) {
+function set(sys: WechatMiniprogram.SystemInfo) {
   _sys = sys;
 }
 

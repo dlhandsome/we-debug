@@ -1,4 +1,10 @@
-export class MySet {
+import {
+  IBaseModel
+} from '../types';
+
+export class MySet<T extends IBaseModel> {
+  private arr: T[];
+
   constructor() {
     this.arr = [];
   }
@@ -7,15 +13,15 @@ export class MySet {
     return this.arr;
   }
 
-  getById(id) {
+  getById(id: number) {
     return this.arr.find(s => s.id === id);
   }
 
-  add(s) {
+  add(s: T) {
     this.arr = this.arr.concat(s);
   }
 
-  remove(s) {
+  remove(s: T) {
     let i = this.arr.length;
     while (i--) {
       let tmp = this.arr[i];
