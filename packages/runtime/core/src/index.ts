@@ -14,6 +14,8 @@ import { version } from './version';
 
 const event = store.event;
 
+export * from './types';
+
 export {
   ENV_TYPE,
   DEFAULT_GROUP,

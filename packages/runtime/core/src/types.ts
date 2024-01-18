@@ -31,8 +31,8 @@ export interface IFormRuleState {
 }
 
 export interface IBaseModelHandler {
-  bindTap(state: IFormRuleState): any;
-  bindChange(state: IFormRuleState): any;
+  bindTap?: (state: IFormRuleState) => any;
+  bindChange?: (state: IFormRuleState) => any;
 }
 
 /**
