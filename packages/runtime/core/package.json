@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/core",
-  "version": "0.31.8",
+  "version": "0.31.9",
   "description": "a useful debug tool for weapp",
   "author": {
     "name": "dlhandsome"
