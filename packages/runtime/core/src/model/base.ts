@@ -12,9 +12,9 @@ export default class BaseManage {
   public id: number;
   public handler: (...args: any[]) => any;
 
-  constructor(opt: IBaseManageConstructorOption) {
-    this.id = opt.id || _id++;
-    this.handler = opt.handler || noop;
+  constructor(opt?: IBaseManageConstructorOption) {
+    this.id = opt?.id || _id++;
+    this.handler = opt?.handler || noop;
   }
 
   get prefix(): void | string {

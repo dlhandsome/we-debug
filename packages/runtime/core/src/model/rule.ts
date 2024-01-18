@@ -17,13 +17,13 @@ export class FormRule extends BaseManage {
   // @ts-ignore
   private state: IAnyObject;
 
-  constructor(opt: IFormRuleManageConstructorOption) {
+  constructor(opt?: IFormRuleManageConstructorOption) {
     super(opt);
-    this.title = opt.title || '';
-    this.desc = opt.desc || '';
-    this.meta = opt.meta || '';
-    this.type = opt.type || '';
-    this.state = opt.state || {};
+    this.title = opt?.title || '';
+    this.desc = opt?.desc || '';
+    this.meta = opt?.meta || '';
+    this.type = opt?.type || 'button';
+    this.state = opt?.state || {};
   }
 
   get prefix() {
@@ -31,6 +31,6 @@ export class FormRule extends BaseManage {
   }
 }
 
-export function createFormRule(opt: IFormRuleManageConstructorOption) {
+export function createFormRule(opt?: IFormRuleManageConstructorOption) {
   return new FormRule(opt);
 }

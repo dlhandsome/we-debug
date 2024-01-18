@@ -15,8 +15,8 @@ import {
  * 初始化方法
  * @param {*} options
  */
-export function init(this: any, options: IWedebugInitOption = {}) {
-  options = merge(
+export function init(this: any, options?: IWedebugInitOption) {
+  const opt = merge(
     {
       launcher: true,
       plugin: {
@@ -26,14 +26,14 @@ export function init(this: any, options: IWedebugInitOption = {}) {
         uiCheck: true
       }
     },
-    options
+    options || {}
   );
 
-  if (options.launcher) use.call(this, LauncherPlugin, options.launcher || {});
-  if (options?.plugin?.network) use.call(this, networkPlugin, options.plugin.network || {});
-  if (options?.plugin?.error) use.call(this, ErrorPlugin, options.plugin.error || {});
-  if (options?.plugin?.router) use.call(this, RouterPlugin, options.plugin.router || {});
-  if (options?.plugin?.uiCheck) use.call(this, uiCheckPlugin, options.plugin.uiCheck || {});
+  if (opt.launcher) use.call(this, LauncherPlugin, opt.launcher || {});
+  if (opt.plugin.network) use.call(this, networkPlugin, opt.plugin.network || {});
+  if (opt.plugin.error) use.call(this, ErrorPlugin, opt.plugin.error || {});
+  if (opt.plugin.router) use.call(this, RouterPlugin, opt.plugin.router || {});
+  if (opt.plugin.uiCheck) use.call(this, uiCheckPlugin, opt.plugin.uiCheck || {});
 
   return this;
 }

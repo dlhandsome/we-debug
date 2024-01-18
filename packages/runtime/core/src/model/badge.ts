@@ -27,16 +27,16 @@ export class Badge extends BaseManage {
   // @ts-ignore
   private textOnly: boolean;
 
-  constructor(opt: IBadgeManageConstructorOption) {
+  constructor(opt?: IBadgeManageConstructorOption) {
     super(opt);
-    this.key = valid(opt.key) ? opt.key : '';
-    this.value = valid(opt.value) ? opt.value : '';
-    this.color = opt.color || '';
-    this.show = opt.show || false;
-    this.draggable = opt.draggable;
-    this.position = opt.position;
-    this.styles = opt.styles || '';
-    this.textOnly = opt.textOnly || false;
+    this.key = valid(opt?.key) ? (opt?.key || '') : '';
+    this.value = valid(opt?.value) ? (opt?.value || '') : '';
+    this.color = opt?.color || '';
+    this.show = opt?.show || false;
+    this.draggable = opt?.draggable || true;
+    this.position = opt?.position || {};
+    this.styles = opt?.styles || '';
+    this.textOnly = opt?.textOnly || false;
   }
 
   get prefix() {
@@ -44,6 +44,6 @@ export class Badge extends BaseManage {
   }
 }
 
-export function createBadge(opt: IBadgeManageConstructorOption) {
+export function createBadge(opt?: IBadgeManageConstructorOption) {
   return new Badge(opt);
 }

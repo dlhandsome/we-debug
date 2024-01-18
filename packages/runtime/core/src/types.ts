@@ -47,21 +47,21 @@ export interface IPosition {
  */
 export interface IBadgeManageConstructorOption extends IBaseManageConstructorOption {
   /** 胶囊左边的内容 */
-  key: string;
+  key?: string;
   /** 胶囊右边的内容 */
-  value: string | number;
+  value?: string | number;
   /** 胶囊的颜色类型 */
-  color: string;
+  color?: string;
   /** 是否展示 */
-  show: boolean;
+  show?: boolean;
   /** 是否允许组件拖拽 */
-  draggable: boolean;
+  draggable?: boolean;
   /** 组件定位坐标 */
-  position: IPosition;
+  position?: IPosition;
   /** 组件样式内容 */
-  styles: string;
+  styles?: string;
   /** 是否只展示文字 */
-  textOnly: boolean;
+  textOnly?: boolean;
 }
 
 /** 规则表单类型 */
@@ -71,11 +71,16 @@ export type FormRuleType = 'button' | 'arrow' | 'switch';
  * 规则表单 FormRule 构造器属性
  */
 export interface IFormRuleManageConstructorOption extends IBaseManageConstructorOption {
-  title: string;
-  desc: string;
-  meta: string | number;
-  type: FormRuleType;
-  state: IAnyObject;
+  /** 功能标题 */
+  title?: string;
+  /** 功能描述 */
+  desc?: string;
+  /** 功能其他信息 */
+  meta?: string | number;
+  /** 表单控件类型 */
+  type?: FormRuleType;
+  /** 表单状态值 */
+  state?: IAnyObject;
 }
 
 /**
