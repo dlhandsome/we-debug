@@ -21,11 +21,25 @@ export interface IBaseModel {
   id: number;
 }
 
+export interface IFormRuleState {
+  /** 操作名称 */
+  name?: string;
+  /** 控件是否禁用 */
+  disabled?: boolean;
+  /** switch 控件状态 */
+  checked?: boolean;
+}
+
+export interface IBaseModelHandler {
+  bindTap(state: IFormRuleState): any;
+  bindChange(state: IFormRuleState): any;
+}
+
 /**
  * Base Model 构造器参数
  */
 export interface IBaseManageConstructorOption extends IBaseModel {
-  handler: (...args: any[]) => any;
+  handler: IBaseModelHandler;
 }
 
 /**
@@ -80,7 +94,7 @@ export interface IFormRuleManageConstructorOption extends IBaseManageConstructor
   /** 表单控件类型 */
   type?: FormRuleType;
   /** 表单状态值 */
-  state?: IAnyObject;
+  state?: IFormRuleState;
 }
 
 /**
