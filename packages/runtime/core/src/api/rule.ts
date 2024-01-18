@@ -23,12 +23,12 @@ export { createFormRule } from '../model/index';
  * 新增规则
  * @param {Rule} rule
  */
-export function addFormRule(rule: FormRule, options: IAddFormRuleOption) {
+export function addFormRule(rule: FormRule, options?: IAddFormRuleOption) {
   store.rules.add(rule);
 
   // 默认分组
   let defaultGroup = [DEFAULT_GROUP.ALL, DEFAULT_GROUP.OTHER];
-  let customGroup = options.group;
+  let customGroup = options?.group;
   // 添加分组
   if (isEmptyArr(customGroup)) {
     customGroup = defaultGroup;
