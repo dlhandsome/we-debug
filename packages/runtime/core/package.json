@@ -6,6 +6,7 @@
     "name": "dlhandsome"
   },
   "main": "dist/index.js",
+  "types": "dist/types.d.ts",
   "scripts": {
     "test": "jest"
   },

@@ -19,7 +19,7 @@
       "strict": true,
       "removeComments": true,
       "pretty": true,
-      "strictPropertyInitialization": true,
+      "strictPropertyInitialization": false,
       "declaration": true,
       "typeRoots": [
         "./node_modules/miniprogram-api-typings",

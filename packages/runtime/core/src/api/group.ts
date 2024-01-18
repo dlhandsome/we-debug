@@ -1,4 +1,9 @@
-import { noop } from '../base/utils';
+import {
+  FormRule,
+} from '../model/index';
+import {
+  compareFn,
+} from '../types';
 import store from '../store/index';
 
 /**
@@ -6,11 +11,11 @@ import store from '../store/index';
  * @param {*} fn
  * @returns
  */
-export function getGroupsAllKeys(fn = noop) {
+export function getGroupsAllKeys(fn?: compareFn) {
   return store.group.getKeys(fn);
 }
 
-export function addRuleByGroup(k, rule = {}) {
+export function addRuleByGroup(k: string, rule: FormRule) {
   return store.group.add(k, rule);
 }
 
@@ -19,7 +24,7 @@ export function addRuleByGroup(k, rule = {}) {
  * @param {*} k
  * @returns
  */
-export function getRuleByGroup(k) {
+export function getRuleByGroup(k: string) {
   return store.group.get(k);
 }
 
@@ -29,6 +34,6 @@ export function getRuleByGroup(k) {
  * @param {*} rule
  * @returns
  */
-export function removeGroupRule(k, rule = {}) {
+export function removeGroupRule(k: string, rule: FormRule) {
   return store.group.remove(k, rule);
 }

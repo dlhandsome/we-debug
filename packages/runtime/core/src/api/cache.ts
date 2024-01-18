@@ -4,7 +4,7 @@ import { CacheData } from '../base/cache';
  * 创建缓存
  * @param {*} cacheKey
  */
-export function createCache(cacheKey) {
+export function createCache(cacheKey: string) {
   let v = null;
   try {
     v = wx.getStorageSync(cacheKey);

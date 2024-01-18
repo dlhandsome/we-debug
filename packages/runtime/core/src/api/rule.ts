@@ -1,7 +1,21 @@
-import { isStr, isArr, isEmptyArr } from '../base/utils';
+import {
+  isStr,
+  isArr,
+  isEmptyArr
+} from '../utils/simple-type-function';
 import store from '../store/index';
-import { addRuleByGroup } from './group';
-import { DEFAULT_GROUP } from '../config/group';
+import {
+  addRuleByGroup
+} from './group';
+import {
+  DEFAULT_GROUP
+} from '../config/group';
+import {
+  FormRule
+} from '../model/index';
+import {
+  IAddFormRuleOption
+} from '../types';
 
 export { createFormRule } from '../model/index';
 
@@ -9,7 +23,7 @@ export { createFormRule } from '../model/index';
  * 新增规则
  * @param {Rule} rule
  */
-export function addFormRule(rule, options = {}) {
+export function addFormRule(rule: FormRule, options: IAddFormRuleOption) {
   store.rules.add(rule);
 
   // 默认分组
@@ -35,7 +49,7 @@ export function addFormRule(rule, options = {}) {
  * 移除规则
  * @param {*} rule
  */
-export function removeFormRule(rule) {
+export function removeFormRule(rule: FormRule) {
   store.rules.remove(rule);
 }
 

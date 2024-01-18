@@ -1,15 +1,23 @@
 import store from '../store/index';
-import { noop } from '../base/utils';
+import {
+  noop
+} from '../utils/simple-type-function';
+import {
+  IBaseManageConstructorOption
+} from '../types';
 
 let _id = 1;
 
 export default class BaseManage {
-  constructor(opt) {
+  public id: number;
+  public handler: (...args: any[]) => any;
+
+  constructor(opt: IBaseManageConstructorOption) {
     this.id = opt.id || _id++;
     this.handler = opt.handler || noop;
   }
 
-  get prefix() {
+  get prefix(): void | string {
     throw new Error('you have to declare a prefix');
   }
 
