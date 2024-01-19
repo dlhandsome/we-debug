@@ -1,6 +1,7 @@
 import {
   IPlugin,
-  IFormRuleState
+  IFormRuleState,
+  IPluginInitOption
 } from './types';
 
 const ErrorPlugin: IPlugin = {
@@ -27,7 +28,7 @@ const errManage = {
   }
 };
 
-ErrorPlugin.install = function (weDebug, options = {}) {
+ErrorPlugin.install = function (weDebug, options: IPluginInitOption = {}) {
   if (ErrorPlugin.installed) return;
   ErrorPlugin.installed = true;
 

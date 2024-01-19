@@ -3,6 +3,7 @@
   "version": "0.31.0",
   "description": "launcher plugin for we-debug",
   "main": "dist/index.js",
+  "types": "dist/types.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +16,8 @@
   "license": "MIT",
   "readme": "ERROR: No README data found!",
   "_id": "@we-debug/plugin-launcher@0.1.1",
-  "_commitid": "4a9cca9"
+  "_commitid": "4a9cca9",
+  "peerDependencies": {
+    "@we-debug/core": "^0.31.11"
+  }
 }
