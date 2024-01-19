@@ -1,4 +1,12 @@
-const ErrorPlugin = {};
+import {
+  IPlugin,
+  IFormRuleState
+} from './types';
+
+const ErrorPlugin: IPlugin = {
+  install () {}
+};
+
 /**
  * 异常调试插件
  *
@@ -7,11 +15,11 @@ const ErrorPlugin = {};
  */
 
 const errManage = {
-  _errStack: [],
+  _errStack: [] as string[],
   get() {
     return this._errStack;
   },
-  add(e) {
+  add(e: string) {
     this._errStack.push(e);
   },
   clear() {
@@ -56,7 +64,7 @@ ErrorPlugin.install = function (weDebug, options = {}) {
           disabled: false
         },
         handler: {
-          bindTap(state) {
+          bindTap(state: IFormRuleState) {
             if (!state.disabled) {
               wx.setClipboardData({
                 data: JSON.stringify(errManage.get(), null, 2)
@@ -81,7 +89,7 @@ ErrorPlugin.install = function (weDebug, options = {}) {
           disabled: false
         },
         handler: {
-          bindTap(state) {
+          bindTap(state: IFormRuleState) {
             if (!state.disabled) {
               errManage.clear();
               updateState();
@@ -118,10 +126,12 @@ ErrorPlugin.install = function (weDebug, options = {}) {
       updateState();
     });
 
-  wx.onAppRoute &&
-    wx.onAppRoute(() => {
+  (wx as any).onAppRoute &&
+  (wx as any).onAppRoute(() => {
       updateState();
     });
 };
 
 export default ErrorPlugin;
+
+export * from './types';

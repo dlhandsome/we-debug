@@ -69,7 +69,7 @@ const builds = {
       base: 'packages/runtime/plugin-error/src',
       allowEmpty: true
     },
-    scriptsSrc: 'packages/runtime/plugin-error/src/**/*.js',
+    tsSrc: 'packages/runtime/plugin-error/src/**/*.ts',
     lessSrc: 'packages/runtime/plugin-error/src/**/*.less',
     copySrc: ['packages/runtime/plugin-error/src/**/*.{wxml,json}'],
     dest: 'packages/runtime/plugin-error/dist/',
