@@ -7,8 +7,8 @@
     <view class="cell-body-minor">{{desc}}</view>
   </view>
   <switch class="w-switch" wx:if="{{type === 'switch'}}" slot="foot" checked="{{state.checked}}" disabled="{{state.disabled}}" catchchange="bindChangeHandler" color="#07c160" />
-  <view wx:if="{{type === 'button'}}" slot="foot" class="w-btn {{state.disabled ? 'w-btn--disabled' : 'w-btn--default'}}" catchtap="bindTapHandler">{{state.name || '获取'}}</view>
-   <view wx:if="{{type === 'arrow'}}" slot="foot" class="w-arrow">
+  <view wx:elif="{{type === 'button'}}" slot="foot" class="w-btn {{state.disabled ? 'w-btn--disabled' : 'w-btn--default'}}" catchtap="bindTapHandler">{{state.name || '获取'}}</view>
+   <view wx:elif="{{type === 'arrow'}}" slot="foot" class="w-arrow">
     <view class="w-arrow-name">{{state.name}}</view>
     <image class="arrow-icon" src="../icon/arrow.svg" />
   </view>
