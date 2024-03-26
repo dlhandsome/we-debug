@@ -35,16 +35,79 @@ Component({
       store.event.emit('debug:mask:hide-modal');
     },
     showMask() {
+      if (!this.isComponentInCurrentPage()) {
+        return;
+      }
       this.setData({
         showMask: true
       });
     },
     closeMask() {
+      if (!this.isComponentInCurrentPage()) {
+        return;
+      }
       setTimeout(() => {
         this.setData({
           showMask: false
         });
       }, animateDuration);
+    },
+    /** 当前组件是否在当前页面中 */
+    isComponentInCurrentPage() {
+      const currentPageUniqueId = this.getPageUniqueId(this.getCurrentPage());
+      let parent = this.selectOwnerComponent();
+      while (parent) {
+        if (currentPageUniqueId === this.getPageUniqueId(parent)) {
+          return true;
+        }
+        parent = parent?.selectOwnerComponent();
+      }
+      return false;
+    },
+    /** 获取当前页面实例 */
+    getCurrentPage() {
+      // 不支持getCurrentPages的，直接忽略上报
+      if (typeof getCurrentPages !== 'function') {
+        return null;
+      }
+
+      const pages = getCurrentPages();
+      if (pages.length === 0) {
+        return null;
+      }
+
+      return pages[pages.length - 1];
+    },
+    /** 获取当前页面的uniqueId */
+    getPageUniqueId(page) {
+      const defaultValue = '';
+
+      const getPageUniqueId = page => {
+        if (!page) {
+          return defaultValue;
+        }
+        if (typeof page.getPageId === 'function') {
+          return page.getPageId();
+        }
+        return page.__wxExparserNodeId__ || page.__wxWebviewId__ || page.route || page.__route__ || defaultValue;
+      };
+      // 如果传入page，则以page为准，如果未传入，则以当前页面为准
+      const uniqueId = getPageUniqueId(page);
+      if (uniqueId) {
+        return uniqueId;
+      }
+
+      // 不支持getCurrentPages的，返回默认值
+      if (typeof getCurrentPages !== 'function') {
+        return defaultValue;
+      }
+
+      const pages = getCurrentPages();
+      if (pages.length === 0) {
+        return defaultValue;
+      }
+
+      return getPageUniqueId(pages[pages.length - 1]);
     },
     addListeners() {
       store.event.on('debug:mask:show-modal', this.showMask.bind(this));
