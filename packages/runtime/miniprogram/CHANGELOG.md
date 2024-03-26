@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.14](https://github.com/dlhandsome/we-debug/compare/v0.31.13...v0.31.14) (2024-03-26)
+
+
+### Bug Fixes
+
+* 修复多页面时，新页面打开we-debug后，页面栈中其他页面we-debug被异常打开的问题 ([4c4f9eb](https://github.com/dlhandsome/we-debug/commit/4c4f9eb0c2765cd1676d261574259898f57549ad))
+
+
+
+
+
 ## [0.31.13](https://github.com/dlhandsome/we-debug/compare/v0.31.12...v0.31.13) (2024-01-30)
 
 **Note:** Version bump only for package @we-debug/miniprogram
