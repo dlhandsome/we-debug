@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.15](https://github.com/dlhandsome/we-debug/compare/v0.31.14...v0.31.15) (2024-05-08)
+
+
+### Bug Fixes
+
+* 修复 option chain 兼容性问题 ([c3260c9](https://github.com/dlhandsome/we-debug/commit/c3260c9ca752ff83b83eec8868d5b3f71f8f08b3))
+
+
+
+
+
 ## [0.31.14](https://github.com/dlhandsome/we-debug/compare/v0.31.13...v0.31.14) (2024-03-26)
 
 
