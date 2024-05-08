@@ -60,7 +60,7 @@ Component({
         if (currentPageUniqueId === this.getPageUniqueId(parent)) {
           return true;
         }
-        parent = parent?.selectOwnerComponent();
+        parent = parent && parent.selectOwnerComponent();
       }
       return false;
     },
