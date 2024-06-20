@@ -105,7 +105,7 @@ const builds = {
       base: 'packages/runtime/plugin-navigate/src',
       allowEmpty: true
     },
-    scriptsSrc: 'packages/runtime/plugin-navigate/src/**/*.js',
+    tsSrc: 'packages/runtime/plugin-navigate/src/**/*.ts',
     lessSrc: 'packages/runtime/plugin-navigate/src/**/*.less',
     copySrc: ['packages/runtime/plugin-navigate/src/**/*.{wxml,json}'],
     dest: 'packages/runtime/plugin-navigate/dist/',

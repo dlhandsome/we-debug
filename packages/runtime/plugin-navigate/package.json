@@ -3,6 +3,7 @@
   "version": "0.31.16",
   "description": "navigate plugin for we-debug",
   "main": "dist/index.js",
+  "types": "dist/types.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
