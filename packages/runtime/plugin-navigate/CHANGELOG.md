@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.16](https://github.com/dlhandsome/we-debug/compare/v0.31.15...v0.31.16) (2024-06-20)
+
+**Note:** Version bump only for package @we-debug/plugin-navigate
+
+
+
+
+
 # [0.31.0](https://github.com/dlhandsome/we-debug/compare/v0.30.1...v0.31.0) (2024-01-03)
 
 **Note:** Version bump only for package @we-debug/plugin-navigate
