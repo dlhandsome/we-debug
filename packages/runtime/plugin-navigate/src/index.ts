@@ -1,9 +1,17 @@
-const NavigatePlugin = {};
+import {
+  IAnyObject,
+  IPlugin,
+  IPluginInitOptions
+} from './types';
 
-NavigatePlugin.install = function (weDebug, options) {
+const NavigatePlugin: IPlugin = {
+  install () {}
+};
+
+NavigatePlugin.install = function (weDebug, options:IPluginInitOptions) {
   if (!Array.isArray(options)) options = [options];
 
-  const rules = [];
+  const rules: IAnyObject[] = [];
 
   options.forEach(o => {
     const rule = weDebug.createFormRule(
@@ -17,7 +25,7 @@ NavigatePlugin.install = function (weDebug, options) {
           desc: o.desc || '',
           type: 'arrow',
           handler: {
-            bindTap(state) {
+            bindTap(state: any) {
               if (!state.disabled) {
                 wx.navigateTo({
                   url: o.url

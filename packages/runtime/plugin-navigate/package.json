@@ -15,5 +15,8 @@
   "license": "MIT",
   "readme": "ERROR: No README data found!",
   "_id": "@we-debug/plugin-navigate@0.1.2",
-  "_commitid": "d1e9ad9"
+  "_commitid": "d1e9ad9",
+  "peerDependencies": {
+    "@we-debug/core": "^0.31.12"
+  }
 }
