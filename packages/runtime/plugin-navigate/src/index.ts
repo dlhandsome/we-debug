@@ -41,7 +41,9 @@ NavigatePlugin.install = function (weDebug, options:IPluginInitOptions) {
     rules.push(rule);
   });
 
-  weDebug.addFormRule(rules);
+  weDebug.addFormRule(rules, {
+    group: '快捷入口'
+  });
 };
 
 export default NavigatePlugin;
