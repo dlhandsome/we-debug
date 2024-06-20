@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.17](https://github.com/dlhandsome/we-debug/compare/v0.31.16...v0.31.17) (2024-06-20)
+
+
+### Bug Fixes
+
+* added types entry ([015dcac](https://github.com/dlhandsome/we-debug/commit/015dcac508adb5fb0a3a140a9dd083d6323a4225))
+
+
+
+
+
 ## [0.31.16](https://github.com/dlhandsome/we-debug/compare/v0.31.15...v0.31.16) (2024-06-20)
 
 **Note:** Version bump only for package we-debug
