@@ -1,9 +1,9 @@
-import { IPluginInstance } from '../types';
+import { IAnyObject, IPluginInstance } from '../types';
 import { isFunc } from '../utils/simple-type-function';
 
 const installedPlugins: IPluginInstance[] = [];
 
-export function use(this: any, plugin: IPluginInstance, ...args: any[]) {
+export function use<T extends IAnyObject>(this: any, plugin: IPluginInstance, ...args: T[]) {
   if (installedPlugins.indexOf(plugin) > -1) {
     return this;
   }
