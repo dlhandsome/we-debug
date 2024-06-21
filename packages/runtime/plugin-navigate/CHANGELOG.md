@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.18](https://github.com/dlhandsome/we-debug/compare/v0.31.17...v0.31.18) (2024-06-21)
+
+
+### Bug Fixes
+
+* **plugin-navigate:** fixed types ([63f2cd4](https://github.com/dlhandsome/we-debug/commit/63f2cd4a11549c4fe1a3ef4a1d8d87dcf5d8abe3))
+
+
+
+
+
 ## [0.31.17](https://github.com/dlhandsome/we-debug/compare/v0.31.16...v0.31.17) (2024-06-20)
 
 
