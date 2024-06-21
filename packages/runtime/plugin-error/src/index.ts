@@ -16,7 +16,7 @@ const ErrorPlugin: IPlugin = {
  */
 
 const errManage = {
-  _errStack: [] as string[],
+  _errStack: [] as WechatMiniprogram.Error[],
   get() {
     return this._errStack;
   },
