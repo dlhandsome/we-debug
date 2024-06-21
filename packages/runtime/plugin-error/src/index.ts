@@ -20,7 +20,7 @@ const errManage = {
   get() {
     return this._errStack;
   },
-  add(e: string) {
+  add(e: WechatMiniprogram.Error) {
     this._errStack.push(e);
   },
   clear() {
