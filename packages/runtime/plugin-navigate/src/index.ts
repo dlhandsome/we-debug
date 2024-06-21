@@ -1,6 +1,7 @@
 import {
   IAnyObject,
   IPlugin,
+  IFormRuleState,
   IPluginInitOptions
 } from './types';
 
@@ -25,7 +26,7 @@ NavigatePlugin.install = function (weDebug, options:IPluginInitOptions) {
           desc: o.desc || '',
           type: 'arrow',
           handler: {
-            bindTap(state: any) {
+            bindTap(state: IFormRuleState) {
               if (!state.disabled) {
                 wx.navigateTo({
                   url: o.url
