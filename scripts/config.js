@@ -45,7 +45,7 @@ const builds = {
       base: 'packages/runtime/plugin-launcher/src',
       allowEmpty: true
     },
-    scriptsSrc: 'packages/runtime/plugin-launcher/src/**/*.js',
+    tsSrc: 'packages/runtime/plugin-launcher/src/**/*.ts',
     lessSrc: 'packages/runtime/plugin-launcher/src/**/*.less',
     copySrc: ['packages/runtime/plugin-launcher/src/**/*.{wxml,json}'],
     dest: 'packages/runtime/plugin-launcher/dist/',
