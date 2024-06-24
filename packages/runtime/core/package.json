@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/core",
-  "version": "0.32.1",
+  "version": "0.32.2",
   "description": "a useful debug tool for weapp",
   "author": {
     "name": "dlhandsome"
@@ -25,7 +25,7 @@
   "license": "MIT",
   "dependencies": {
     "@we-debug/plugin-error": "0.32.0",
-    "@we-debug/plugin-launcher": "0.32.1",
+    "@we-debug/plugin-launcher": "0.32.2",
     "@we-debug/plugin-network": "0.32.0",
     "@we-debug/plugin-router": "0.32.0",
     "@we-debug/plugin-ui-check": "0.32.0",

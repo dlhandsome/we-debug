@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.32.2](https://github.com/dlhandsome/we-debug/compare/v0.32.1...v0.32.2) (2024-06-24)
+
+
+### Bug Fixes
+
+* **plugin-launcher:** fixed empty pkg ([46d797f](https://github.com/dlhandsome/we-debug/commit/46d797f514047fb9f21137dda01e16e733c4806c))
+
+
+
+
+
 ## [0.32.1](https://github.com/dlhandsome/we-debug/compare/v0.32.0...v0.32.1) (2024-06-24)
 
 
