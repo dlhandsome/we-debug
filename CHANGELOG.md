@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.32.0](https://github.com/dlhandsome/we-debug/compare/v0.31.18...v0.32.0) (2024-06-24)
+
+
+### Bug Fixes
+
+* **core:** fixed types ([168ff8e](https://github.com/dlhandsome/we-debug/commit/168ff8ee9ad7c45fd6f300798b571f9c5261db75))
+
+
+### Features
+
+* 自定义 tabbar 模式下使用 自定义 mask ([154085b](https://github.com/dlhandsome/we-debug/commit/154085b9b6e2468fa44ff701f1925519d82fe6d5))
+
+
+
+
+
 ## [0.31.18](https://github.com/dlhandsome/we-debug/compare/v0.31.17...v0.31.18) (2024-06-21)
 
 
