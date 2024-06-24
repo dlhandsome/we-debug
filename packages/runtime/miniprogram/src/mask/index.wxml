@@ -1,4 +1,5 @@
 <page-container
+  wx:if="{{!useCustomMask}}"
   show="{{showMask}}"
   round="{{true}}"
   z-index="{{styles.zIndex}}"
@@ -6,3 +7,8 @@
  >
   <slot></slot>
 </page-container>
+<view wx:else class="w-mask animated {{animateClassName.mask}}" hidden="{{!showMask}}" bindtap="closeMaskHandler">
+    <view class="w-mask__modal animated {{animateClassName.modal}}" catchtap="noop">
+        <slot></slot>
+    </view>
+</view>

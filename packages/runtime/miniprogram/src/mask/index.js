@@ -3,6 +3,12 @@ import Debug from '@we-debug/core';
 const store = Debug.store;
 
 const animateDuration = 300;
+const animateClassName = {
+  fadeIn: 'fadeIn',
+  fadeOut: 'fadeOut',
+  slideInUp: 'slideInUp',
+  slideOutDown: 'slideOutDown'
+};
 
 Component({
   properties: {
@@ -19,11 +25,18 @@ Component({
   data: {
     // 是否展示浮层
     showMask: false,
+    // 动画类
+    animateClassName: {
+      mask: animateClassName.fadeIn,
+      modal: animateClassName.slideInUp
+    },
     styles: {
       zIndex: 999991,
       customStyle:
         'padding: 12px 24px 24px 24px;padding-bottom: constant(safe-area-inset-bottom);padding-bottom: env(safe-area-inset-bottom);'
-    }
+    },
+    // eslint-disable-next-line no-undef
+    useCustomMask: __wxConfig.tabBar.custom
   },
   externalClasses: ['my-class'],
   methods: {
