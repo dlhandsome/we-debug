@@ -7,7 +7,7 @@ const LauncherPlugin: IPlugin = {
   install () {}
 };
 /**
- * 调试启动器
+ * 调试启动器 
  *
  * @param {*} weDebug
  * @param {*} [options={}]
