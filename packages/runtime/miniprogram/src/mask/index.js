@@ -36,7 +36,7 @@ Component({
         'padding: 12px 24px 24px 24px;padding-bottom: constant(safe-area-inset-bottom);padding-bottom: env(safe-area-inset-bottom);'
     },
     // eslint-disable-next-line no-undef
-    useCustomMask: __wxConfig.tabBar.custom
+    useCustomMask: __wxConfig.tabBar && __wxConfig.tabBar.custom
   },
   externalClasses: ['my-class'],
   methods: {
