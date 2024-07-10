@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.32.3](https://github.com/dlhandsome/we-debug/compare/v0.32.2...v0.32.3) (2024-07-10)
+
+
+### Bug Fixes
+
+* **miniprogram:** 修复mask 组件报错问题 ([837f016](https://github.com/dlhandsome/we-debug/commit/837f016de1baa3e65a0a22098a07251d29d2eeb0))
+
+
+
+
+
 ## [0.32.2](https://github.com/dlhandsome/we-debug/compare/v0.32.1...v0.32.2) (2024-06-24)
 
 
