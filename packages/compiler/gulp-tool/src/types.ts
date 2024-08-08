@@ -14,6 +14,7 @@ export namespace WechatMiniprogram {
   export interface IAppJson {
     pages: string[];
     subpackages?: AppJsonSubpages;
+    subPackages?: AppJsonSubpages;
   }
 }
 

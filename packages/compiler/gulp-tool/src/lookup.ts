@@ -21,7 +21,7 @@ export function lookupPages (projectDir: string) {
     const appJson: WechatMiniprogram.IAppJson = require(appPath);
 
     pages = appJson.pages;
-    subpackages = appJson.subpackages || [];
+    subpackages = appJson.subpackages || appJson.subPackages || [];
 
     pages = pages.map(p => {
       return path.resolve(projectDir, p);
