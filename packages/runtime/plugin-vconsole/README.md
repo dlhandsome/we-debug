@@ -9,10 +9,10 @@ npm install @we-debug/plugin-vconsole --save-dev
 ## 使用
 
 ```javascript
-import weDebug from '@we-debug/core/libs/index'
-import RouterPlugin from '@we-debug/plugin-vconsole'
+import weDebug from '@we-debug/miniprogram'
+import VConsolePlugin from '@we-debug/plugin-vconsole'
 
-weDebug.use(RouterPlugin, { someOption })
+weDebug.use(VConsolePlugin, { someOption })
 ```
 
 ## 配置
