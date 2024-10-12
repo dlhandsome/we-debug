@@ -84,7 +84,7 @@ RoutePlugin.install = function (weDebug, options = {}) {
       });
 
       copyPageOptionRule.emit({
-        desc: routeSearch
+        desc: routeSearch || '(空)'
       });
     }
   });
