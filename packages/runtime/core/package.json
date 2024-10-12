@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/core",
-  "version": "0.34.0",
+  "version": "0.34.1",
   "description": "a useful debug tool for weapp",
   "author": {
     "name": "dlhandsome"
@@ -27,7 +27,7 @@
     "@we-debug/plugin-error": "0.34.0",
     "@we-debug/plugin-launcher": "0.34.0",
     "@we-debug/plugin-network": "0.34.0",
-    "@we-debug/plugin-router": "0.34.0",
+    "@we-debug/plugin-router": "0.34.1",
     "@we-debug/plugin-ui-check": "0.34.0",
     "deepmerge": "^4.2.2"
   },
