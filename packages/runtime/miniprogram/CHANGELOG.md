@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.33.1](https://github.com/dlhandsome/we-debug/compare/v0.33.0...v0.33.1) (2024-10-12)
+
+
+### Bug Fixes
+
+* **miniprogram:** remove useless package ([1714747](https://github.com/dlhandsome/we-debug/commit/17147476637c8c16fe108ce9d4fe2b47659a8575))
+
+
+
+
+
 # [0.33.0](https://github.com/dlhandsome/we-debug/compare/v0.32.3...v0.33.0) (2024-08-08)
 
 **Note:** Version bump only for package @we-debug/miniprogram

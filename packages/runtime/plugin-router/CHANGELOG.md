@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.33.1](https://github.com/dlhandsome/we-debug/compare/v0.33.0...v0.33.1) (2024-10-12)
+
+
+### Bug Fixes
+
+* fixed typo ([5ba7b67](https://github.com/dlhandsome/we-debug/commit/5ba7b6701c822a2b92e6eebc115d8d58c2581973))
+
+
+
+
+
 # [0.33.0](https://github.com/dlhandsome/we-debug/compare/v0.32.3...v0.33.0) (2024-08-08)
 
 **Note:** Version bump only for package @we-debug/plugin-router
