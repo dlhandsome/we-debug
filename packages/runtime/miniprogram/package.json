@@ -25,13 +25,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@we-debug/core": "0.33.0",
-    "@we-debug/plugin-error": "0.33.0",
-    "@we-debug/plugin-launcher": "0.33.0",
-    "@we-debug/plugin-network": "0.33.0",
-    "@we-debug/plugin-router": "0.33.0",
-    "@we-debug/plugin-ui-check": "0.33.0",
-    "deepmerge": "^4.2.2"
+    "@we-debug/core": "0.33.0"
   },
   "readme": "ERROR: No README data found!",
   "_id": "@we-debug/core@0.3.5",
