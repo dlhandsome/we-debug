@@ -16,8 +16,8 @@ RoutePlugin.install = function (weDebug, options = {}) {
     Object.assign(
       {},
       {
-        title: '页面路由',
-        desc: '复制当前页面路由到剪切板',
+        title: '页面路径',
+        desc: '复制当前页面路径到剪切板',
         type: 'button',
         handler: {
           bindTap(state) {
