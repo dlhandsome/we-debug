@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.34.0](https://github.com/dlhandsome/we-debug/compare/v0.33.1...v0.34.0) (2024-10-12)
+
+
+### Features
+
+* **router:** 菜单界面展示页面路径 & 参数 ([bf03097](https://github.com/dlhandsome/we-debug/commit/bf03097fcae7fa0c43c90627b7278e4dbcb7555e))
+
+
+
+
+
 ## [0.33.1](https://github.com/dlhandsome/we-debug/compare/v0.33.0...v0.33.1) (2024-10-12)
 
 
