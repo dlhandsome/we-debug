@@ -100,6 +100,8 @@ interface PluginOption {
   [props: string]: any
 }
 
+type ProcessDefine = (file: File, encoding?: string) => File | void;
+
 interface IRegistration {
   // 插件名称
   pluginName: string;
