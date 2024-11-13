@@ -28,6 +28,7 @@ const builds = {
       base: 'packages/runtime/miniprogram/src',
       allowEmpty: true
     },
+    tsSrc: 'packages/runtime/miniprogram/src/**/*.ts',
     scriptsSrc: 'packages/runtime/miniprogram/src/**/*.js',
     lessSrc: ['packages/runtime/miniprogram/src/**/*.less', '!packages/runtime/miniprogram/src/less/*.*'],
     copySrc: [
