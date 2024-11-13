@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.35.0](https://github.com/dlhandsome/we-debug/compare/v0.34.1...v0.35.0) (2024-11-13)
+
+
+### Features
+
+* **minprogram:** 支持 type 导出 ([1bd7f02](https://github.com/dlhandsome/we-debug/commit/1bd7f025e11e7785133a7eb09618abf5bd24eabd))
+
+
+
+
+
 ## [0.34.1](https://github.com/dlhandsome/we-debug/compare/v0.34.0...v0.34.1) (2024-10-12)
 
 
