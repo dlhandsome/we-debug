@@ -76,7 +76,7 @@ Component({
       this.setData({ sys: store.sys.get() });
     },
     setGroups() {
-      return setGroup();
+      this.setData({ 'group.keys': setGroup() });
     },
     setRules() {
       this.setData({ rules: store.group.get(currentGroupCache.get() || DEFAULT_GROUP.ALL).get() });
