@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.36.0](https://github.com/dlhandsome/we-debug/compare/v0.35.0...v0.36.0) (2024-11-25)
+
+
+### Features
+
+* 添加规则时更新视图 ([f303b29](https://github.com/dlhandsome/we-debug/commit/f303b29a877cb20e6dae21cb3c055b9da560d2a6))
+
+
+
+
+
 # [0.35.0](https://github.com/dlhandsome/we-debug/compare/v0.34.1...v0.35.0) (2024-11-13)
 
 
