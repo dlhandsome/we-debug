@@ -10,6 +10,8 @@ export { createBadge } from '../model/index';
  */
 export function addBadge(badges: Badge) {
   store.badges.add(badges);
+  // 抛出 badge 更新事件
+  store.event.emit('badge:update');
 }
 
 /**
@@ -18,6 +20,8 @@ export function addBadge(badges: Badge) {
  */
 export function removeBadge(badges: Badge) {
   store.badges.remove(badges);
+  // 抛出 badge 更新事件
+  store.event.emit('badge:update');
 }
 
 /**
