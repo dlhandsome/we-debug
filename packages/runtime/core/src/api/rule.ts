@@ -43,8 +43,9 @@ export function addFormRule(rule: FormRule, options?: IAddFormRuleOption) {
   }
 
   customGroup.forEach(k => addRuleByGroup(k, rule));
-  // 抛出 rule 更新事件
+  // 抛出 rule、group 更新事件
   store.event.emit('rule:update');
+  store.event.emit('group:update');
 }
 
 /**
@@ -53,8 +54,10 @@ export function addFormRule(rule: FormRule, options?: IAddFormRuleOption) {
  */
 export function removeFormRule(rule: FormRule) {
   store.rules.remove(rule);
-  // 抛出 rule 更新事件
+  // 抛出 rule、group 更新事件
   store.event.emit('rule:update');
+  store.event.emit('group:update');
+
 }
 
 /**

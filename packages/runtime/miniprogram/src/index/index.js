@@ -6,6 +6,22 @@ const sys = store.sys.get();
 const currentGroupCache = Debug.createCache('__wedebug_miniprogram_group_actived_key__', '');
 const DEFAULT_GROUP = Debug.DEFAULT_GROUP;
 
+const setGroup = () =>
+  store.group.getKeys((next, prev) => {
+    if (prev === '全部') {
+      return 1;
+    }
+    if (next === '全部') {
+      return -1;
+    }
+    if (prev === '未分类') {
+      return -1;
+    }
+    if (next === '未分类') {
+      return 1;
+    }
+  });
+
 Component({
   options: {
     multipleSlots: true
@@ -51,26 +67,16 @@ Component({
     },
     searchStr: '',
     group: {
-      keys: store.group.getKeys((next, prev) => {
-        if (prev === '全部') {
-          return 1;
-        }
-        if (next === '全部') {
-          return -1;
-        }
-        if (prev === '未分类') {
-          return -1;
-        }
-        if (next === '未分类') {
-          return 1;
-        }
-      }),
+      keys: setGroup(),
       actived: currentGroupCache.get() || DEFAULT_GROUP.ALL
     }
   },
   methods: {
     setSys() {
       this.setData({ sys: store.sys.get() });
+    },
+    setGroups() {
+      return setGroup();
     },
     setRules() {
       this.setData({ rules: store.group.get(currentGroupCache.get() || DEFAULT_GROUP.ALL).get() });
@@ -115,15 +121,18 @@ Component({
     addListeners() {
       store.event.on('rule:update', this.setRules.bind(this));
       store.event.on('badge:update', this.setBadges.bind(this));
+      store.event.on('group:update', this.setGroups.bind(this));
     },
     removeListeners() {
       store.event.off('rule:update', this.setRules.bind(this));
       store.event.off('badge:update', this.setBadges.bind(this));
+      store.event.off('group:update', this.setGroups.bind(this));
     }
   },
   lifetimes: {
     attached() {
       this.setSys();
+      this.setGroups();
       this.setRules();
       this.setBadges();
       this.addListeners();
