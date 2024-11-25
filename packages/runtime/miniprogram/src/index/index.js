@@ -79,7 +79,11 @@ Component({
       this.setData({ 'group.keys': setGroup() });
     },
     setRules() {
-      this.setData({ rules: store.group.get(currentGroupCache.get() || DEFAULT_GROUP.ALL).get() });
+      const rules = !store.group.get(currentGroupCache.get() || DEFAULT_GROUP.ALL)
+        ? store.group.get(DEFAULT_GROUP.ALL).get()
+        : store.group.get(currentGroupCache.get() || DEFAULT_GROUP.ALL).get();
+
+      this.setData({ rules });
     },
     setBadges() {
       this.setData({ badges: store.badges.get() });
