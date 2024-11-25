@@ -111,6 +111,14 @@ Component({
       });
       // 设置当前分组 key 缓存
       currentGroupCache.set(group);
+    },
+    addListeners() {
+      store.event.on('rule:update', this.setRules.bind(this));
+      store.event.on('badge:update', this.setBadges.bind(this));
+    },
+    removeListeners() {
+      store.event.off('rule:update', this.setRules.bind(this));
+      store.event.off('badge:update', this.setBadges.bind(this));
     }
   },
   lifetimes: {
@@ -118,6 +126,10 @@ Component({
       this.setSys();
       this.setRules();
       this.setBadges();
+      this.addListeners();
+    },
+    detached() {
+      this.removeListeners();
     }
   }
 });
