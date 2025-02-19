@@ -4,6 +4,10 @@
   "description": "we-debug ui-check plugin",
   "miniprogram": "dist",
   "main": "dist/plugin.js",
+  "exports": {
+    ".": "./dist/plugin.js",
+    "./plugin": "./dist/plugin.js"
+  },
   "publishConfig": {
     "access": "public"
   },
