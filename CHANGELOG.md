@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.37.3](https://github.com/dlhandsome/we-debug/compare/v0.37.2...v0.37.3) (2025-02-19)
+
+
+### Bug Fixes
+
+* fixed core types ([6a59706](https://github.com/dlhandsome/we-debug/commit/6a59706344a37100c2d51c8a4b379d268bd0486c))
+* 给@we-debug/plugin-ui-check添加deep import索引 ([6b0d4d3](https://github.com/dlhandsome/we-debug/commit/6b0d4d3b556b1b4cfe4187ffe6e268338beca267))
+
+
+
+
+
 ## [0.37.2](https://github.com/dlhandsome/we-debug/compare/v0.37.1...v0.37.2) (2024-11-25)
 
 
