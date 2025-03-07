@@ -1,5 +1,6 @@
 import {
   isStr,
+  isObj,
   isArr,
   isEmptyArr
 } from '../utils/simple-type-function';
@@ -37,8 +38,14 @@ export function addFormRule(rule: FormRule, options?: IAddFormRuleOption) {
       ? Array.from(new Set(customGroup.concat(defaultGroup)))
       : Array.from(new Set(customGroup.concat(DEFAULT_GROUP.ALL)));
   } else if (isStr(customGroup)) {
-    customGroup = [DEFAULT_GROUP.ALL, customGroup];
-  } else {
+    customGroup = Array.from(new Set([DEFAULT_GROUP.ALL, customGroup]));
+  } else if (isObj(customGroup)) {
+    if (customGroup.private) {
+      customGroup = [customGroup.name];
+    } else {
+      customGroup = Array.from(new Set([DEFAULT_GROUP.ALL, customGroup.name]));
+    }
+  } else{
     customGroup = defaultGroup;
   }
 
