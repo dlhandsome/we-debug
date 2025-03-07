@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.40.2](https://github.com/dlhandsome/we-debug/compare/v0.40.1...v0.40.2) (2025-03-07)
+
+
+### Bug Fixes
+
+* remove file pkg.json ([07c9166](https://github.com/dlhandsome/we-debug/commit/07c916616a6950802ae36837b114f7d89b6ff3d2))
+
+
+
+
+
 ## [0.40.1](https://github.com/dlhandsome/we-debug/compare/v0.40.0...v0.40.1) (2025-03-07)
 
 
