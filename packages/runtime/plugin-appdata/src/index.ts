@@ -37,7 +37,6 @@ const actionHandlers: ActionHandlers = {
     }
     return false;
   },
-
   [ActionType.EDIT]: async ({ page, key }) => {
     try {
       const res = await showModal({
@@ -61,7 +60,6 @@ const actionHandlers: ActionHandlers = {
     }
     return false;
   },
-
   [ActionType.CLEAR]: async ({ page, key }) => {
     try {
       await page.setData({ [key]: undefined });
