@@ -1,0 +1,27 @@
+{
+  "name": "@we-debug/plugin-appdata",
+  "version": "0.38.1",
+  "description": "> TODO: description",
+  "author": "Sail <505441575@qq.com>",
+  "homepage": "https://github.com/dlhandsome/we-debug/tree/master/packages/runtime/plugin-appdata#readme",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "types": "dist/types.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dlhandsome/we-debug.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/dlhandsome/we-debug/issues"
+  }
+}
