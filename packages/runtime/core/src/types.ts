@@ -141,6 +141,8 @@ export interface IWedebugInitOption {
     router?: IAnyObject;
     /** 视觉搞对比属性配置 */
     uiCheck?: IAnyObject;
+    /** AppData配置 */
+    appData?: IAnyObject;
   }
 }
 

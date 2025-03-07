@@ -112,6 +112,18 @@ const builds = {
     dest: 'packages/runtime/plugin-navigate/dist/',
     pkg: 'packages/runtime/plugin-navigate/package.json'
   },
+  'plugin-appdata': {
+    name: 'plugin-appdata',
+    option: {
+      base: 'packages/runtime/plugin-appdata/src',
+      allowEmpty: true
+    },
+    tsSrc: 'packages/runtime/plugin-appdata/src/**/*.ts',
+    lessSrc: 'packages/runtime/plugin-appdata/src/**/*.less',
+    copySrc: ['packages/runtime/plugin-appdata/src/**/*.{wxml,json}'],
+    dest: 'packages/runtime/plugin-appdata/dist/',
+    pkg: 'packages/runtime/plugin-appdata/package.json'
+  },
   'plugin-ui-check': {
     name: 'plugin-ui-check',
     option: {
