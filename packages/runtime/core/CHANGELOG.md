@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.37.4](https://github.com/dlhandsome/we-debug/compare/v0.37.3...v0.37.4) (2025-03-07)
+
+
+### Bug Fixes
+
+* fixed remove rule ([e3d6e69](https://github.com/dlhandsome/we-debug/commit/e3d6e69e0719f62f942590017f1692dcb1f9b192))
+
+
+
+
+
 ## [0.37.3](https://github.com/dlhandsome/we-debug/compare/v0.37.2...v0.37.3) (2025-02-19)
 
 **Note:** Version bump only for package @we-debug/core
