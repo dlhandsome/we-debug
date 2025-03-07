@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/core",
-  "version": "0.37.4",
+  "version": "0.38.0",
   "description": "a useful debug tool for weapp",
   "author": {
     "name": "dlhandsome"
@@ -24,11 +24,11 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@we-debug/plugin-error": "0.37.0",
-    "@we-debug/plugin-launcher": "0.37.0",
-    "@we-debug/plugin-network": "0.37.0",
-    "@we-debug/plugin-router": "0.37.0",
-    "@we-debug/plugin-ui-check": "0.37.3",
+    "@we-debug/plugin-error": "0.38.0",
+    "@we-debug/plugin-launcher": "0.38.0",
+    "@we-debug/plugin-network": "0.38.0",
+    "@we-debug/plugin-router": "0.38.0",
+    "@we-debug/plugin-ui-check": "0.38.0",
     "deepmerge": "^4.2.2"
   },
   "readme": "ERROR: No README data found!",

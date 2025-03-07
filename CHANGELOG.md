@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.38.0](https://github.com/dlhandsome/we-debug/compare/v0.37.4...v0.38.0) (2025-03-07)
+
+
+### Features
+
+* support private rule group ([7e3804f](https://github.com/dlhandsome/we-debug/commit/7e3804f49899882203c8456a1ea76b77581cc8b2))
+
+
+
+
+
 ## [0.37.4](https://github.com/dlhandsome/we-debug/compare/v0.37.3...v0.37.4) (2025-03-07)
 
 
