@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.38.1](https://github.com/dlhandsome/we-debug/compare/v0.38.0...v0.38.1) (2025-03-07)
+
+
+### Bug Fixes
+
+* fixed search input ([728f841](https://github.com/dlhandsome/we-debug/commit/728f8414962bf6b28e639ece8e981652481e4f3a))
+
+
+
+
+
 # [0.38.0](https://github.com/dlhandsome/we-debug/compare/v0.37.4...v0.38.0) (2025-03-07)
 
 
