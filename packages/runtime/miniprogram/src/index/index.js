@@ -94,6 +94,12 @@ Component({
       });
     },
     setfilterRule(searchStr) {
+      if (searchStr === '') {
+        // 此时搜索框内容清空，应该恢复当前分组的初始状态
+        this.setRules();
+        return;
+      }
+
       const rules = store.rules.get();
       const filterRules = rules.filter(i => i.title.indexOf(searchStr) > -1);
 
