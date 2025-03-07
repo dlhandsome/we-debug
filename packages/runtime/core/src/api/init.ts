@@ -14,6 +14,7 @@ import {
 
 /**
  * 初始化方法
+ * 
  * @param {*} options
  */
 export function init(this: any, options?: IWedebugInitOption) {
