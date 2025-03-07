@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.40.0](https://github.com/dlhandsome/we-debug/compare/v0.39.0...v0.40.0) (2025-03-07)
+
+
+### Features
+
+* added something ([d439b85](https://github.com/dlhandsome/we-debug/commit/d439b855a52687ec3e0d7cbfde021a847b33fbc6))
+
+
+
+
+
 # [0.39.0](https://github.com/dlhandsome/we-debug/compare/v0.38.1...v0.39.0) (2025-03-07)
 
 

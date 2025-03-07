@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/plugin-launcher",
-  "version": "0.39.0",
+  "version": "0.40.0",
   "description": "launcher plugin for we-debug",
   "main": "dist/index.js",
   "types": "dist/types.d.ts",
