@@ -33,7 +33,7 @@ export class Group extends Store {
   }
 
   remove(k: string, rule: FormRule) {
-    const rules = this.get(k);
+    const rules = this.get(k)?.get();
 
     if (!rules) {
       return;
