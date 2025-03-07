@@ -112,11 +112,17 @@ export type WxKey = keyof WechatMiniprogram.Wx;
  */
 export type GetBridgeInfoFunc =  ((key: string, callback: (...args: any[]) => any) => void) & { hasEventBind?: boolean; };
 
+export type IFormRuleGroup = {
+  name: string;
+  private?: boolean;
+} | string | string[];
+
 /**
  * 新增表单规则函数参数
  */
 export interface IAddFormRuleOption {
-  group?: string | string[];
+   /** 规则会展示在调试面板对应类目中 */
+  group?: IFormRuleGroup;
 }
 
 /**
