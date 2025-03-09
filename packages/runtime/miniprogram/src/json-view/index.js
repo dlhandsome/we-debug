@@ -1,34 +1,41 @@
+import Debug from '@we-debug/core';
+
+const store = Debug.store;
+const { isFunc } = Debug.util;
+
+const prefix = 'debug:jsonview-';
+
 Component({
   properties: {
-    jsonData: {
-      type: null,
-      value: null,
-      observer: function (newVal) {
-        if (newVal) {
-          const formatted = this.formatJson(newVal);
-          this.setData({ formattedData: formatted });
-          if (this.data.expandLevel >= 0) {
-            this.updateExpandLevel(this.data.expandLevel);
-          }
-        }
-      }
-    },
-    editable: {
-      type: Boolean,
-      value: false
-    },
-    expandLevel: {
-      type: Number,
-      value: -1, // -1 表示全部展开，0 表示全部折叠，正数表示展开的层级数
-      observer: function (newVal) {
-        if (this.data.formattedData.length > 0) {
-          this.updateExpandLevel(newVal);
-        }
-      }
+    config: {
+      type: Object,
+      value: {}
     }
   },
-
+  observers: {
+    'config.id'(v) {
+      const id = isFunc(v) ? v() : v;
+      this.setData({ prefix: prefix + id });
+    },
+    'config.data'(v) {
+      const jsonData = isFunc(v) ? v() : v;
+      this.onDataChange(jsonData);
+      this.setData({ jsonData });
+    },
+    'config.editable'(v) {
+      const editable = isFunc(v) ? v() : v;
+      this.setData({ editable });
+    },
+    'config.expandLevel'(v) {
+      const expandLevel = isFunc(v) ? v() : v;
+      this.setData({ expandLevel });
+    }
+  },
   data: {
+    prefix,
+    jsonData: null,
+    editable: false,
+    expandLevel: -1,
     formattedData: [],
     editingIndex: -1,
     editValue: '',
@@ -42,6 +49,33 @@ Component({
   },
 
   methods: {
+    addListeners() {
+      const prefix = this.data.prefix;
+      store.event.on(prefix + ':emit', this.emit.bind(this));
+    },
+    removeListeners() {
+      const prefix = this.data.prefix;
+      store.event.off(prefix + ':emit', this.emit.bind(this));
+    },
+    emit(opt) {
+      this.setData({
+        ...this.properties.config,
+        ...opt
+      });
+
+      if (opt.data) {
+        this.onDataChange(opt.data);
+      }
+    },
+    onDataChange(jsonData) {
+      if (jsonData) {
+        const formatted = this.formatJson(jsonData);
+        this.setData({ formattedData: formatted });
+        if (this.data.expandLevel >= 0) {
+          this.updateExpandLevel(this.data.expandLevel);
+        }
+      }
+    },
     updateExpandLevel(level) {
       const { formattedData } = this.data;
       const stack = [];
@@ -682,5 +716,11 @@ Component({
         formattedData: restoredData
       });
     }
+  },
+  attached() {
+    this.addListeners();
+  },
+  detached() {
+    this.removeListeners();
   }
 });

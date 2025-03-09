@@ -13,7 +13,7 @@
       <image class="search-icon--close" src="../icon/close.svg" wx:if="{{searchStr}}" catchtap="searchCleanHandler"/>
     </view>
     <view style="height:{{modal.scrollHeight}}rpx;">
-      <w-json-view json-data="{{jsonviews[0].data}}" editable="{{jsonviews[0].editable}}" expand-level="{{jsonviews[0].expandLevel}}" bind:change="handleJsonViewChange"/>
+      <w-json-view data="{{jsonviews[0].data}}" editable="{{jsonviews[0].editable}}" expand-level="{{jsonviews[0].expandLevel}}" bind:change="handleJsonViewChange"/>
     </view>
   </block>
   <block wx:else>
