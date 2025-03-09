@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.42.3](https://github.com/dlhandsome/we-debug/compare/v0.42.2...v0.42.3) (2025-03-09)
+
+
+### Bug Fixes
+
+* **miniprogram:** fixed json view update ([0a519b9](https://github.com/dlhandsome/we-debug/commit/0a519b9b4c3f7e45c65572a2ca01120fd7d7f792))
+
+
+
+
+
 ## [0.42.2](https://github.com/dlhandsome/we-debug/compare/v0.42.1...v0.42.2) (2025-03-09)
 
 
