@@ -20,7 +20,6 @@ Component({
     'config.data'(v) {
       const jsonData = isFunc(v) ? v() : v;
       this.onDataChange(jsonData);
-      this.setData({ jsonData });
     },
     'config.editable'(v) {
       const editable = isFunc(v) ? v() : v;
@@ -58,17 +57,15 @@ Component({
       store.event.off(prefix + ':emit', this.emit.bind(this));
     },
     emit(opt) {
-      this.setData({
-        ...this.properties.config,
-        ...opt
-      });
-
       if (opt.data) {
         this.onDataChange(opt.data);
       }
     },
     onDataChange(jsonData) {
       if (jsonData) {
+        this.setData({
+          jsonData
+        });
         const formatted = this.formatJson(jsonData);
         this.setData({ formattedData: formatted });
         if (this.data.expandLevel >= 0) {
