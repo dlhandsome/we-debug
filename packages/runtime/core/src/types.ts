@@ -97,6 +97,15 @@ export interface IFormRuleManageConstructorOption extends IBaseManageConstructor
   state?: IFormRuleState;
 }
 
+export interface IJsonViewManagerConstructorOption extends IBaseManageConstructorOption {
+  /** json 数据 */
+  data?: IAnyObject;
+  /** 是否允许编辑 */
+  editable?: boolean;
+  /** 默认展开层级 */
+  expandLevel?: number;
+}
+
 /**
  * 功能分组排序函数类型
  */
@@ -112,10 +121,12 @@ export type WxKey = keyof WechatMiniprogram.Wx;
  */
 export type GetBridgeInfoFunc =  ((key: string, callback: (...args: any[]) => any) => void) & { hasEventBind?: boolean; };
 
-export type IFormRuleGroup = {
+export type IGroupOption = {
   name: string;
   private?: boolean;
-} | string | string[];
+}
+
+export type IFormRuleGroup = IGroupOption | string | string[];
 
 /**
  * 新增表单规则函数参数
@@ -123,6 +134,16 @@ export type IFormRuleGroup = {
 export interface IAddFormRuleOption {
    /** 规则会展示在调试面板对应类目中 */
   group?: IFormRuleGroup;
+}
+
+export type IJsonViewGroup = IGroupOption;
+
+/**
+ * 新增 JsonView 函数参数
+ */
+export interface IAddJsonViewOption {
+  /** 规则会展示在调试面板对应类目中 */
+ group?: IJsonViewGroup;
 }
 
 /**

@@ -6,6 +6,7 @@ import { init } from './api/init';
 import { createCache } from './api/cache';
 import { createBadge, getBadge, addBadge, removeBadge } from './api/badge';
 import { createFormRule, getFormRule, addFormRule, removeFormRule } from './api/rule';
+import { createJsonView, getJsonView, addJsonView, removeJsonView } from './api/jsonview';
 import { getGroupsAllKeys, addRuleByGroup, getRuleByGroup, removeGroupRule } from './api/group';
 import { setBridgeInfo, getBridgeInfo } from './api/bridge';
 import { ENV_TYPE, getEnv } from './utils/env';
@@ -34,6 +35,10 @@ export {
   getFormRule,
   addFormRule,
   removeFormRule,
+  createJsonView,
+  getJsonView,
+  addJsonView,
+  removeJsonView,
   getGroupsAllKeys,
   addRuleByGroup,
   getRuleByGroup,
@@ -61,6 +66,10 @@ export default {
   getFormRule,
   addFormRule,
   removeFormRule,
+  createJsonView,
+  getJsonView,
+  addJsonView,
+  removeJsonView,
   getGroupsAllKeys,
   addRuleByGroup,
   getRuleByGroup,

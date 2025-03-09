@@ -4,6 +4,9 @@ import {
   FormRule
 } from '../model/rule';
 import {
+  JsonView
+} from '../model/jsonview';
+import {
   compareFn
 } from '../types';
 
@@ -17,7 +20,7 @@ export class Group extends Store {
     return Object.keys(this.store).sort(sortFn);
   }
 
-  add(k: string, rule: FormRule) {
+  add(k: string, rule: FormRule | JsonView) {
     let rules = this.get(k);
 
     if (!rules) {
@@ -32,7 +35,7 @@ export class Group extends Store {
     }
   }
 
-  remove(k: string, rule: FormRule) {
+  remove(k: string, rule: FormRule | JsonView) {
     const rules = this.get(k)?.get();
 
     if (!rules) {

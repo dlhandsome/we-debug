@@ -5,7 +5,8 @@ import { Group } from './group';
 import sys from './sys';
 import {
   Badge,
-  FormRule
+  FormRule,
+  JsonView
 } from '../model/index'
 
 export default {
@@ -13,6 +14,7 @@ export default {
   event: new Event(),
   badges: new MySet<Badge>(),
   rules: new MySet<FormRule>(),
+  jsonviews: new MySet<JsonView>(),
   group: new Group(),
   bridge: new Store()
 };
