@@ -2,6 +2,7 @@
   <scroll-view 
     class="json-viewer" 
     scroll-x="{{true}}" 
+    scroll-y="{{true}}" 
     scroll-left="{{scrollLeft}}"
     bindtouchstart="handleTouchStart"
     bindtouchmove="handleTouchMove"
