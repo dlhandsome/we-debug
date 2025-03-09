@@ -84,16 +84,11 @@ Component({
         ? store.group.get(DEFAULT_GROUP.ALL).get()
         : store.group.get(currentGroupCache.get() || DEFAULT_GROUP.ALL).get();
     },
-    setJsonViews() {
+    setPanelViews() {
       const groupStores = this.getGroupStores();
       this.setData({
+        rules: groupStores.filter(i => !i.isJsonView),
         jsonviews: groupStores.filter(i => i.isJsonView)
-      });
-    },
-    setRules() {
-      const groupStores = this.getGroupStores();
-      this.setData({
-        rules: groupStores.filter(i => !i.isJsonView)
       });
     },
     setBadges() {
@@ -107,7 +102,7 @@ Component({
     setfilterRule(searchStr) {
       if (searchStr === '') {
         // 此时搜索框内容清空，应该恢复当前分组的初始状态
-        this.setRules();
+        this.setPanelViews();
         return;
       }
 
@@ -126,7 +121,7 @@ Component({
     },
     searchCleanHandler() {
       this.setSearch('');
-      this.setRules();
+      this.setPanelViews();
     },
     groupTapHandler(e) {
       const group = e.currentTarget.dataset.item;
@@ -136,17 +131,17 @@ Component({
       this.setData({
         'group.actived': group
       });
-      this.setRules();
+      this.setPanelViews();
     },
     addListeners() {
-      store.event.on('rule:update', this.setRules.bind(this));
-      store.event.on('jsonview:update', this.setJsonViews.bind(this));
+      store.event.on('rule:update', this.setPanelViews.bind(this));
+      store.event.on('jsonview:update', this.setPanelViews.bind(this));
       store.event.on('badge:update', this.setBadges.bind(this));
       store.event.on('group:update', this.setGroups.bind(this));
     },
     removeListeners() {
-      store.event.off('rule:update', this.setRules.bind(this));
-      store.event.on('jsonview:update', this.setJsonViews.bind(this));
+      store.event.off('rule:update', this.setPanelViews.bind(this));
+      store.event.on('jsonview:update', this.setPanelViews.bind(this));
       store.event.off('badge:update', this.setBadges.bind(this));
       store.event.off('group:update', this.setGroups.bind(this));
     }
@@ -155,7 +150,7 @@ Component({
     attached() {
       this.setSys();
       this.setGroups();
-      this.setRules();
+      this.setPanelViews();
       this.setBadges();
       this.addListeners();
     },

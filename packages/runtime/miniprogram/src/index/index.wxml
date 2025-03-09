@@ -8,7 +8,7 @@
  
   <block wx:if="{{jsonviews.length > 0}}">
     <view style="height:{{modal.scrollHeight}}rpx;">
-      <json-viewer json-data="{{jsonviews[0].data}}" editable="{{jsonviews[0].editable}}" expand-level="{{jsonviews[0].expandLevel}}" bind:change="handleJsonViewChange"/>
+      <w-json-view json-data="{{jsonviews[0].data}}" editable="{{jsonviews[0].editable}}" expand-level="{{jsonviews[0].expandLevel}}" bind:change="handleJsonViewChange"/>
     </view>
   </block>
   <block wx:else>
