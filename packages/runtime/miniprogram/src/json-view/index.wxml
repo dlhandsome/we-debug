@@ -1,0 +1,66 @@
+<view class="json-viewer-container">
+  <scroll-view 
+    class="json-viewer" 
+    scroll-x="{{true}}" 
+    scroll-left="{{scrollLeft}}"
+    bindtouchstart="handleTouchStart"
+    bindtouchmove="handleTouchMove"
+    bindtouchend="handleTouchEnd"
+    enhanced="{{true}}"
+    show-scrollbar="{{false}}">
+    <view class="json-content">
+      <block wx:for="{{formattedData}}" wx:key="index">
+        <view 
+          class="json-item {{item.hidden ? 'hidden' : ''}} {{item.highlight ? 'highlight' : ''}}"
+          style="padding-left: {{item.level * 20}}px; transform: translateX(-{{scrollLeft}}px);"
+        >
+          <view class="content">
+            <!-- 编辑状态 -->
+            <block wx:if="{{editingIndex === index}}">
+              <view class="edit-group">
+                <block wx:if="{{!item.inArray && item.key !== null}}">
+                  <input class="edit-input key" 
+                         value="{{editKey}}" 
+                         bind:input="handleKeyEdit" />
+                  <text>:</text>
+                </block>
+                <picker class="type-picker" 
+                        bindchange="handleTypeChange" 
+                        value="{{editType}}" 
+                        range="{{typeOptions}}">
+                  <view class="type-selector">{{typeOptions[editType]}}</view>
+                </picker>
+                <input class="edit-input value" 
+                       value="{{editValue}}" 
+                       bind:input="handleValueEdit" />
+                <view class="edit-actions">
+                  <text class="action save" bind:tap="saveEdit">✓</text>
+                  <text class="action cancel" bind:tap="cancelEdit">✗</text>
+                </view>
+              </view>
+            </block>
+            
+            <!-- 显示状态 -->
+            <block wx:else>
+              <view class="item-content" bind:tap="{{editable && !item.isOpening && !item.isClosing ? 'startEdit' : 'toggleCollapse'}}" data-index="{{index}}">
+                <text wx:if="{{!item.inArray && item.key !== null}}" class="key">{{item.key}}: </text>
+                <block wx:if="{{item.isOpening}}">
+                  <text class="bracket">{{item.isArray ? '[' : '{'}}{{item.collapsed ? '...' : ''}}</text>
+                  <text wx:if="{{editable}}" class="action add" catchtap="addItem" data-index="{{index}}">+</text>
+                </block>
+                <block wx:elif="{{!item.isClosing}}">
+                  <text class="value {{item.type}}">{{item.value}}</text>
+                  <text wx:if="{{editable}}" class="action delete" catchtap="deleteItem" data-index="{{index}}">×</text>
+                </block>
+                <block wx:if="{{item.isClosing}}">
+                  <text class="bracket">{{item.isArray ? ']' : '}'}}</text>
+                </block>
+                <text wx:if="{{!item.isLast && !item.isOpening}}">,</text>
+              </view>
+            </block>
+          </view>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view> 

@@ -60,6 +60,7 @@ Component({
   data: {
     sys: store.sys.get(),
     rules: store.rules.get(),
+    jsonviews: store.jsonviews.get(),
     badges: store.badges.get(),
     modal: {
       logo: LOGO_BASE64,
@@ -78,12 +79,22 @@ Component({
     setGroups() {
       this.setData({ 'group.keys': setGroup() });
     },
-    setRules() {
-      const rules = !store.group.get(currentGroupCache.get() || DEFAULT_GROUP.ALL)
+    getGroupStores() {
+      return !store.group.get(currentGroupCache.get() || DEFAULT_GROUP.ALL)
         ? store.group.get(DEFAULT_GROUP.ALL).get()
         : store.group.get(currentGroupCache.get() || DEFAULT_GROUP.ALL).get();
-
-      this.setData({ rules });
+    },
+    setJsonViews() {
+      const groupStores = this.getGroupStores();
+      this.setData({
+        jsonviews: groupStores.filter(i => i.isJsonView)
+      });
+    },
+    setRules() {
+      const groupStores = this.getGroupStores();
+      this.setData({
+        rules: groupStores.filter(i => !i.isJsonView)
+      });
     },
     setBadges() {
       this.setData({ badges: store.badges.get() });
@@ -119,22 +130,23 @@ Component({
     },
     groupTapHandler(e) {
       const group = e.currentTarget.dataset.item;
-      const rules = store.group.get(group).get();
-
-      this.setData({
-        'group.actived': group,
-        rules
-      });
       // 设置当前分组 key 缓存
       currentGroupCache.set(group);
+
+      this.setData({
+        'group.actived': group
+      });
+      this.setRules();
     },
     addListeners() {
       store.event.on('rule:update', this.setRules.bind(this));
+      store.event.on('jsonview:update', this.setJsonViews.bind(this));
       store.event.on('badge:update', this.setBadges.bind(this));
       store.event.on('group:update', this.setGroups.bind(this));
     },
     removeListeners() {
       store.event.off('rule:update', this.setRules.bind(this));
+      store.event.on('jsonview:update', this.setJsonViews.bind(this));
       store.event.off('badge:update', this.setBadges.bind(this));
       store.event.off('group:update', this.setGroups.bind(this));
     }

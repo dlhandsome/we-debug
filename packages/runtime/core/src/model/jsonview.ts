@@ -12,6 +12,8 @@ export class JsonView extends BaseManage {
   // @ts-ignore
   // -1 表示全部展开，0 表示全部折叠，正数表示展开的层级数
   private expandLevel: number;
+  // @ts-ignore 
+  readonly isJsonView: boolean = true;
 
   constructor(opt?: IJsonViewManagerConstructorOption) {
     super(opt);

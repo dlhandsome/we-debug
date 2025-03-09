@@ -5,22 +5,30 @@
   <view class="w-mask__modal-header">
     <image class="w-mask__modal-logo" src="{{modal.logo}}" mode="aspectFit" lazy-load="false" binderror="" bindload=""></image>
   </view>
-  <view class="w-mask__modal-search">
-    <input value="{{searchStr}}" placeholder="搜索" catchinput="searchInputHandler"/>
-    <image class="search-icon--search" />
-    <image class="search-icon--close" src="../icon/close.svg" wx:if="{{searchStr}}" catchtap="searchCleanHandler"/>
-  </view>
-  <scroll-view class="w-mask__modal-content" scroll-y="true" style="height:{{modal.scrollHeight}}rpx;">
-    <w-cell wx:if="{{rules.length > 0}}">
-      <w-rule
-        wx:for="{{rules}}"
-        wx:key="id"
-        config="{{item}}"
-      />
-    </w-cell>
-    <view wx:else class="w-mask__modal-content--empty">暂无搜索内容</view>
-    <slot name="modal-body"></slot>
-  </scroll-view>
+ 
+  <block wx:if="{{jsonviews.length > 0}}">
+    <view style="height:{{modal.scrollHeight}}rpx;">
+      <json-viewer json-data="{{jsonviews[0].data}}" editable="{{jsonviews[0].editable}}" expand-level="{{jsonviews[0].expandLevel}}" bind:change="handleJsonViewChange"/>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="w-mask__modal-search">
+      <input value="{{searchStr}}" placeholder="搜索" catchinput="searchInputHandler"/>
+      <image class="search-icon--search" />
+      <image class="search-icon--close" src="../icon/close.svg" wx:if="{{searchStr}}" catchtap="searchCleanHandler"/>
+    </view>
+    <scroll-view class="w-mask__modal-content" scroll-y="true" style="height:{{modal.scrollHeight}}rpx;">
+      <w-cell wx:if="{{rules.length > 0}}">
+        <w-rule
+          wx:for="{{rules}}"
+          wx:key="id"
+          config="{{item}}"
+        />
+      </w-cell>
+      <view wx:else class="w-mask__modal-content--empty">暂无搜索内容</view>
+      <slot name="modal-body"></slot>
+    </scroll-view>
+  </block>
   <scroll-view class="w-mask__modal-group" scroll-x="true">
     <view class="group-item {{item === group.actived ? 'actived': ''}}" style=""
     wx:for="{{group.keys}}"
