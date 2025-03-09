@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.42.0](https://github.com/dlhandsome/we-debug/compare/v0.41.0...v0.42.0) (2025-03-09)
+
+
+### Features
+
+* **miniprogram:** support jsonview ([09cf21c](https://github.com/dlhandsome/we-debug/commit/09cf21cf6d65af71c5bb823fc2ebe63e3c1c1d76))
+
+
+
+
+
 # [0.41.0](https://github.com/dlhandsome/we-debug/compare/v0.40.2...v0.41.0) (2025-03-09)
 
 **Note:** Version bump only for package @we-debug/miniprogram
