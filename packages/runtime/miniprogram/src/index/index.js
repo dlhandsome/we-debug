@@ -77,7 +77,10 @@ Component({
       this.setData({ sys: store.sys.get() });
     },
     setGroups() {
-      this.setData({ 'group.keys': setGroup() });
+      this.setData({
+        'group.actived': currentGroupCache.get() || DEFAULT_GROUP.ALL,
+        'group.keys': setGroup()
+      });
     },
     getGroupStores() {
       return !store.group.get(currentGroupCache.get() || DEFAULT_GROUP.ALL)
