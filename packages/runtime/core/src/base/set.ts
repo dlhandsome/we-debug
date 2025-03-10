@@ -31,4 +31,11 @@ export class MySet<T extends IBaseModel> {
       }
     }
   }
+
+  update(s: T) {
+    const index = this.arr.findIndex(item => item.id === s.id);
+    if (index !== -1) {
+      this.arr[index] = s;
+    }
+  }
 }

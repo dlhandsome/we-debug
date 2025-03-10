@@ -37,6 +37,16 @@ export function addJsonViewByGroup(k: string, jsonview: JsonView) {
 }
 
 /**
+ * 给 jsonview 更新分组内数据
+ * @param k 
+ * @param jsonview 
+ * @returns 
+ */
+export function updateJsonViewByGroup(k: string, jsonview: JsonView) {
+  return store.group.update(k, jsonview);
+}
+
+/**
  * 查询分类下所有规则
  * @param {*} k
  * @returns

@@ -35,6 +35,10 @@ export class Group extends Store {
     }
   }
 
+  update(k: string, rule: FormRule | JsonView) {
+    this.get(k).update(rule);
+  }
+
   remove(k: string, rule: FormRule | JsonView) {
     const rules = this.get(k)?.get();
 
