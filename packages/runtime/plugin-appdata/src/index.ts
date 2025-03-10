@@ -4,6 +4,12 @@ import {
   IPluginInitOptions
 } from './types';
 
+const APP_DATA_VIEW_CONFIG = {
+  group: {
+    name: 'AppData'
+  }
+};
+
 const AppDataPlugin: IPlugin = {
   install () {}
 };
@@ -25,7 +31,7 @@ AppDataPlugin.install = function (weDebug, options:IPluginInitOptions) {
     const data = page.data || {};
     
     if (currentRule) {
-      weDebug.removeJsonView(currentRule);
+      weDebug.removeJsonView(currentRule, APP_DATA_VIEW_CONFIG);
     }
     currentRule = weDebug.createJsonView({
       data,
@@ -42,11 +48,7 @@ AppDataPlugin.install = function (weDebug, options:IPluginInitOptions) {
       }
     });
 
-    weDebug.addJsonView(currentRule, {
-      group: {
-        name: 'AppData',
-      },
-    });
+    weDebug.addJsonView(currentRule, APP_DATA_VIEW_CONFIG);
   });
 }
 
