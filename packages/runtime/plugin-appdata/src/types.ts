@@ -9,25 +9,8 @@ export interface IPlugin extends IPluginInstance {
 }
 
 export interface IPluginInitOption {
-  title: string;
-  name?: string;
-  desc?: string;
-  url: string;
+  editable?: boolean;
+  expandLevel?: number;
 }
 
-export type IPluginInitOptions = IPluginInitOption | IPluginInitOption[];
-
-export type IActionMetaData = {
-  page: WechatMiniprogram.Page.Instance<any, any>;
-  key: string;
-  value: string;
-}
-
-export interface ActionHandler {
-  (data: IActionMetaData): Promise<boolean>;
-}
-  
-export interface ActionHandlers {
-  [key: string]: ActionHandler;
-}
-  
+export type IPluginInitOptions = IPluginInitOption;
