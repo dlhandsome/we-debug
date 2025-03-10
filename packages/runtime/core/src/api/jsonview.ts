@@ -1,6 +1,7 @@
 import store from '../store/index';
 import {
 addJsonViewByGroup,
+removeGroupJsonView,
 } from './group';
 import {
   JsonView
@@ -32,8 +33,15 @@ export function addJsonView(jsonview: JsonView, options?: IAddJsonViewOption) {
  * 移除规则
  * @param {*} rule
  */
-export function removeJsonView(jsonview: JsonView) {
+export function removeJsonView(jsonview: JsonView, options?: IAddJsonViewOption) {
   store.jsonviews.remove(jsonview);
+
+  const group = options?.group?.name;
+
+  if (group) {
+    removeGroupJsonView(group, jsonview);
+  }
+
   // 抛出 rule、group 更新事件
   store.event.emit('jsonview:update');
   store.event.emit('group:update');
