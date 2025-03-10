@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.43.3](https://github.com/dlhandsome/we-debug/compare/v0.43.2...v0.43.3) (2025-03-10)
+
+
+### Bug Fixes
+
+* fixed remove jsonview group ([4afd574](https://github.com/dlhandsome/we-debug/commit/4afd574ec7f1ac6712d00ea41b979c729825bd92))
+
+
+
+
+
 ## [0.43.2](https://github.com/dlhandsome/we-debug/compare/v0.43.1...v0.43.2) (2025-03-10)
 
 
