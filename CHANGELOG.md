@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.44.1](https://github.com/dlhandsome/we-debug/compare/v0.44.0...v0.44.1) (2025-03-10)
+
+
+### Bug Fixes
+
+* fixed addJsonView export ([84df0b1](https://github.com/dlhandsome/we-debug/commit/84df0b1f617f84973d760eeb50fbe89d92a4f334))
+
+
+
+
+
 # [0.44.0](https://github.com/dlhandsome/we-debug/compare/v0.43.5...v0.44.0) (2025-03-10)
 
 
