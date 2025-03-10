@@ -33,7 +33,7 @@ AppDataPlugin.install = function (weDebug, options:IPluginInitOptions) {
       expandLevel: options.expandLevel ?? 1,
       handler: {
         bindChange(data: { changes: { field: string, value: IAnyObject }[] }) {
-          const changeData: any = {};
+          const changeData: IAnyObject = {};
           data.changes.forEach((change) => {
             changeData[change.field] = change.value;
           });
@@ -49,3 +49,5 @@ AppDataPlugin.install = function (weDebug, options:IPluginInitOptions) {
     });
   });
 }
+
+export default AppDataPlugin;
