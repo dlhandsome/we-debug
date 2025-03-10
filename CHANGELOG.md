@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.43.0](https://github.com/dlhandsome/we-debug/compare/v0.42.6...v0.43.0) (2025-03-10)
+
+
+### Features
+
+* support jsonview appdata ([0d1e4f7](https://github.com/dlhandsome/we-debug/commit/0d1e4f76ffee0f5351a3d1c4e3d686a238ab56eb))
+
+
+
+
+
 ## [0.42.6](https://github.com/dlhandsome/we-debug/compare/v0.42.5...v0.42.6) (2025-03-10)
 
 
