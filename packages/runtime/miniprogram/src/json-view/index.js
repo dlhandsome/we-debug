@@ -506,6 +506,10 @@ Component({
         value: updatedData,
         changes: changedData
       });
+      this.bindChangeHandler({
+        value: updatedData,
+        changes: changedData
+      });
 
       // 更新显示
       this.setData({
@@ -666,6 +670,10 @@ Component({
         value: newData,
         changes: changedData
       });
+      this.bindChangeHandler({
+        value: newData,
+        changes: changedData
+      });
 
       this.setData({
         formattedData: newFormattedData
@@ -708,10 +716,21 @@ Component({
         value: newData,
         changes: changedData
       });
+      this.bindChangeHandler({
+        value: newData,
+        changes: changedData
+      });
 
       this.setData({
         formattedData: restoredData
       });
+    },
+    bindChangeHandler(data) {
+      const handler = this.properties.config.handler;
+
+      if (handler && handler.bindChange && isFunc(handler.bindChange)) {
+        handler.bindChange.call(this, data);
+      }
     }
   },
   attached() {
