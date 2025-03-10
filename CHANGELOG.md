@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.43.5](https://github.com/dlhandsome/we-debug/compare/v0.43.4...v0.43.5) (2025-03-10)
+
+
+### Bug Fixes
+
+* fixed group refresh ([69b560f](https://github.com/dlhandsome/we-debug/commit/69b560f40afbfe00b55842f3f77f526356be19db))
+
+
+
+
+
 ## [0.43.4](https://github.com/dlhandsome/we-debug/compare/v0.43.3...v0.43.4) (2025-03-10)
 
 
