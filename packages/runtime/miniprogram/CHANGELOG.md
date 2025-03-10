@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.44.0](https://github.com/dlhandsome/we-debug/compare/v0.43.5...v0.44.0) (2025-03-10)
+
+
+### Features
+
+* **miniprogram:** added table view ([d9ddefa](https://github.com/dlhandsome/we-debug/commit/d9ddefa1e7590a9f0ccb161523587cc710b519a3))
+
+
+
+
+
 ## [0.43.5](https://github.com/dlhandsome/we-debug/compare/v0.43.4...v0.43.5) (2025-03-10)
 
 

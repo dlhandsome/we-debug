@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.44.0](https://github.com/dlhandsome/we-debug/compare/v0.43.5...v0.44.0) (2025-03-10)
+
+
+### Features
+
+* support json view update ([12c0822](https://github.com/dlhandsome/we-debug/commit/12c0822fd4d1c87e893a0a61e087d8e5f2975a09))
+
+
+
+
+
 ## [0.43.4](https://github.com/dlhandsome/we-debug/compare/v0.43.3...v0.43.4) (2025-03-10)
 
 **Note:** Version bump only for package @we-debug/core
