@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.44.2](https://github.com/dlhandsome/we-debug/compare/v0.44.1...v0.44.2) (2025-03-10)
+
+
+### Bug Fixes
+
+* fixed plugin appdata ([f961f60](https://github.com/dlhandsome/we-debug/commit/f961f60570c9cabecd9290448cd3a9ed1aa76f98))
+
+
+
+
+
 ## [0.44.1](https://github.com/dlhandsome/we-debug/compare/v0.44.0...v0.44.1) (2025-03-10)
 
 

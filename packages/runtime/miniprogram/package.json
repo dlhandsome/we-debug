@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/miniprogram",
-  "version": "0.44.1",
+  "version": "0.44.2",
   "description": "we-debug miniprogram component",
   "author": {
     "name": "dlhandsome"
@@ -26,7 +26,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@we-debug/core": "0.44.1"
+    "@we-debug/core": "0.44.2"
   },
   "readme": "ERROR: No README data found!",
   "_id": "@we-debug/core@0.3.5",
