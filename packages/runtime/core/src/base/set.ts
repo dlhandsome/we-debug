@@ -25,7 +25,7 @@ export class MySet<T extends IBaseModel> {
     let i = this.arr.length;
     while (i--) {
       let tmp = this.arr[i];
-      if (tmp === s) {
+      if (tmp.id === s.id) {
         this.arr.splice(i, 1);
         break;
       }

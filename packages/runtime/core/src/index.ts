@@ -7,7 +7,7 @@ import { createCache } from './api/cache';
 import { createBadge, getBadge, addBadge, removeBadge } from './api/badge';
 import { createFormRule, getFormRule, addFormRule, removeFormRule } from './api/rule';
 import { createJsonView, getJsonView, addJsonView, removeJsonView } from './api/jsonview';
-import { getGroupsAllKeys, addRuleByGroup, getRuleByGroup, removeGroupRule } from './api/group';
+import { getGroupsAllKeys, addRuleByGroup, getRuleByGroup, removeGroupRule, addJsonViewByGroup, getJsonViewByGroup, removeGroupJsonView } from './api/group';
 import { setBridgeInfo, getBridgeInfo } from './api/bridge';
 import { ENV_TYPE, getEnv } from './utils/env';
 import { DEFAULT_GROUP } from './config/group';
@@ -43,6 +43,9 @@ export {
   addRuleByGroup,
   getRuleByGroup,
   removeGroupRule,
+  addJsonViewByGroup,
+  getJsonViewByGroup,
+  removeGroupJsonView,
   setBridgeInfo,
   getBridgeInfo,
   version
@@ -74,6 +77,9 @@ export default {
   addRuleByGroup,
   getRuleByGroup,
   removeGroupRule,
+  addJsonViewByGroup,
+  getJsonViewByGroup,
+  removeGroupJsonView,
   setBridgeInfo,
   getBridgeInfo,
   version
