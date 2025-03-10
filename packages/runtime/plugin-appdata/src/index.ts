@@ -20,8 +20,8 @@ function getCurrentPage(): WechatMiniprogram.Page.Instance<any, any> | null {
   return pages.length > 0 ? pages[pages.length - 1] : null;
 }
 
-function getJsonViewOption (page: WechatMiniprogram.Page.Instance<any, any> | null, options: IPluginInitOptions) {
-  return {
+function getJsonView (weDebug: IAnyObject, page: WechatMiniprogram.Page.Instance<any, any> | null, options: IPluginInitOptions) {
+  return weDebug.createJsonView({
     data: page?.data || {},
     editable: options.editable ?? true,
     expandLevel: options.expandLevel ?? 1,
@@ -34,21 +34,24 @@ function getJsonViewOption (page: WechatMiniprogram.Page.Instance<any, any> | nu
         page?.setData(changeData);
       }
     }
-  }
+  })
 }
 
 AppDataPlugin.install = function (weDebug, options: IPluginInitOptions) {
   // 调试面板弹出时，触发规则更新
-  const jsonViewOptions = getJsonViewOption({}, options);
-  let currentJsonView = weDebug.createJsonView(jsonViewOptions);
+  const currentJsonView = getJsonView(weDebug, {}, options);
   weDebug.addJsonView(currentJsonView, APP_DATA_VIEW_CONFIG);
 
   weDebug.event.on('debug:mask:show-modal', () => {
     const page = getCurrentPage();
     if (!page) return;
+
+    const newJsonView = getJsonView(weDebug, page, options);
     
-    const newJsonViewOptions = getJsonViewOption(page, options);
-    weDebug.updateJsonView(newJsonViewOptions, APP_DATA_VIEW_CONFIG);
+    weDebug.updateJsonView({
+      ...newJsonView,
+      id: currentJsonView.id
+    }, APP_DATA_VIEW_CONFIG);
   });
 }
 
