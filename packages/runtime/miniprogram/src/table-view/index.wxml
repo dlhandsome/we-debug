@@ -1,0 +1,83 @@
+<view class="table-view">
+  <!-- 操作栏 -->
+  <view class="action-bar">
+    <view class="btn refresh" bindtap="handleRefresh" title="刷新">
+      <view class="icon">↻</view>
+    </view>
+    <view class="search-box">
+      <input 
+        class="search-input" 
+        placeholder="输入关键字过滤" 
+        value="{{searchText}}"
+        bindinput="handleSearch"
+      />
+    </view>
+    <view class="btn clear" bindtap="handleClear" title="清空">
+      <view class="icon trash"></view>
+    </view>
+    <view class="data-size">
+      <text class="size-label">Current Size:</text>
+      <text class="size-value">{{dataSize}}</text>
+    </view>
+  </view>
+
+  <!-- 表格区域 -->
+  <view class="table-container">
+    <!-- 表格头部 -->
+    <view class="table-header">
+      <view class="col key">Key</view>
+      <view class="col value">Value</view>
+      <view class="col type">Type</view>
+    </view>
+
+    <!-- 表格内容 -->
+    <scroll-view class="table-body" scroll-y>
+      <view 
+        class="table-row {{item.highlight ? 'highlight' : ''}}" 
+        wx:for="{{filteredData}}" 
+        wx:key="key"
+        bindtap="handleValueClick"
+        data-item="{{item}}"
+      >
+        <view class="col key">{{item.key}}</view>
+        <view class="col value">
+          <block wx:if="{{item.type === 'object' || item.type === 'array'}}">
+            {{item.serializedValue}}
+          </block>
+          <block wx:else>
+            {{item.value}}
+          </block>
+        </view>
+        <view class="col type">{{item.type}}</view>
+      </view>
+    </scroll-view>
+
+    <!-- 详情抽屉 -->
+    <view class="drawer {{showDrawer ? 'show' : ''}}" style="width: 70%">
+      <view class="drawer-header">
+        <view class="drawer-title">{{selectedItem.key}}</view>
+        <view class="drawer-close" bindtap="handleCloseDrawer">×</view>
+      </view>
+      
+      <view class="drawer-content">
+        <view class="value-preview">
+          <view class="type-info">
+            <text>类型：{{selectedItem.type}}</text>
+            <view class="copy-btn" bindtap="handleCopyValue" title="复制值">
+              <view class="icon copy"></view>
+            </view>
+          </view>
+          <block wx:if="{{selectedItem.type === 'object' || selectedItem.type === 'array'}}">
+            <json-view
+              json-data="{{selectedItem.value}}"
+              expand-level="1"
+            />
+          </block>
+          <block wx:else>
+            <text class="text-value">{{selectedItem.value}}</text>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</view> 
