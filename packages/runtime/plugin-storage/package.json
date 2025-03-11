@@ -1,0 +1,23 @@
+{
+  "name": "@we-debug/plugin-storage",
+  "version": "0.45.0",
+  "description": "> TODO: description",
+  "author": "Sail <505441575@qq.com>",
+  "homepage": "https://github.com/dlhandsome/we-debug/tree/master/packages/runtime/plugin-storage#readme",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "types": "dist/types.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dlhandsome/we-debug.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/dlhandsome/we-debug/issues"
+  }
+}

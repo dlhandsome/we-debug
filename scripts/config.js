@@ -124,6 +124,18 @@ const builds = {
     dest: 'packages/runtime/plugin-appdata/dist/',
     pkg: 'packages/runtime/plugin-appdata/package.json'
   },
+  'plugin-storage': {
+    name: 'plugin-storage',
+    option: {
+      base: 'packages/runtime/plugin-storage/src',
+      allowEmpty: true
+    },
+    tsSrc: 'packages/runtime/plugin-storage/src/**/*.ts',
+    lessSrc: 'packages/runtime/plugin-storage/src/**/*.less',
+    copySrc: ['packages/runtime/plugin-storage/src/**/*.{wxml,json}'],
+    dest: 'packages/runtime/plugin-storage/dist/',
+    pkg: 'packages/runtime/plugin-storage/package.json'
+  },
   'plugin-ui-check': {
     name: 'plugin-ui-check',
     option: {
