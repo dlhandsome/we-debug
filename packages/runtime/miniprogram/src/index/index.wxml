@@ -9,7 +9,7 @@
     <view style="height:{{modal.scrollHeight}}rpx; margin-top: 12px;">
       <w-table-view data="{{tableviews[0]}}"/>
     </view>
-  <block>
+  </block>
   <block wx:elif="{{jsonviews.length > 0}}">
     <view class="w-mask__modal-search">
       <input value="{{searchStr}}" placeholder="搜索" catchinput="searchInputHandler"/>
