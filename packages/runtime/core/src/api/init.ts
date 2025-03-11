@@ -7,6 +7,7 @@ import LauncherPlugin from '@we-debug/plugin-launcher';
 import networkPlugin from '@we-debug/plugin-network';
 import uiCheckPlugin from '@we-debug/plugin-ui-check/plugin';
 import AppdataPlugin from '@we-debug/plugin-appdata';
+import StoragePlugin from '@we-debug/plugin-storage';
 import merge from 'deepmerge';
 import {
   IWedebugInitOption
@@ -27,6 +28,7 @@ export function init(this: any, options?: IWedebugInitOption) {
         router: true,
         uiCheck: true,
         appData: true,
+        storage: true,
       }
     },
     options || {}
@@ -34,6 +36,7 @@ export function init(this: any, options?: IWedebugInitOption) {
 
   if (opt.launcher) use.call(this, LauncherPlugin, opt.launcher || {});
   if (opt.plugin.appData) use.call(this, AppdataPlugin, opt.plugin.appData || {});
+  if (opt.plugin.storage) use.call(this, StoragePlugin, opt.plugin.storage || {});
   if (opt.plugin.network) use.call(this, networkPlugin, opt.plugin.network || {});
   if (opt.plugin.error) use.call(this, ErrorPlugin, opt.plugin.error || {});
   if (opt.plugin.router) use.call(this, RouterPlugin, opt.plugin.router || {});

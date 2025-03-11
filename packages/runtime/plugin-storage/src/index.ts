@@ -1,7 +1,6 @@
 import {
   IAnyObject,
   IPlugin,
-  IPluginInitOptions
 } from './types';
 
 
@@ -129,7 +128,7 @@ function initStorageDebug(weDebug: IAnyObject) {
 
 // 注册调试插件
 
-AppDataPlugin.install = function (weDebug, options: IPluginInitOptions) {
+AppDataPlugin.install = function (weDebug) {
   initStorageDebug(weDebug);
 
   // 监听调试面板显示事件

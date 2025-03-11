@@ -179,6 +179,8 @@ export interface IWedebugInitOption {
     uiCheck?: IAnyObject;
     /** AppData配置 */
     appData?: IAnyObject;
+    /** Storage配置 */
+    storage?: IAnyObject;
   }
 }
 
