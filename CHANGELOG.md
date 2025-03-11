@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.45.1](https://github.com/dlhandsome/we-debug/compare/v0.45.0...v0.45.1) (2025-03-11)
+
+
+### Bug Fixes
+
+* fixed wxml error ([64d9590](https://github.com/dlhandsome/we-debug/commit/64d9590f0fd69f147e9ea2689638441cd0cdae2c))
+
+
+
+
+
 # [0.45.0](https://github.com/dlhandsome/we-debug/compare/v0.44.2...v0.45.0) (2025-03-11)
 
 
