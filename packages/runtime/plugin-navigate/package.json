@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/plugin-navigate",
-  "version": "0.44.0",
+  "version": "0.45.0",
   "description": "navigate plugin for we-debug",
   "main": "dist/index.js",
   "types": "dist/types.d.ts",

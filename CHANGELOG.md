@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.45.0](https://github.com/dlhandsome/we-debug/compare/v0.44.2...v0.45.0) (2025-03-11)
+
+
+### Features
+
+* support tableview ([26f8d0d](https://github.com/dlhandsome/we-debug/commit/26f8d0d0a3b42d7a63e900ad8b2ca09805edb2fb))
+
+
+
+
+
 ## [0.44.2](https://github.com/dlhandsome/we-debug/compare/v0.44.1...v0.44.2) (2025-03-10)
 
 
