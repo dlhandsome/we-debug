@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.46.1](https://github.com/dlhandsome/we-debug/compare/v0.46.0...v0.46.1) (2025-03-11)
+
+
+### Bug Fixes
+
+* **core:** added storage dependence ([eefa368](https://github.com/dlhandsome/we-debug/commit/eefa368ddf638e6d6fd24f2ddf86658c80699280))
+
+
+
+
+
 # [0.46.0](https://github.com/dlhandsome/we-debug/compare/v0.45.2...v0.46.0) (2025-03-11)
 
 
