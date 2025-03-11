@@ -1,6 +1,6 @@
 {
   "name": "@we-debug/gulp-tool",
-  "version": "0.45.0",
+  "version": "0.46.0",
   "description": "we-debug, gulp",
   "main": "dist/index.js",
   "types": "dist/types.d.ts",

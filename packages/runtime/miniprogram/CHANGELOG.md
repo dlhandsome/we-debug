@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.46.0](https://github.com/dlhandsome/we-debug/compare/v0.45.2...v0.46.0) (2025-03-11)
+
+
+### Bug Fixes
+
+* fixed tableview update event ([a6adc1c](https://github.com/dlhandsome/we-debug/commit/a6adc1c3768430c184aa898deb5110eb8555fced))
+
+
+
+
+
 ## [0.45.2](https://github.com/dlhandsome/we-debug/compare/v0.45.1...v0.45.2) (2025-03-11)
 
 
