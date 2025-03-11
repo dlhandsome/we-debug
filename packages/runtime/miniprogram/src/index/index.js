@@ -141,12 +141,14 @@ Component({
     addListeners() {
       store.event.on('rule:update', this.setPanelViews.bind(this));
       store.event.on('jsonview:update', this.setPanelViews.bind(this));
+      store.event.on('tableview:update', this.setPanelViews.bind(this));
       store.event.on('badge:update', this.setBadges.bind(this));
       store.event.on('group:update', this.setGroups.bind(this));
     },
     removeListeners() {
       store.event.off('rule:update', this.setPanelViews.bind(this));
-      store.event.on('jsonview:update', this.setPanelViews.bind(this));
+      store.event.off('jsonview:update', this.setPanelViews.bind(this));
+      store.event.off('tableview:update', this.setPanelViews.bind(this));
       store.event.off('badge:update', this.setBadges.bind(this));
       store.event.off('group:update', this.setGroups.bind(this));
     }
