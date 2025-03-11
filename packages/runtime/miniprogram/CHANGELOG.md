@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.45.2](https://github.com/dlhandsome/we-debug/compare/v0.45.1...v0.45.2) (2025-03-11)
+
+
+### Bug Fixes
+
+* fixed table view render ([9dd8ee7](https://github.com/dlhandsome/we-debug/commit/9dd8ee7d09600648dbd5468a76e408b00140f47f))
+
+
+
+
+
 ## [0.45.1](https://github.com/dlhandsome/we-debug/compare/v0.45.0...v0.45.1) (2025-03-11)
 
 
