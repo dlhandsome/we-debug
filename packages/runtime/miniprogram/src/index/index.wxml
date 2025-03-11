@@ -5,8 +5,12 @@
   <view class="w-mask__modal-header">
     <image class="w-mask__modal-logo" src="{{modal.logo}}" mode="aspectFit" lazy-load="false" binderror="" bindload=""></image>
   </view>
- 
-  <block wx:if="{{jsonviews.length > 0}}">
+  <block wx:if="{{tableviews.length > 0}}">
+    <view style="height:{{modal.scrollHeight}}rpx; margin-top: 12px;">
+      <w-table-view data="{{tableviews[0]}}"/>
+    </view>
+  <block>
+  <block wx:elif="{{jsonviews.length > 0}}">
     <view class="w-mask__modal-search">
       <input value="{{searchStr}}" placeholder="搜索" catchinput="searchInputHandler"/>
       <image class="search-icon--search" />

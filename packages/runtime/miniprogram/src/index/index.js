@@ -61,6 +61,7 @@ Component({
     sys: store.sys.get(),
     rules: store.rules.get(),
     jsonviews: store.jsonviews.get(),
+    tableviews: store.tableviews.get(),
     badges: store.badges.get(),
     modal: {
       logo: LOGO_BASE64,
@@ -91,7 +92,8 @@ Component({
       const groupStores = this.getGroupStores();
       this.setData({
         rules: groupStores.filter(i => !i.isJsonView),
-        jsonviews: groupStores.filter(i => i.isJsonView)
+        jsonviews: groupStores.filter(i => i.isJsonView),
+        tableviews: groupStores.filter(i => i.isTableView)
       });
     },
     setBadges() {

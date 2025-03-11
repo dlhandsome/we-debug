@@ -1,3 +1,10 @@
+import Debug from '@we-debug/core';
+
+const store = Debug.store;
+const { isFunc } = Debug.util;
+
+const prefix = 'debug:tableview-';
+
 Component({
   properties: {
     data: {
@@ -7,6 +14,7 @@ Component({
   },
 
   data: {
+    prefix,
     searchText: '',
     showDrawer: false,
     selectedItem: null,
@@ -17,6 +25,12 @@ Component({
 
   observers: {
     data: function (data) {
+      this.onDataChange(data);
+    }
+  },
+
+  methods: {
+    onDataChange(data) {
       if (!Array.isArray(data)) {
         console.error('TableView: data must be an array');
         return;
@@ -73,10 +87,7 @@ Component({
         parsedData,
         filteredData: parsedData
       });
-    }
-  },
-
-  methods: {
+    },
     calculateDataSize(data) {
       try {
         const jsonString = JSON.stringify(data);
@@ -109,64 +120,13 @@ Component({
     },
 
     handleClear() {
-      this.setData({
-        searchText: '',
-        filteredData: this.data.parsedData,
-        dataSize: '0 B'
-      });
+      this.bindClearHandler();
+      this.triggerEvent('clear');
     },
 
     handleRefresh() {
-      // 重新解析数据
-      const parsedData = this.data.data.map(item => {
-        const key = Object.keys(item)[0];
-        const value = item[key];
-
-        let type = typeof value;
-        if (Array.isArray(value)) {
-          type = 'array';
-        } else if (value === null) {
-          type = 'null';
-        } else if (type === 'object') {
-          type = 'object';
-        }
-
-        let serializedValue = value;
-        if (type === 'object' || type === 'array') {
-          try {
-            serializedValue = JSON.stringify(value, null, 2);
-          } catch (e) {
-            console.error('TableView: failed to serialize value:', e);
-            serializedValue = String(value);
-          }
-        }
-
-        return {
-          key,
-          value,
-          type,
-          serializedValue,
-          highlight: true
-        };
-      });
-
-      // 更新数据大小
-      const dataSize = this.calculateDataSize(this.data.data);
-
-      this.setData({
-        parsedData,
-        filteredData: parsedData,
-        dataSize
-      });
-
-      // 3秒后移除高亮效果
-      setTimeout(() => {
-        const filteredData = this.data.filteredData.map(item => ({
-          ...item,
-          highlight: false
-        }));
-        this.setData({ filteredData });
-      }, 3000);
+      this.bindRefreshHandler();
+      this.triggerEvent('refresh');
     },
 
     handleValueClick(e) {
@@ -213,6 +173,39 @@ Component({
           });
         }
       });
+    },
+    addListeners() {
+      const prefix = this.data.prefix;
+      store.event.on(prefix + ':emit', this.emit.bind(this));
+    },
+    removeListeners() {
+      const prefix = this.data.prefix;
+      store.event.off(prefix + ':emit', this.emit.bind(this));
+    },
+    emit(opt) {
+      if (opt.data) {
+        this.onDataChange(opt.data);
+      }
+    },
+    bindClearHandler() {
+      const handler = this.properties.config.handler;
+
+      if (handler && handler.bindClear && isFunc(handler.bindClear)) {
+        handler.bindClear.call(this);
+      }
+    },
+    bindRefreshHandler() {
+      const handler = this.properties.config.handler;
+
+      if (handler && handler.bindRefresh && isFunc(handler.bindRefresh)) {
+        handler.bindRefresh.call(this);
+      }
     }
+  },
+  attached() {
+    this.addListeners();
+  },
+  detached() {
+    this.removeListeners();
   }
 });

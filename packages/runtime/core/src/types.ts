@@ -106,6 +106,11 @@ export interface IJsonViewManagerConstructorOption extends IBaseManageConstructo
   expandLevel?: number;
 }
 
+export interface ITableViewManagerConstructorOption extends IBaseManageConstructorOption {
+  /** json 数据 */
+  data?: IAnyObject;
+}
+
 /**
  * 功能分组排序函数类型
  */
@@ -144,6 +149,16 @@ export type IJsonViewGroup = IGroupOption;
 export interface IAddJsonViewOption {
   /** 规则会展示在调试面板对应类目中 */
  group?: IJsonViewGroup;
+}
+
+export type ITableViewGroup = IGroupOption;
+
+/**
+ * 新增 JsonView 函数参数
+ */
+export interface IAddTableViewOption {
+  /** 规则会展示在调试面板对应类目中 */
+ group?: ITableViewGroup;
 }
 
 /**

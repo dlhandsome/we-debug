@@ -6,7 +6,8 @@ import sys from './sys';
 import {
   Badge,
   FormRule,
-  JsonView
+  JsonView,
+  TableView
 } from '../model/index'
 
 export default {
@@ -15,6 +16,7 @@ export default {
   badges: new MySet<Badge>(),
   rules: new MySet<FormRule>(),
   jsonviews: new MySet<JsonView>(),
+  tableviews: new MySet<TableView>(),
   group: new Group(),
   bridge: new Store()
 };

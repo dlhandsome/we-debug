@@ -7,6 +7,7 @@ import { createCache } from './api/cache';
 import { createBadge, getBadge, addBadge, removeBadge } from './api/badge';
 import { createFormRule, getFormRule, addFormRule, removeFormRule } from './api/rule';
 import { createJsonView, getJsonView, addJsonView, updateJsonView, removeJsonView } from './api/jsonview';
+import { createTableView, getTableView, addTableView, updateTableView, removeTableView } from './api/tableview';
 import { getGroupsAllKeys, addRuleByGroup, getRuleByGroup, removeGroupRule, addJsonViewByGroup, getJsonViewByGroup, removeGroupJsonView } from './api/group';
 import { setBridgeInfo, getBridgeInfo } from './api/bridge';
 import { ENV_TYPE, getEnv } from './utils/env';
@@ -27,19 +28,28 @@ export {
   event,
   store,
   util,
+  /** Badge 相关 API */
   createBadge,
   getBadge,
   addBadge,
   removeBadge,
+  /** FormRule 相关 API */
   createFormRule,
   getFormRule,
   addFormRule,
   removeFormRule,
+  /** JsonView 相关 API */
   createJsonView,
   getJsonView,
   addJsonView,
   updateJsonView,
   removeJsonView,
+  /** TableView 相关 API */
+  createTableView,
+  getTableView,
+  addTableView,
+  updateTableView,
+  removeTableView,
   getGroupsAllKeys,
   addRuleByGroup,
   getRuleByGroup,
@@ -75,6 +85,11 @@ export default {
   addJsonView,
   updateJsonView,
   removeJsonView,
+  createTableView,
+  getTableView,
+  addTableView,
+  updateTableView,
+  removeTableView,
   getGroupsAllKeys,
   addRuleByGroup,
   getRuleByGroup,

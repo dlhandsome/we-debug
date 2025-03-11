@@ -1,14 +1,9 @@
 import { MySet } from '../base/set';
 import { Store } from '../base/store';
 import {
-  FormRule
-} from '../model/rule';
-import {
-  JsonView
-} from '../model/jsonview';
-import {
   compareFn
 } from '../types';
+import BaseManage from '../model/base';
 
 export class Group extends Store {
   constructor() {
@@ -20,7 +15,7 @@ export class Group extends Store {
     return Object.keys(this.store).sort(sortFn);
   }
 
-  add(k: string, rule: FormRule | JsonView) {
+  add<T extends BaseManage>(k: string, rule: T) {
     let rules = this.get(k);
 
     if (!rules) {
@@ -35,11 +30,11 @@ export class Group extends Store {
     }
   }
 
-  update(k: string, rule: FormRule | JsonView) {
+  update<T extends BaseManage>(k: string, rule: T) {
     this.get(k).update(rule);
   }
 
-  remove(k: string, rule: FormRule | JsonView) {
+  remove<T extends BaseManage>(k: string, rule: T) {
     const rules = this.get(k)?.get();
 
     if (!rules) {

@@ -6,6 +6,7 @@ import {
   compareFn,
 } from '../types';
 import store from '../store/index';
+import BaseManage from '../model/base';
 
 /**
  * 查询所有分组
@@ -37,6 +38,16 @@ export function addJsonViewByGroup(k: string, jsonview: JsonView) {
 }
 
 /**
+ * 添加视图容器到分组
+ * @param k 
+ * @param someModel 
+ * @returns 
+ */
+export function addViewByGroup<T extends BaseManage>(k: string, someView: T) {
+  return store.group.add(k, someView);
+}
+
+/**
  * 给 jsonview 更新分组内数据
  * @param k 
  * @param jsonview 
@@ -44,6 +55,16 @@ export function addJsonViewByGroup(k: string, jsonview: JsonView) {
  */
 export function updateJsonViewByGroup(k: string, jsonview: JsonView) {
   return store.group.update(k, jsonview);
+}
+
+/**
+ * 更新分组内视图
+ * @param k 
+ * @param jsonview 
+ * @returns 
+ */
+export function updateViewByGroup<T extends BaseManage>(k: string, someView: T) {
+  return store.group.update(k, someView);
 }
 
 /**
@@ -65,6 +86,15 @@ export function getJsonViewByGroup(k: string) {
 }
 
 /**
+ *  查询分类下所有视图容器
+ * @param k 
+ * @returns 
+ */
+export function getViewByGroup(k: string) {
+  return store.group.get(k);
+}
+
+/**
  * 从分类中移除规则
  * @param {*} k
  * @param {*} rule
@@ -82,4 +112,14 @@ export function removeGroupRule(k: string, rule: FormRule) {
  */
 export function removeGroupJsonView(k: string, jsonview: JsonView) {
   return store.group.remove(k, jsonview);
+}
+
+/**
+ * 从分类中移除视图容器
+ * @param k 
+ * @param jsonview 
+ * @returns 
+ */
+export function removeGroupView<T extends BaseManage>(k: string, someView: T) {
+  return store.group.remove(k, someView);
 }

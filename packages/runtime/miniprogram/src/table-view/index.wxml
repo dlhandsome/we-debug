@@ -68,9 +68,8 @@
             </view>
           </view>
           <block wx:if="{{selectedItem.type === 'object' || selectedItem.type === 'array'}}">
-            <json-view
-              json-data="{{selectedItem.value}}"
-              expand-level="1"
+            <w-json-view
+              config="{{ { data: selectedItem.value } }}"
             />
           </block>
           <block wx:else>
