@@ -7,9 +7,9 @@ const prefix = 'debug:tableview-';
 
 Component({
   properties: {
-    data: {
-      type: Array,
-      value: []
+    config: {
+      type: Object,
+      value: {}
     }
   },
 
@@ -24,7 +24,7 @@ Component({
   },
 
   observers: {
-    data: function (data) {
+    'config.data': function (data) {
       this.onDataChange(data);
     }
   },

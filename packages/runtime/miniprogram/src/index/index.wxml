@@ -7,7 +7,7 @@
   </view>
   <block wx:if="{{tableviews.length > 0}}">
     <view style="height:{{modal.scrollHeight}}rpx; margin-top: 12px;">
-      <w-table-view data="{{tableviews[0]}}"/>
+      <w-table-view config="{{tableviews[0]}}"/>
     </view>
   </block>
   <block wx:elif="{{jsonviews.length > 0}}">
