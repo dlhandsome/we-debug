@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.47.0](https://github.com/dlhandsome/we-debug/compare/v0.46.1...v0.47.0) (2025-05-23)
+
+
+### Features
+
+* support auto inject custom mask props ([6b2df07](https://github.com/dlhandsome/we-debug/commit/6b2df071b1137f516e1e61001e73531aeb983ef6))
+
+
+
+
+
 ## [0.46.1](https://github.com/dlhandsome/we-debug/compare/v0.46.0...v0.46.1) (2025-03-11)
 
 **Note:** Version bump only for package @we-debug/miniprogram
