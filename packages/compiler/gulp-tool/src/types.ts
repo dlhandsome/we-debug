@@ -85,7 +85,7 @@ export interface ICompilerPluginOption<T extends IAnyObject = IAnyObject> {
 export interface ICompilerOption<T extends IAnyObject = IAnyObject> {
   /**  */
   baseDir?: string;
-  wxml?: string;
+  wxml?: string | ((props: { useCustomMask: boolean }) => string);
   filter?: FilterOption;
   compName?: string;
   compPath?: string;

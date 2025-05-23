@@ -28,7 +28,7 @@ let hasInit = false;
 function mpGlobalComp(options: ICompilerOption = {}) {
   //
   let baseDir = options.baseDir || 'src';
-  const wxmlRaw = options.wxml || '<we-debug />';
+  const wxmlRaw = options.wxml || ((props) => `<we-debug useCustomMask="{{${props.useCustomMask}}}" />`);
   const filter = options.filter || '';
   let compName = options.compName || 'we-debug';
   let compPath = options.compPath || '@we-debug/miniprogram/index/index';
@@ -101,8 +101,13 @@ function mpGlobalComp(options: ICompilerOption = {}) {
         // 插入 we-debug 片段之前执行
         plugin.execLifecycle('beforeInsertWxml', file);
         let code = file.contents.toString();
+        let injectWxml = typeof wxmlRaw === 'function'
+            ? wxmlRaw({
+              useCustomMask: code.indexOf('<page-container') > -1
+            })
+            : wxmlRaw;
 
-        code += wxmlRaw;
+        code += injectWxml;
 
         file.contents = Buffer.from(code);
         // 插入 we-debug 片段之后执行

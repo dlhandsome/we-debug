@@ -15,11 +15,18 @@ Component({
     show: {
       type: Boolean,
       value: false
+    },
+    useCustom: {
+      type: Boolean,
+      value: false
     }
   },
   observers: {
     show(v) {
       v ? this.showMaskHandler() : this.closeMaskHandler();
+    },
+    useCustom(v) {
+      this.setUseCustomMask(v);
     }
   },
   data: {
@@ -41,6 +48,12 @@ Component({
   externalClasses: ['my-class'],
   methods: {
     noop() {},
+    setUseCustomMask(v) {
+      this.setData({
+        // eslint-disable-next-line no-undef
+        useCustomMask: (__wxConfig.tabBar && __wxConfig.tabBar.custom) || !!v
+      });
+    },
     showMaskHandler() {
       store.event.emit('debug:mask:show-modal');
     },

@@ -30,6 +30,10 @@ Component({
     config: {
       type: Object,
       value: {}
+    },
+    useCustomMask: {
+      type: Boolean,
+      value: false
     }
   },
   observers: {

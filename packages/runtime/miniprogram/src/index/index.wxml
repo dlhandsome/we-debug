@@ -1,7 +1,7 @@
 <slot></slot>
 
 <w-ui-check></w-ui-check>
-<w-mask>
+<w-mask useCustom="{{useCustomMask}}">
   <view class="w-mask__modal-header">
     <image class="w-mask__modal-logo" src="{{modal.logo}}" mode="aspectFit" lazy-load="false" binderror="" bindload=""></image>
   </view>
