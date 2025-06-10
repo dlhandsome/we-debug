@@ -65,12 +65,14 @@ Component({
         return;
       }
       this.setData({
-        ...(this.properties.useCustom ? {
-          animateClassName: {
-            mask: animateClassName.fadeIn,
-            modal: animateClassName.slideInUp
-          },
-        }: {}),
+        ...(this.properties.useCustom
+          ? {
+              animateClassName: {
+                mask: animateClassName.fadeIn,
+                modal: animateClassName.slideInUp
+              }
+            }
+          : {}),
         showMask: true
       });
     },
