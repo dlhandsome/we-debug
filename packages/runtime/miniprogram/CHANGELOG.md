@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.47.1](https://github.com/dlhandsome/we-debug/compare/v0.47.0...v0.47.1) (2025-06-10)
+
+
+### Bug Fixes
+
+* fixed custom mask animation ([786648a](https://github.com/dlhandsome/we-debug/commit/786648a78eacd3863268b4d88f25834afe083389))
+* fixed eslint ([c190558](https://github.com/dlhandsome/we-debug/commit/c190558c94c0545fdd0f8a1c215b40a8ea664ddf))
+
+
+
+
+
 # [0.47.0](https://github.com/dlhandsome/we-debug/compare/v0.46.1...v0.47.0) (2025-05-23)
 
 
