@@ -65,12 +65,26 @@ Component({
         return;
       }
       this.setData({
+        ...(this.properties.useCustom ? {
+          animateClassName: {
+            mask: animateClassName.fadeIn,
+            modal: animateClassName.slideInUp
+          },
+        }: {}),
         showMask: true
       });
     },
     closeMask() {
       if (!this.isComponentInCurrentPage()) {
         return;
+      }
+      if (this.properties.useCustom) {
+        this.setData({
+          animateClassName: {
+            mask: animateClassName.fadeOut,
+            modal: animateClassName.slideOutDown
+          }
+        });
       }
       setTimeout(() => {
         this.setData({
