@@ -18,7 +18,7 @@ Component({
     },
     useCustom: {
       type: Boolean,
-      value: false
+      value: true
     }
   },
   observers: {
