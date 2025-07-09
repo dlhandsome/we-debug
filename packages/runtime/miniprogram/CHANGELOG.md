@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.47.2](https://github.com/dlhandsome/we-debug/compare/v0.47.1...v0.47.2) (2025-07-09)
+
+
+### Bug Fixes
+
+* 默认使用自定义 mask ([f819e3f](https://github.com/dlhandsome/we-debug/commit/f819e3f4ab8d434829b498be34f53f99d678b650))
+
+
+
+
+
 ## [0.47.1](https://github.com/dlhandsome/we-debug/compare/v0.47.0...v0.47.1) (2025-06-10)
 
 
