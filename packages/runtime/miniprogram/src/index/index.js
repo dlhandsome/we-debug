@@ -33,7 +33,7 @@ Component({
     },
     useCustomMask: {
       type: Boolean,
-      value: false
+      value: true
     }
   },
   observers: {
