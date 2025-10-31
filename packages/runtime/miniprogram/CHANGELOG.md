@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.49.0](https://github.com/dlhandsome/we-debug/compare/v0.48.0...v0.49.0) (2025-10-31)
+
+
+### Features
+
+* 添加文本编码器功能并更新相关引用 ([62c2267](https://github.com/dlhandsome/we-debug/commit/62c2267fa6bbe020a334d74f88b9e684516cba9c))
+
+
+
+
+
 # [0.48.0](https://github.com/dlhandsome/we-debug/compare/v0.47.4...v0.48.0) (2025-10-31)
 
 **Note:** Version bump only for package @we-debug/miniprogram
