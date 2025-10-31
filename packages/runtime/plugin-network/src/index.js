@@ -53,7 +53,7 @@ class NetworkPlugin {
    * @memberof NetworkPlugin
    */
   createProxy() {
-    this.weDebug.event.on('network:request-finished', (network) => {
+    this.weDebug.event.on('network:request-finished', network => {
       requestManage.add(network);
     });
   }
