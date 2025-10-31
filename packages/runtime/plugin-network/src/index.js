@@ -10,20 +10,12 @@ wx.onAppRoute &&
 
 /**
  * weDebug: weDebug 实例
- * networkCallee: 网络请求方式
  *
  * @class NetworkPlugin
  */
 class NetworkPlugin {
-  constructor(weDebug, options = {}) {
+  constructor(weDebug) {
     this.weDebug = weDebug;
-    this.networkCallee = options.networkCallee || ['request', 'downloadFile', 'uploadFile'];
-
-    this._store = {
-      infoRuleState: weDebug.createCache('__infoRuleState__')
-    };
-
-    this._proxyRule = null;
   }
 
   /**
@@ -61,50 +53,9 @@ class NetworkPlugin {
    * @memberof NetworkPlugin
    */
   createProxy() {
-    this.networkCallee.forEach(method => {
-      const networkFunc = wx[method];
-      Object.defineProperty(wx, method, {
-        get:
-          () =>
-          (opt = {}) =>
-            this.proxyHandler(networkFunc, opt)
-      });
+    this.weDebug.event.on('network:request-finished', (network) => {
+      requestManage.add(network);
     });
-  }
-
-  proxyHandler(networkFunc, opt = {}) {
-    const that = this;
-    const { isFunc } = that.weDebug.util;
-
-    let out = Object.assign({}, opt);
-
-    if (!out.header) {
-      out.header = {};
-    }
-
-    if (!out.data) {
-      out.data = {};
-    }
-
-    out.success = function (res) {
-      requestManage.add({
-        request: opt,
-        response: res
-      });
-
-      isFunc(opt.success) && opt.success.apply(this, arguments);
-    };
-
-    out.fail = function (err) {
-      requestManage.add({
-        request: opt,
-        response: err
-      });
-
-      isFunc(opt.fail) && opt.fail.apply(this, arguments);
-    };
-
-    return networkFunc.call(this, out);
   }
 }
 
