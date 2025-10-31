@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.48.0](https://github.com/dlhandsome/we-debug/compare/v0.47.4...v0.48.0) (2025-10-31)
+
+
+### Features
+
+* 添加网络请求 API 处理逻辑 ([6c7e0c2](https://github.com/dlhandsome/we-debug/commit/6c7e0c2056ddbef155df0b71cc37023ed290db45))
+
+
+
+
+
 ## [0.47.4](https://github.com/dlhandsome/we-debug/compare/v0.47.3...v0.47.4) (2025-07-09)
 
 

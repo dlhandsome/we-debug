@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.48.0](https://github.com/dlhandsome/we-debug/compare/v0.47.4...v0.48.0) (2025-10-31)
+
+**Note:** Version bump only for package @we-debug/plugin-error
+
+
+
+
+
 # [0.47.0](https://github.com/dlhandsome/we-debug/compare/v0.46.1...v0.47.0) (2025-05-23)
 
 **Note:** Version bump only for package @we-debug/plugin-error
