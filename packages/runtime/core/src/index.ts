@@ -1,6 +1,6 @@
 import store from './store/index';
 import * as util from './utils/simple-type-function';
-
+import './api/network';
 import { use } from './api/use';
 import { init } from './api/init';
 import { createCache } from './api/cache';
