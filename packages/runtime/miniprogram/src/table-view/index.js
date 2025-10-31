@@ -2,6 +2,7 @@ import Debug from '@we-debug/core';
 
 const store = Debug.store;
 const { isFunc } = Debug.util;
+const textEncoder = Debug.textEncoder;
 
 const prefix = 'debug:tableview-';
 
@@ -91,7 +92,7 @@ Component({
     calculateDataSize(data) {
       try {
         const jsonString = JSON.stringify(data);
-        const bytes = new TextEncoder().encode(jsonString).length;
+        const bytes = textEncoder.encode(jsonString).length;
 
         if (bytes < 1024) {
           return `${bytes} B`;

@@ -1,5 +1,6 @@
 import store from './store/index';
 import * as util from './utils/simple-type-function';
+import * as textEncoder from './utils/text-encoder';
 import './api/network';
 import { use } from './api/use';
 import { init } from './api/init';
@@ -28,6 +29,7 @@ export {
   event,
   store,
   util,
+  textEncoder,
   /** Badge 相关 API */
   createBadge,
   getBadge,
@@ -72,6 +74,7 @@ export default {
   event,
   store,
   util,
+  textEncoder,
   createBadge,
   getBadge,
   addBadge,
