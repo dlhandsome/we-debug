@@ -16,8 +16,5 @@
   "license": "MIT",
   "readme": "ERROR: No README data found!",
   "_id": "@we-debug/plugin-error@0.1.6",
-  "_commitid": "ea9904d",
-  "peerDependencies": {
-    "@we-debug/core": "^0.31.10"
-  }
+  "_commitid": "ea9904d"
 }
