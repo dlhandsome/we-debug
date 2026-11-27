@@ -112,6 +112,66 @@ export interface ITableViewManagerConstructorOption extends IBaseManageConstruct
 }
 
 /**
+ * NetworkView 与插件之间的交互接口
+ */
+export interface INetworkViewHandler extends IBaseModelHandler {
+  /** 获取当前请求记录 */
+  getRecords?: () => IAnyObject[];
+  /** 清空请求记录 */
+  bindClear?: () => any;
+  /** 开始/暂停录制 */
+  bindRecordChange?: (recording: boolean) => any;
+  /** 切换页面时是否保留日志 */
+  bindPreserveLogChange?: (preserveLog: boolean) => any;
+  /** 获取录制状态 */
+  getState?: () => { recording: boolean; preserveLog: boolean };
+}
+
+export interface INetworkViewManagerConstructorOption extends IBaseManageConstructorOption {
+  handler: INetworkViewHandler;
+}
+
+export type INetworkViewGroup = IGroupOption;
+
+/**
+ * 新增 NetworkView 函数参数
+ */
+export interface IAddNetworkViewOption {
+  /** 视图会展示在调试面板对应类目中 */
+  group?: INetworkViewGroup;
+}
+
+/**
+ * ApiView 与插件之间的交互接口
+ */
+export interface IApiViewHandler extends IBaseModelHandler {
+  /** 获取当前 API 调用记录 */
+  getRecords?: () => IAnyObject[];
+  /** 清空调用记录 */
+  bindClear?: () => any;
+  /** 开始/暂停录制 */
+  bindRecordChange?: (recording: boolean) => any;
+  /** 切换页面时是否保留日志 */
+  bindPreserveLogChange?: (preserveLog: boolean) => any;
+  /** 获取录制状态 */
+  getState?: () => { recording: boolean; preserveLog: boolean };
+}
+
+export interface IApiViewManagerConstructorOption extends IBaseManageConstructorOption {
+  handler: IApiViewHandler;
+}
+
+export type IApiViewGroup = IGroupOption;
+
+/**
+ * 新增 ApiView 函数参数
+ */
+export interface IAddApiViewOption {
+  /** 视图会展示在调试面板对应类目中 */
+  group?: IApiViewGroup;
+}
+
+/**
  * 功能分组排序函数类型
  */
 export type compareFn = (a: string, b: string) => number;
@@ -171,6 +231,8 @@ export interface IWedebugInitOption {
   plugin?: {
     /** 调试抓包属性配置 */
     network?: IAnyObject;
+    /** wx API 抓包属性配置 */
+    api?: IAnyObject;
     /** jsError日志属性配置 */
     error?: IAnyObject;
     /** 路由插件配置 */

@@ -64,6 +64,16 @@ const builds = {
     dest: 'packages/runtime/plugin-network/dist/',
     pkg: 'packages/runtime/plugin-network/package.json'
   },
+  'plugin-api': {
+    name: 'plugin-api',
+    option: {
+      base: 'packages/runtime/plugin-api/src',
+      allowEmpty: true
+    },
+    scriptsSrc: 'packages/runtime/plugin-api/src/**/*.js',
+    dest: 'packages/runtime/plugin-api/dist/',
+    pkg: 'packages/runtime/plugin-api/package.json'
+  },
   'plugin-error': {
     name: 'plugin-error',
     option: {

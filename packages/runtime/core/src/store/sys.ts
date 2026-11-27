@@ -1,3 +1,5 @@
+import { silent } from '../utils/silent';
+
 let _sys: WechatMiniprogram.SystemInfo;
 
 function set(sys: WechatMiniprogram.SystemInfo) {
@@ -5,7 +7,7 @@ function set(sys: WechatMiniprogram.SystemInfo) {
 }
 
 function get() {
-  if (!_sys) _sys = wx.getSystemInfoSync();
+  if (!_sys) _sys = silent(() => wx.getSystemInfoSync());
   return _sys;
 }
 

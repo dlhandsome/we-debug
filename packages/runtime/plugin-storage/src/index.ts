@@ -29,6 +29,10 @@ interface StorageItem {
   [key: string]: any;
 }
 
+type Silent = <T>(fn: () => T) => T;
+
+const getSilent = (weDebug: IAnyObject): Silent => weDebug.silent || (fn => fn());
+
 interface TableViewHandler {
   bindClear: () => void;
   bindRefresh: () => void;
@@ -57,16 +61,16 @@ function getStorageItems(): StorageItem[] {
  * @param refreshCallback 刷新回调函数
  * @returns TableViewHandler
  */
-function createTableViewHandler(refreshCallback: () => void): TableViewHandler {
+function createTableViewHandler(refreshCallback: () => void, silent: Silent): TableViewHandler {
   return {
     async bindClear() {
       try {
-        wx.clearStorageSync();
+        silent(() => wx.clearStorageSync());
         refreshCallback();
-        wx.showToast({ 
+        silent(() => wx.showToast({ 
           title: CONFIG.TOAST_MESSAGES.CLEAR_SUCCESS, 
           icon: 'none' 
-        });
+        }));
       } catch (error) {
         console.error('Failed to clear storage:', error);
       }
@@ -74,10 +78,10 @@ function createTableViewHandler(refreshCallback: () => void): TableViewHandler {
     async bindRefresh() {
       try {
         refreshCallback();
-        wx.showToast({ 
+        silent(() => wx.showToast({ 
           title: CONFIG.TOAST_MESSAGES.REFRESH_SUCCESS, 
           icon: 'none' 
-        });
+        }));
       } catch (error) {
         console.error('Failed to refresh storage view:', error);
       }
@@ -94,7 +98,7 @@ function createTableViewHandler(refreshCallback: () => void): TableViewHandler {
 function createTableView(weDebug: IAnyObject, storageItems: StorageItem[]) {
   return weDebug.createTableView({
     data: storageItems,
-    handler: createTableViewHandler(() => refreshTableView(weDebug))
+    handler: createTableViewHandler(() => refreshTableView(weDebug), getSilent(weDebug))
   });
 }
 
@@ -107,7 +111,7 @@ let currentTableView: any = null;
 function refreshTableView(weDebug: IAnyObject) {
   if (!currentTableView) return;
 
-  const storageItems = getStorageItems();
+  const storageItems = getSilent(weDebug)(getStorageItems);
   const newTableView = createTableView(weDebug, storageItems);
   
   weDebug.updateTableView({
@@ -120,7 +124,7 @@ function refreshTableView(weDebug: IAnyObject) {
  * 初始化存储调试功能
  */
 function initStorageDebug(weDebug: IAnyObject) {
-  const storageItems = getStorageItems();
+  const storageItems = getSilent(weDebug)(getStorageItems);
   currentTableView = createTableView(weDebug, storageItems);
   
   weDebug.addTableView(currentTableView, STORAGE_VIEW_CONFIG);

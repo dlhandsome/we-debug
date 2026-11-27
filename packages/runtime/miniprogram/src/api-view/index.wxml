@@ -1,0 +1,154 @@
+<view class="nv">
+  <!-- 操作栏 -->
+  <view class="nv-toolbar">
+    <view class="nv-btn" bindtap="handleToggleRecord">
+      <view class="nv-record {{recording ? 'on' : ''}}"></view>
+    </view>
+    <view class="nv-search">
+      <input class="nv-search-input" placeholder="过滤 API" value="{{keyword}}" bindinput="handleSearch" />
+    </view>
+    <view class="nv-btn" bindtap="handleClear">
+      <view class="nv-icon trash"></view>
+    </view>
+    <view class="nv-chip {{preserveLog ? 'active' : ''}}" bindtap="handleTogglePreserveLog">
+      <view class="nv-checkbox {{preserveLog ? 'checked' : ''}}"></view>
+      <text>Preserve log</text>
+    </view>
+  </view>
+
+  <!-- 类型筛选 -->
+  <scroll-view class="nv-types" scroll-x="{{true}}">
+    <view
+      wx:for="{{typeFilters}}"
+      wx:key="key"
+      class="nv-type {{activeType === item.key ? 'active' : ''}}"
+      data-type="{{item.key}}"
+      bindtap="handleTypeTap"
+    >{{item.label}}</view>
+  </scroll-view>
+
+  <!-- 调用列表 -->
+  <view class="nv-table">
+    <view class="nv-row nv-head">
+      <view class="nv-col name">Name</view>
+      <view class="nv-col status">Status</view>
+      <view class="nv-col method">Type</view>
+      <view class="nv-col time">Time</view>
+    </view>
+    <scroll-view class="nv-body" scroll-y="{{true}}">
+      <view
+        wx:for="{{list}}"
+        wx:key="id"
+        class="nv-row {{item.isError ? 'error' : ''}} {{item.isPending ? 'pending' : ''}} {{selectedId === item.id ? 'selected' : ''}}"
+        data-id="{{item.id}}"
+        bindtap="handleRowTap"
+      >
+        <view class="nv-col name">
+          <view class="nv-name">{{item.name}}</view>
+          <view wx:if="{{item.dir}}" class="nv-dir">{{item.dir}}</view>
+        </view>
+        <view class="nv-col status">{{item.statusText}}</view>
+        <view class="nv-col method">{{item.type}}</view>
+        <view class="nv-col time">{{item.time}}</view>
+      </view>
+      <view wx:if="{{list.length === 0}}" class="nv-empty">
+        <block wx:if="{{recording}}">
+          <view>Recording wx API calls...</view>
+          <view class="nv-empty-sub">调用 wx API 后将在此展示</view>
+        </block>
+        <block wx:else>
+          <view>Recording paused</view>
+          <view class="nv-empty-sub">点击左上角录制按钮恢复抓包</view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 状态栏 -->
+  <view class="nv-statusbar">
+    <view class="nv-stat"><text class="nv-stat-label">Calls:</text><text class="nv-stat-value">{{summary.count}} / {{summary.total}}</text></view>
+    <view class="nv-stat"><text class="nv-stat-label">Failed:</text><text class="nv-stat-value">{{summary.failed}}</text></view>
+    <view class="nv-stat"><text class="nv-stat-label">Finish:</text><text class="nv-stat-value">{{summary.finish}}</text></view>
+  </view>
+
+  <!-- 详情抽屉 -->
+  <view class="nv-drawer {{detail ? 'show' : ''}}">
+    <block wx:if="{{detail}}">
+      <view class="nv-drawer-header">
+        <view class="nv-drawer-title {{detail.isError ? 'error' : ''}}">{{detail.name}}</view>
+        <view class="nv-drawer-close" bindtap="handleCloseDetail"></view>
+      </view>
+      <view class="nv-tabs">
+        <view
+          wx:for="{{detailTabs}}"
+          wx:key="*this"
+          class="nv-tab {{activeTab === item ? 'active' : ''}}"
+          data-tab="{{item}}"
+          bindtap="handleTabTap"
+        >{{item}}</view>
+      </view>
+
+      <!-- Overview -->
+      <scroll-view wx:if="{{activeTab === 'Overview'}}" class="nv-drawer-body" scroll-y="{{true}}">
+        <view class="nv-card">
+          <view class="nv-card-title">General</view>
+          <view class="nv-kv" wx:for="{{detail.general}}" wx:key="key">
+            <text class="nv-k">{{item.key}}</text>
+            <text class="nv-v {{(item.key === 'Status' || item.key === 'errMsg') && detail.isError ? 'error' : ''}}" user-select>{{item.value}}</text>
+          </view>
+        </view>
+        <view class="nv-card">
+          <view class="nv-card-title">Timing</view>
+          <view class="nv-kv" wx:for="{{detail.timing}}" wx:key="key">
+            <text class="nv-k">{{item.key}}</text>
+            <text class="nv-v">{{item.value}}</text>
+          </view>
+        </view>
+        <view wx:if="{{detail.initiator.length > 0}}" class="nv-card">
+          <view class="nv-card-title">Initiator</view>
+          <text class="nv-code nv-initiator" user-select wx:for="{{detail.initiator}}" wx:key="index">{{item}}</text>
+        </view>
+        <view class="nv-actions">
+          <view class="nv-action" bindtap="handleCopyCall"><view class="nv-icon copy"></view>复制调用代码</view>
+        </view>
+      </scroll-view>
+
+      <!-- Params -->
+      <view wx:elif="{{activeTab === 'Params'}}" class="nv-drawer-body nv-flex">
+        <view wx:if="{{detail.paramsText}}" class="nv-card nv-card-fill">
+          <view class="nv-card-title">
+            <text>Params</text>
+            <view class="nv-copy-btn" bindtap="handleCopyParams"><view class="nv-icon copy"></view></view>
+          </view>
+          <view wx:if="{{detail.paramsJson}}" class="nv-json">
+            <w-json-view config="{{ { data: detail.paramsJson, expandLevel: 2 } }}" />
+          </view>
+          <scroll-view wx:else class="nv-json" scroll-y="{{true}}">
+            <text class="nv-code" user-select>{{detail.paramsText}}</text>
+          </scroll-view>
+        </view>
+        <view wx:else class="nv-placeholder">This call has no params</view>
+      </view>
+
+      <!-- Result -->
+      <view wx:elif="{{activeTab === 'Result'}}" class="nv-drawer-body nv-flex">
+        <view wx:if="{{detail.isPending}}" class="nv-placeholder">Pending...</view>
+        <view wx:elif="{{detail.isDone}}" class="nv-placeholder">未传入回调且未返回 Promise，无法获取调用结果</view>
+        <view wx:elif="{{detail.resultText}}" class="nv-card nv-card-fill">
+          <view class="nv-card-title">
+            <text class="{{detail.isError ? 'nv-error-text' : ''}}">{{detail.isError ? 'Error' : 'Result'}}</text>
+            <view class="nv-copy-btn" bindtap="handleCopyResult"><view class="nv-icon copy"></view></view>
+          </view>
+          <view wx:if="{{detail.resultJson}}" class="nv-json">
+            <w-json-view config="{{ { data: detail.resultJson, expandLevel: 1 } }}" />
+          </view>
+          <scroll-view wx:else class="nv-json" scroll-y="{{true}}">
+            <text class="nv-code" user-select>{{detail.resultText}}</text>
+          </scroll-view>
+          <view wx:if="{{detail.resultTruncated}}" class="nv-none">内容过长已截断，可点击右上角复制完整内容</view>
+        </view>
+        <view wx:else class="nv-placeholder">This call has no result</view>
+      </view>
+    </block>
+  </view>
+</view>

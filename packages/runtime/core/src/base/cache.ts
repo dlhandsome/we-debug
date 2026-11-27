@@ -1,8 +1,10 @@
+import { silent } from '../utils/silent';
+
 export const getStorage = function (key: string) {
   if (wx.getStorageSync) {
     let rst;
     try {
-      rst = wx.getStorageSync(key);
+      rst = silent(() => wx.getStorageSync(key));
     } catch (e) {
       console.error(e);
     }
@@ -11,13 +13,15 @@ export const getStorage = function (key: string) {
 };
 
 export const setStorage = function (key: string, value: any) {
-  wx.setStorage({
-    key: key,
-    data: value,
-    fail(e) {
-      console.log(e);
-    }
-  });
+  silent(() =>
+    wx.setStorage({
+      key: key,
+      data: value,
+      fail(e) {
+        console.log(e);
+      }
+    })
+  );
 };
 
 export class CacheData {

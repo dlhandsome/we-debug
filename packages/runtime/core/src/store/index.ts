@@ -7,7 +7,9 @@ import {
   Badge,
   FormRule,
   JsonView,
-  TableView
+  TableView,
+  NetworkView,
+  ApiView
 } from '../model/index'
 
 export default {
@@ -17,6 +19,8 @@ export default {
   rules: new MySet<FormRule>(),
   jsonviews: new MySet<JsonView>(),
   tableviews: new MySet<TableView>(),
+  networkviews: new MySet<NetworkView>(),
+  apiviews: new MySet<ApiView>(),
   group: new Group(),
   bridge: new Store()
 };

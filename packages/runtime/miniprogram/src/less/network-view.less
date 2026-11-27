@@ -1,0 +1,685 @@
+// 与 table-view（Storage 面板）保持一致的配色
+@nv-primary: #4d4fec;
+@nv-primary-light: rgba(77, 79, 236, 0.08);
+@nv-primary-active: rgba(77, 79, 236, 0.2);
+@nv-border: #dadce0;
+@nv-border-light: #e0e0e0;
+@nv-divider: #f1f3f4;
+@nv-bg-bar: #f5f5f5;
+@nv-bg-head: #f8f9fa;
+@nv-text: #202124;
+@nv-text-sub: #5f6368;
+@nv-text-weak: #9aa0a6;
+@nv-red: #d93025;
+@nv-mono: 'Consolas', 'Monaco', monospace;
+
+@icon-search: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%235f6368'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3C/svg%3E");
+@icon-trash: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%235f6368'%3E%3Cpath d='M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z'/%3E%3C/svg%3E");
+@icon-copy: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%235f6368'%3E%3Cpath d='M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z'/%3E%3C/svg%3E");
+@icon-copy-primary: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234d4fec'%3E%3Cpath d='M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z'/%3E%3C/svg%3E");
+
+.nv {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  color: @nv-text;
+  font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* 操作栏 */
+.nv-toolbar {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 8px;
+  background: @nv-bg-bar;
+  border-bottom: 1px solid @nv-border-light;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.nv-btn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid @nv-border;
+  border-radius: 4px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+
+  &:active {
+    background: @nv-divider;
+  }
+}
+
+.nv-record {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid @nv-text-sub;
+  box-sizing: border-box;
+
+  &.on {
+    border: none;
+    background: @nv-red;
+  }
+}
+
+.nv-icon {
+  width: 14px;
+  height: 14px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  flex-shrink: 0;
+
+  &.trash {
+    background-image: @icon-trash;
+  }
+
+  &.copy {
+    background-image: @icon-copy;
+    opacity: 0.8;
+  }
+}
+
+.nv-search {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  height: 28px;
+  margin: 0 6px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    transform: translateY(-50%);
+    background: @icon-search no-repeat center;
+    background-size: contain;
+    opacity: 0.5;
+    z-index: 1;
+  }
+}
+
+.nv-search-input {
+  width: 100%;
+  height: 28px;
+  min-height: 28px;
+  padding: 0 8px 0 28px;
+  font-size: 13px;
+  background: #ffffff;
+  border: 1px solid @nv-border;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.nv-chip {
+  display: flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 8px;
+  margin-left: 6px;
+  font-size: 12px;
+  color: @nv-text-sub;
+  background: @nv-bg-head;
+  border: 1px solid @nv-border-light;
+  border-radius: 4px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+
+  &.active {
+    color: @nv-primary;
+    background: @nv-primary-light;
+    border-color: rgba(77, 79, 236, 0.3);
+  }
+}
+
+.nv-checkbox {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  margin-right: 4px;
+  border: 1px solid @nv-text-weak;
+  border-radius: 2px;
+  background: #ffffff;
+  box-sizing: border-box;
+
+  &.checked {
+    background: @nv-primary;
+    border-color: @nv-primary;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 3px;
+      top: 0;
+      width: 3px;
+      height: 7px;
+      border: solid #ffffff;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+/* 类型筛选，与面板底部分组胶囊一致 */
+.nv-types {
+  height: 36px;
+  white-space: nowrap;
+  border-bottom: 1px solid @nv-border-light;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.nv-type {
+  display: inline-block;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 12px;
+  margin: 6px 0 0 8px;
+  font-size: 12px;
+  border-radius: 24px;
+  background: #f8f8f8;
+  color: @nv-text;
+
+  &.active {
+    background: rgba(77, 79, 236, 0.05);
+    color: @nv-primary;
+  }
+}
+
+/* 表格 */
+.nv-table {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.nv-row {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 4px;
+  border-bottom: 1px solid @nv-divider;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease;
+
+  &:active {
+    background-color: @nv-primary-active;
+  }
+
+  &.selected {
+    background-color: @nv-primary-light;
+  }
+
+  &.error .nv-col,
+  &.error .nv-name {
+    color: @nv-red;
+  }
+
+  &.pending .nv-col,
+  &.pending .nv-name {
+    color: @nv-text-weak;
+  }
+}
+
+.nv-head {
+  min-height: 32px;
+  background: @nv-bg-head;
+  border-bottom: 1px solid @nv-border;
+  flex-shrink: 0;
+
+  &:active {
+    background: @nv-bg-head;
+  }
+
+  .nv-col {
+    color: @nv-text-sub;
+    font-weight: 500;
+  }
+}
+
+.nv-body {
+  flex: 1;
+  height: 0;
+}
+
+.nv-col {
+  padding: 0 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.4;
+  color: @nv-text-sub;
+  box-sizing: border-box;
+
+  &.name {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &.status {
+    width: 50px;
+  }
+
+  &.method {
+    width: 60px;
+  }
+
+  &.size {
+    width: 54px;
+    text-align: right;
+    font-size: 12px;
+  }
+
+  &.time {
+    width: 56px;
+    text-align: right;
+    font-size: 12px;
+  }
+}
+
+.nv-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: @nv-text;
+  font-weight: 500;
+}
+
+.nv-dir {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 11px;
+  color: @nv-text-weak;
+}
+
+.nv-empty {
+  padding-top: 56px;
+  text-align: center;
+  color: #d9d9d9;
+  font-size: 16px;
+}
+
+.nv-empty-sub {
+  margin-top: 8px;
+  font-size: 12px;
+  color: @nv-text-weak;
+}
+
+/* 状态栏 */
+.nv-statusbar {
+  display: flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 6px;
+  background: @nv-bg-bar;
+  border-top: 1px solid @nv-border-light;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.nv-stat {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  height: 22px;
+  padding: 0 5px;
+  margin-right: 4px;
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  background: @nv-bg-head;
+  border: 1px solid @nv-border-light;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.nv-stat-label {
+  margin-right: 4px;
+  color: @nv-text-sub;
+  opacity: 0.8;
+}
+
+.nv-stat-value {
+  color: @nv-text;
+  font-weight: 500;
+}
+
+/* 详情抽屉 */
+.nv-drawer {
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-left: 1px solid @nv-border-light;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100;
+  box-sizing: border-box;
+
+  &.show {
+    right: 0;
+  }
+}
+
+.nv-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  padding: 0 8px 0 12px;
+  background: @nv-bg-head;
+  border-bottom: 1px solid @nv-border-light;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.nv-drawer-title {
+  flex: 1;
+  min-width: 0;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 500;
+  color: @nv-text;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 14px;
+    margin-right: 8px;
+    background: @nv-primary;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  &.error {
+    color: @nv-red;
+  }
+}
+
+.nv-drawer-close {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: @nv-text-sub;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+
+  &::before {
+    content: '×';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 18px;
+    line-height: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:active {
+    background: #e8eaed;
+    color: @nv-text;
+  }
+}
+
+.nv-tabs {
+  display: flex;
+  height: 36px;
+  border-bottom: 1px solid @nv-border-light;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.nv-tab {
+  flex: 1;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  font-size: 12px;
+  color: @nv-text-sub;
+  border-bottom: 2px solid transparent;
+
+  &.active {
+    color: @nv-primary;
+    font-weight: 500;
+    border-bottom-color: @nv-primary;
+  }
+}
+
+.nv-drawer-body {
+  flex: 1;
+  height: 0;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.nv-flex {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* 内容卡片，与 table-view 的 value-preview 一致 */
+.nv-card {
+  margin: 0 1px 12px;
+  padding: 10px 12px;
+  background: @nv-bg-head;
+  border: 1px solid @nv-border-light;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.nv-card-fill {
+  flex: 1;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1px;
+}
+
+.nv-card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: @nv-text-sub;
+  border-bottom: 1px solid @nv-border-light;
+  flex-shrink: 0;
+}
+
+.nv-count {
+  margin-left: 6px;
+  padding: 0 6px;
+  font-size: 11px;
+  line-height: 16px;
+  color: @nv-primary;
+  background: @nv-primary-light;
+  border-radius: 8px;
+}
+
+.nv-copy-btn {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+
+  &:active {
+    background: #e8eaed;
+  }
+}
+
+.nv-kv {
+  display: flex;
+  padding: 4px 0;
+  font-size: 12px;
+  line-height: 1.6;
+  word-break: break-all;
+}
+
+.nv-k {
+  flex-shrink: 0;
+  width: 42%;
+  margin-right: 8px;
+  color: @nv-text-sub;
+  font-weight: 500;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.nv-v {
+  flex: 1;
+  min-width: 0;
+  color: @nv-text;
+  font-family: @nv-mono;
+
+  &.error {
+    color: @nv-red;
+  }
+}
+
+.nv-none {
+  padding: 4px 0;
+  font-size: 12px;
+  color: @nv-text-weak;
+}
+
+.nv-json {
+  flex: 1;
+  height: 0;
+  margin: 0 -12px -10px;
+}
+
+.nv-code {
+  display: block;
+  font-family: @nv-mono;
+  font-size: 13px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-all;
+  color: @nv-text;
+}
+
+.nv-json .nv-code {
+  padding: 4px 12px 10px;
+}
+
+.nv-placeholder {
+  padding-top: 48px;
+  text-align: center;
+  font-size: 14px;
+  color: #d9d9d9;
+
+  &.error {
+    color: @nv-red;
+  }
+}
+
+.nv-actions {
+  display: flex;
+  padding-bottom: 4px;
+}
+
+.nv-action {
+  display: flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 10px;
+  margin-right: 8px;
+  font-size: 12px;
+  color: @nv-primary;
+  background: #ffffff;
+  border: 1px solid @nv-border;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+
+  .nv-icon {
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+    background-image: @icon-copy-primary;
+    opacity: 1;
+  }
+
+  &:active {
+    background: @nv-primary-light;
+  }
+}
+
+.nv-phase {
+  display: flex;
+  align-items: center;
+  padding: 4px 0;
+  font-size: 12px;
+}
+
+.nv-phase-label {
+  width: 40%;
+  flex-shrink: 0;
+  color: @nv-text-sub;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nv-phase-track {
+  position: relative;
+  flex: 1;
+  height: 8px;
+  margin: 0 8px;
+  background: #ffffff;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.nv-phase-bar {
+  position: absolute;
+  top: 0;
+  height: 8px;
+  border-radius: 4px;
+}
+
+.nv-phase-time {
+  width: 56px;
+  flex-shrink: 0;
+  text-align: right;
+  color: @nv-text;
+}

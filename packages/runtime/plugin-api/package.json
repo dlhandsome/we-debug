@@ -1,0 +1,19 @@
+{
+  "name": "@we-debug/plugin-api",
+  "version": "0.49.2",
+  "description": "wx api capture plugin for we-debug",
+  "main": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "keywords": [
+    "we-debug"
+  ],
+  "author": {
+    "name": "dlhandsome"
+  },
+  "license": "MIT"
+}
