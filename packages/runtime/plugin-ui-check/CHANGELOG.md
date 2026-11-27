@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.50.0](https://github.com/dlhandsome/we-debug/compare/v0.49.2...v0.50.0) (2026-11-27)
+
+**Note:** Version bump only for package @we-debug/plugin-ui-check
+
+
+
+
+
 # [0.49.0](https://github.com/dlhandsome/we-debug/compare/v0.48.0...v0.49.0) (2025-10-31)
 
 **Note:** Version bump only for package @we-debug/plugin-ui-check

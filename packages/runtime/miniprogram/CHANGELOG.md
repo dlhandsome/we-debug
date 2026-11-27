@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.50.0](https://github.com/dlhandsome/we-debug/compare/v0.49.2...v0.50.0) (2026-11-27)
+
+
+### Features
+
+* **api:** 新增 wx API 抓包面板 ([da85c30](https://github.com/dlhandsome/we-debug/commit/da85c30bbdd5d40b314b74d64dd22f1137157304))
+* **network:** 新增 Chrome 风格的 Network 抓包面板 ([5e69881](https://github.com/dlhandsome/we-debug/commit/5e69881c74e24f5605fd5ef996f7b66f139d43bb))
+
+
+
+
+
 ## [0.49.2](https://github.com/dlhandsome/we-debug/compare/v0.49.1...v0.49.2) (2025-11-12)
 
 **Note:** Version bump only for package @we-debug/miniprogram
