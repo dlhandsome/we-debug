@@ -1,4 +1,5 @@
 import { CacheData } from '../base/cache';
+import { silent } from '../utils/silent';
 
 /**
  * 创建缓存
@@ -7,7 +8,7 @@ import { CacheData } from '../base/cache';
 export function createCache(cacheKey: string) {
   let v = null;
   try {
-    v = wx.getStorageSync(cacheKey);
+    v = silent(() => wx.getStorageSync(cacheKey));
   } catch (e) {}
 
   return new CacheData(cacheKey, v);

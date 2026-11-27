@@ -24,6 +24,8 @@ const { isFunc } = Debug.util;
 const prefix = 'debug:networkview-';
 const RENDER_THROTTLE = 200;
 
+const getDetailKey = record => `${record.id}:${record.status}:${record.endTime}`;
+
 Component({
   properties: {
     config: {
@@ -131,8 +133,14 @@ Component({
 
       if (selectedId) {
         const record = records.find(r => r.id === selectedId);
-        nextData.detail = record ? this.toDetail(record) : null;
-        if (!record) nextData.selectedId = 0;
+        if (!record) {
+          nextData.selectedId = 0;
+          nextData.detail = null;
+        } else if (getDetailKey(record) !== this._detailKey) {
+          // 详情未变化时不重新 setData，避免 json-view 被重置而丢失展开状态
+          this._detailKey = getDetailKey(record);
+          nextData.detail = this.toDetail(record);
+        }
       }
 
       this.setData(nextData);
@@ -214,6 +222,7 @@ Component({
       const id = e.currentTarget.dataset.id;
       const record = this.getRecords().find(r => r.id === id);
       if (!record) return;
+      this._detailKey = getDetailKey(record);
       this.setData({
         selectedId: id,
         detail: this.toDetail(record)
@@ -229,10 +238,12 @@ Component({
     },
 
     copy(data) {
-      wx.setClipboardData({
-        data,
-        success: () => wx.showToast({ title: '已复制', icon: 'none' })
-      });
+      Debug.silent(() =>
+        wx.setClipboardData({
+          data,
+          success: () => Debug.silent(() => wx.showToast({ title: '已复制', icon: 'none' }))
+        })
+      );
     },
 
     handleCopyUrl() {

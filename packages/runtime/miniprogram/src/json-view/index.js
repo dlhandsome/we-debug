@@ -81,7 +81,7 @@ Component({
       formattedData.forEach(item => {
         item.hidden = false;
         if (item.isOpening) {
-          item.collapsed = level >= 0 && item.level >= level;
+          item.collapsed = item.hasChildren && level >= 0 && item.level >= level;
         }
       });
 
@@ -222,6 +222,7 @@ Component({
         isOpening: false,
         isClosing: true,
         isLast: true,
+        isEmpty: entries.length === 0,
         path: [...path],
         hidden: false
       });

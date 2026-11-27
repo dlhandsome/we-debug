@@ -156,24 +156,17 @@ Component({
           : String(selectedItem.value);
 
       // 复制到剪贴板
-      wx.setClipboardData({
-        data: valueToCopy,
-        success: () => {
-          wx.showToast({
-            title: '已复制',
-            icon: 'success',
-            duration: 1500
-          });
-        },
-        fail: err => {
-          console.error('TableView: failed to copy value:', err);
-          wx.showToast({
-            title: '复制失败',
-            icon: 'error',
-            duration: 1500
-          });
-        }
-      });
+      const toast = (title, icon) => Debug.silent(() => wx.showToast({ title, icon, duration: 1500 }));
+      Debug.silent(() =>
+        wx.setClipboardData({
+          data: valueToCopy,
+          success: () => toast('已复制', 'success'),
+          fail: err => {
+            console.error('TableView: failed to copy value:', err);
+            toast('复制失败', 'error');
+          }
+        })
+      );
     },
     addListeners() {
       const prefix = this.data.prefix;

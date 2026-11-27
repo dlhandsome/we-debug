@@ -12,7 +12,7 @@
     <view class="json-content">
       <block wx:for="{{formattedData}}" wx:key="index">
         <view 
-          class="json-item {{item.hidden ? 'hidden' : ''}} {{item.highlight ? 'highlight' : ''}}"
+          class="json-item {{item.hidden || item.isEmpty ? 'hidden' : ''}} {{item.highlight ? 'highlight' : ''}}"
           style="padding-left: {{item.level * 20}}px; transform: translateX(-{{scrollLeft}}px);"
         >
           <view class="content">
@@ -47,6 +47,7 @@
                 <text wx:if="{{!item.inArray && item.key !== null}}" class="key">{{item.key}}: </text>
                 <block wx:if="{{item.isOpening}}">
                   <text class="bracket">{{item.isArray ? '[' : '{'}}{{item.collapsed ? '...' : ''}}</text>
+                  <text wx:if="{{!item.hasChildren}}" class="bracket">{{item.isArray ? ']' : '}'}}</text>
                   <text wx:if="{{editable}}" class="action add" catchtap="addItem" data-index="{{index}}">+</text>
                 </block>
                 <block wx:elif="{{!item.isClosing}}">

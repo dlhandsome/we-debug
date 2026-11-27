@@ -5,6 +5,7 @@ import ErrorPlugin from '@we-debug/plugin-error';
 import RouterPlugin from '@we-debug/plugin-router';
 import LauncherPlugin from '@we-debug/plugin-launcher';
 import networkPlugin from '@we-debug/plugin-network';
+import apiPlugin from '@we-debug/plugin-api';
 import uiCheckPlugin from '@we-debug/plugin-ui-check/plugin';
 import AppdataPlugin from '@we-debug/plugin-appdata';
 import StoragePlugin from '@we-debug/plugin-storage';
@@ -24,6 +25,7 @@ export function init(this: any, options?: IWedebugInitOption) {
       launcher: true,
       plugin: {
         network: true,
+        api: true,
         error: true,
         router: true,
         uiCheck: true,
@@ -38,6 +40,7 @@ export function init(this: any, options?: IWedebugInitOption) {
   if (opt.plugin.appData) use.call(this, AppdataPlugin, opt.plugin.appData || {});
   if (opt.plugin.storage) use.call(this, StoragePlugin, opt.plugin.storage || {});
   if (opt.plugin.network) use.call(this, networkPlugin, opt.plugin.network || {});
+  if (opt.plugin.api) use.call(this, apiPlugin, opt.plugin.api || {});
   if (opt.plugin.error) use.call(this, ErrorPlugin, opt.plugin.error || {});
   if (opt.plugin.router) use.call(this, RouterPlugin, opt.plugin.router || {});
   if (opt.plugin.uiCheck) use.call(this, uiCheckPlugin, opt.plugin.uiCheck || {});

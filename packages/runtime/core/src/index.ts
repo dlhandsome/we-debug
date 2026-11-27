@@ -10,9 +10,11 @@ import { createFormRule, getFormRule, addFormRule, removeFormRule } from './api/
 import { createJsonView, getJsonView, addJsonView, updateJsonView, removeJsonView } from './api/jsonview';
 import { createTableView, getTableView, addTableView, updateTableView, removeTableView } from './api/tableview';
 import { createNetworkView, getNetworkView, addNetworkView, updateNetworkView, removeNetworkView } from './api/networkview';
+import { createApiView, getApiView, addApiView, updateApiView, removeApiView } from './api/apiview';
 import { getGroupsAllKeys, addRuleByGroup, getRuleByGroup, removeGroupRule, addJsonViewByGroup, getJsonViewByGroup, removeGroupJsonView } from './api/group';
 import { setBridgeInfo, getBridgeInfo } from './api/bridge';
 import { ENV_TYPE, getEnv } from './utils/env';
+import { silent, isSilent } from './utils/silent';
 import { DEFAULT_GROUP } from './config/group';
 import { version } from './version';
 
@@ -24,6 +26,8 @@ export {
   ENV_TYPE,
   DEFAULT_GROUP,
   getEnv,
+  silent,
+  isSilent,
   use,
   init,
   createCache,
@@ -59,6 +63,12 @@ export {
   addNetworkView,
   updateNetworkView,
   removeNetworkView,
+  /** ApiView 相关 API */
+  createApiView,
+  getApiView,
+  addApiView,
+  updateApiView,
+  removeApiView,
   getGroupsAllKeys,
   addRuleByGroup,
   getRuleByGroup,
@@ -75,6 +85,8 @@ export default {
   ENV_TYPE,
   DEFAULT_GROUP,
   getEnv,
+  silent,
+  isSilent,
   use,
   init,
   createCache,
@@ -105,6 +117,11 @@ export default {
   addNetworkView,
   updateNetworkView,
   removeNetworkView,
+  createApiView,
+  getApiView,
+  addApiView,
+  updateApiView,
+  removeApiView,
   getGroupsAllKeys,
   addRuleByGroup,
   getRuleByGroup,

@@ -38,9 +38,11 @@ class NetworkPlugin {
       type: 'button',
       handler: {
         bindTap() {
-          wx.setClipboardData({
-            data: JSON.stringify(requestManage.get(), null, 2)
-          });
+          that.weDebug.silent(() =>
+            wx.setClipboardData({
+              data: JSON.stringify(requestManage.get(), null, 2)
+            })
+          );
         }
       }
     });

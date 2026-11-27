@@ -3,3 +3,4 @@ export * from './badge';
 export * from './jsonview';
 export * from './tableview';
 export * from './networkview';
+export * from './apiview';

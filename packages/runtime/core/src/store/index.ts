@@ -8,7 +8,8 @@ import {
   FormRule,
   JsonView,
   TableView,
-  NetworkView
+  NetworkView,
+  ApiView
 } from '../model/index'
 
 export default {
@@ -19,6 +20,7 @@ export default {
   jsonviews: new MySet<JsonView>(),
   tableviews: new MySet<TableView>(),
   networkviews: new MySet<NetworkView>(),
+  apiviews: new MySet<ApiView>(),
   group: new Group(),
   bridge: new Store()
 };

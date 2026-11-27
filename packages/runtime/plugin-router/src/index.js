@@ -32,9 +32,11 @@ RoutePlugin.install = function (weDebug, options = {}) {
             if (!state.disabled) {
               const page = getCurrentPage();
               if (page) {
-                wx.setClipboardData({
-                  data: page.route
-                });
+                weDebug.silent(() =>
+                  wx.setClipboardData({
+                    data: page.route
+                  })
+                );
               }
             }
           }
@@ -59,9 +61,11 @@ RoutePlugin.install = function (weDebug, options = {}) {
             if (!state.disabled) {
               const page = getCurrentPage();
               if (page) {
-                wx.setClipboardData({
-                  data: getRouteSearch(page.options)
-                });
+                weDebug.silent(() =>
+                  wx.setClipboardData({
+                    data: getRouteSearch(page.options)
+                  })
+                );
               }
             }
           }

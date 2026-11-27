@@ -67,9 +67,11 @@ ErrorPlugin.install = function (weDebug, options: IPluginInitOption = {}) {
         handler: {
           bindTap(state: IFormRuleState) {
             if (!state.disabled) {
-              wx.setClipboardData({
-                data: JSON.stringify(errManage.get(), null, 2)
-              });
+              weDebug.silent(() =>
+                wx.setClipboardData({
+                  data: JSON.stringify(errManage.get(), null, 2)
+                })
+              );
             }
           }
         }
