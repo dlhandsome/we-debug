@@ -66,6 +66,7 @@ Component({
     rules: store.rules.get(),
     jsonviews: store.jsonviews.get(),
     tableviews: store.tableviews.get(),
+    networkviews: [],
     badges: store.badges.get(),
     modal: {
       logo: LOGO_BASE64,
@@ -95,9 +96,10 @@ Component({
     setPanelViews() {
       const groupStores = this.getGroupStores();
       this.setData({
-        rules: groupStores.filter(i => !i.isJsonView),
+        rules: groupStores.filter(i => !i.isJsonView && !i.isTableView && !i.isNetworkView),
         jsonviews: groupStores.filter(i => i.isJsonView),
-        tableviews: groupStores.filter(i => i.isTableView)
+        tableviews: groupStores.filter(i => i.isTableView),
+        networkviews: groupStores.filter(i => i.isNetworkView)
       });
     },
     setBadges() {
@@ -146,6 +148,7 @@ Component({
       store.event.on('rule:update', this.setPanelViews.bind(this));
       store.event.on('jsonview:update', this.setPanelViews.bind(this));
       store.event.on('tableview:update', this.setPanelViews.bind(this));
+      store.event.on('networkview:update', this.setPanelViews.bind(this));
       store.event.on('badge:update', this.setBadges.bind(this));
       store.event.on('group:update', this.setGroups.bind(this));
     },
@@ -153,6 +156,7 @@ Component({
       store.event.off('rule:update', this.setPanelViews.bind(this));
       store.event.off('jsonview:update', this.setPanelViews.bind(this));
       store.event.off('tableview:update', this.setPanelViews.bind(this));
+      store.event.off('networkview:update', this.setPanelViews.bind(this));
       store.event.off('badge:update', this.setBadges.bind(this));
       store.event.off('group:update', this.setGroups.bind(this));
     }

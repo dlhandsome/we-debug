@@ -9,6 +9,7 @@ import { createBadge, getBadge, addBadge, removeBadge } from './api/badge';
 import { createFormRule, getFormRule, addFormRule, removeFormRule } from './api/rule';
 import { createJsonView, getJsonView, addJsonView, updateJsonView, removeJsonView } from './api/jsonview';
 import { createTableView, getTableView, addTableView, updateTableView, removeTableView } from './api/tableview';
+import { createNetworkView, getNetworkView, addNetworkView, updateNetworkView, removeNetworkView } from './api/networkview';
 import { getGroupsAllKeys, addRuleByGroup, getRuleByGroup, removeGroupRule, addJsonViewByGroup, getJsonViewByGroup, removeGroupJsonView } from './api/group';
 import { setBridgeInfo, getBridgeInfo } from './api/bridge';
 import { ENV_TYPE, getEnv } from './utils/env';
@@ -52,6 +53,12 @@ export {
   addTableView,
   updateTableView,
   removeTableView,
+  /** NetworkView 相关 API */
+  createNetworkView,
+  getNetworkView,
+  addNetworkView,
+  updateNetworkView,
+  removeNetworkView,
   getGroupsAllKeys,
   addRuleByGroup,
   getRuleByGroup,
@@ -93,6 +100,11 @@ export default {
   addTableView,
   updateTableView,
   removeTableView,
+  createNetworkView,
+  getNetworkView,
+  addNetworkView,
+  updateNetworkView,
+  removeNetworkView,
   getGroupsAllKeys,
   addRuleByGroup,
   getRuleByGroup,

@@ -13,6 +13,7 @@
     "w-badge": "../badge/index",
     "w-json-view": "../json-view/index",
     "w-table-view": "../table-view/index",
+    "w-network-view": "../network-view/index",
     "w-ui-check": "@we-debug/plugin-ui-check/index"
   }
 }

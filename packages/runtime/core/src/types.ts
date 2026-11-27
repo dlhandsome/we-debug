@@ -112,6 +112,36 @@ export interface ITableViewManagerConstructorOption extends IBaseManageConstruct
 }
 
 /**
+ * NetworkView 与插件之间的交互接口
+ */
+export interface INetworkViewHandler extends IBaseModelHandler {
+  /** 获取当前请求记录 */
+  getRecords?: () => IAnyObject[];
+  /** 清空请求记录 */
+  bindClear?: () => any;
+  /** 开始/暂停录制 */
+  bindRecordChange?: (recording: boolean) => any;
+  /** 切换页面时是否保留日志 */
+  bindPreserveLogChange?: (preserveLog: boolean) => any;
+  /** 获取录制状态 */
+  getState?: () => { recording: boolean; preserveLog: boolean };
+}
+
+export interface INetworkViewManagerConstructorOption extends IBaseManageConstructorOption {
+  handler: INetworkViewHandler;
+}
+
+export type INetworkViewGroup = IGroupOption;
+
+/**
+ * 新增 NetworkView 函数参数
+ */
+export interface IAddNetworkViewOption {
+  /** 视图会展示在调试面板对应类目中 */
+  group?: INetworkViewGroup;
+}
+
+/**
  * 功能分组排序函数类型
  */
 export type compareFn = (a: string, b: string) => number;
